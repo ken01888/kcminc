@@ -11,6 +11,7 @@ const stylesHandler = MiniCssExtractPlugin.loader;
 
 const config = {
     entry: "./src/index.tsx",
+    devtool: "inline-source-map",
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: 'main.js'
@@ -19,16 +20,16 @@ const config = {
         open: true,
         host: "localhost",
     },
-    // plugins: [
-    //     new HtmlWebpackPlugin({
-    //         template: "index.html",
-    //     }),
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./public/index.html",
+        }),
 
-    //     new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin(),
 
-    //     // Add your plugins here
-    //     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
-    // ],
+        // Add your plugins here
+        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    ],
     module: {
         rules: [{
                 test: /\.(ts|tsx)$/i,
