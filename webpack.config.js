@@ -13,21 +13,22 @@ const config = {
     entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "dist"),
+        filename: 'main.js'
     },
     devServer: {
         open: true,
         host: "localhost",
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "index.html",
-        }),
+    // plugins: [
+    //     new HtmlWebpackPlugin({
+    //         template: "index.html",
+    //     }),
 
-        new MiniCssExtractPlugin(),
+    //     new MiniCssExtractPlugin(),
 
-        // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
-    ],
+    //     // Add your plugins here
+    //     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
+    // ],
     module: {
         rules: [{
                 test: /\.(ts|tsx)$/i,
@@ -44,7 +45,7 @@ const config = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: "asset",
+                type: "javascript/auto",
             },
 
             // Add your rules for custom modules here
