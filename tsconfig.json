@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "module": "esnext",
-    "target": "ESNext",
+    "noImplicitAny": false,
+    "module": "ESNext",
+    "target": "esnext",
     "allowJs": true,
     "lib": [
       "dom",
@@ -12,7 +12,7 @@
       "WebWorker"
     ],
     "skipLibCheck": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -20,13 +20,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmitOnError": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "noEmit": false,
+    "jsx": "react",
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "./dist/client"
   },
   
   "include": [
     "src/**/*"
-  ]
+  ],
+  "exclude": ["node_modules"]
 }
