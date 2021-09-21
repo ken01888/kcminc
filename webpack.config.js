@@ -18,7 +18,6 @@ const config = {
     },
     devServer: {
         open: true,
-        host: "localhost",
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -33,8 +32,11 @@ const config = {
     module: {
         rules: [{
                 test: /\.(ts|tsx)$/i,
-                loader: "ts-loader"
-                // exclude: ["/node_modules/"],
+                loader: "ts-loader",
+                exclude: ["/node_modules/"],
+                options: {
+					configFile: 'tsconfig.client.json'
+				}
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -48,13 +50,23 @@ const config = {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
                 type: "javascript/auto",
             },
+            {
+                test: /\.?js$/,
+                exclude: /node_modules/,
+                use: {
+                  loader: "babel-loader",
+                  options: {
+                    presets: ['@babel/preset-env', '@babel/preset-react']
+                  }
+                }
+              }
 
             // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js","jsx"],
+        extensions: [".tsx", ".ts", ".js",".css",".scss"],
     },
 };
 
