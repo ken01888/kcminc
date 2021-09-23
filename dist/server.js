@@ -16,7 +16,7 @@
   \*************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar cors = __webpack_require__(/*! cors */ \"cors\");\nvar app = express();\napp.use(cors());\napp.use(express.json());\napp.use(express.static('public'));\napp.listen(3000);\n\n\n//# sourceURL=webpack://prototype-for-sites/./server/index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar express = __webpack_require__(/*! express */ \"express\");\nvar cors = __webpack_require__(/*! cors */ \"cors\");\nvar app = express();\napp.use(cors());\napp.use(express.json());\napp.use(express.static('public'));\napp.get('*', function (req, res) {\n    console.log('hello');\n    res.sendStatus(200);\n});\napp.listen(4000);\n\n\n//# sourceURL=webpack://prototype-for-sites/./server/index.ts?");
 
 /***/ }),
 

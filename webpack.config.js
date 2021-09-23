@@ -13,18 +13,17 @@ const stylesHandler = MiniCssExtractPlugin.loader;
 
 const configClient = {
     mode:"development",
-
     entry: "./src/index.tsx",
     devtool: "inline-source-map",
     output: {
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "./public"),
         filename: 'main.js',
 
     },
-    devServer: {
-        open: true,
-        port: 3000
-    },
+    // devServer: {
+    //     open: true,
+    //     port: 3000,
+    // },
     plugins: [
         new HtmlWebpackPlugin({
         }),
