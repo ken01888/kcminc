@@ -20,10 +20,11 @@ const configClient = {
         filename: 'main.js',
 
     },
-    // devServer: {
-    //     open: true,
-    //     port: 3000,
-    // },
+    devServer: {
+        open: true,
+        hot: true,
+        port: 3000
+    },
     plugins: [
         // new HtmlWebpackPlugin({
         // }),
@@ -105,5 +106,4 @@ const configServer = {
     externals: [nodeExternals()]
 };
 
-module.exports = [configServer, configClient];
 module.exports = [configServer, configClient];

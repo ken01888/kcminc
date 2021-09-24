@@ -6,7 +6,7 @@ const App = () => {
   const [old,setNew] = React.useState()
 
   const fetchServer = async () =>{
-    const data = await fetch('http://localhost:3000')
+    const data = await fetch('/')
     const res = await data.json();
     setNew(res)
 console.log(res)     
@@ -15,7 +15,7 @@ console.log(res)
 
   return(
 
-    <p  >{old}pagesfds ddddfdfadsafjdfadskhjkhddd123d</p>
+    <p  >{old}pjkjagesfds ddddfdfadsafjdfadskhjkhddd123d</p>
   )
 }
 

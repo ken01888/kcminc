@@ -37,8 +37,7 @@
         "workbox-strategies": "^5.1.3",
         "workbox-streams": "^5.1.3"
     },
-    "proxy": 3000,
-    "scripts ": {
+    "scripts": {
         "start": "react-scripts start",
         "build": "webpack --mode=production --node-env=production",
         "test": "react-scripts test",
