@@ -8,8 +8,8 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 app.use(express.static('public'))
-app.get('*',(req,res)=>{
-    console.log('hello')
+app.get('/',(req,res)=>{
+    console.log('hello dd')
     res.sendStatus(200)
 })
 
@@ -17,4 +17,4 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(4000)
+app.listen(3000)

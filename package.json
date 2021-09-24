@@ -37,8 +37,8 @@
         "workbox-strategies": "^5.1.3",
         "workbox-streams": "^5.1.3"
     },
-    "proxy":4000,
-    "scripts": {
+    "proxy": 3000,
+    "scripts ": {
         "start": "react-scripts start",
         "build": "webpack --mode=production --node-env=production",
         "test": "react-scripts test",
@@ -47,7 +47,7 @@
         "build:prod": "webpack --mode=production --node-env=production",
         "watch": "webpack --watch",
         "serve": "webpack serve",
-        "node": "nodemon server/index.js",
+        "node": "nodemon dist",
         "dev": "npm-run-all --parallel watch:*"
     },
     "eslintConfig": {
@@ -88,7 +88,7 @@
         "html-webpack-plugin": "^5.3.2",
         "mini-css-extract-plugin": "^2.3.0",
         "moment": "^2.29.1",
-        "nodemon": "^2.0.12",
+        "nodemon": "^2.0.13",
         "npm-run-all": "^4.1.5",
         "postcss": "^8.3.6",
         "postcss-loader": "^6.1.1",
