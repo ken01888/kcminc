@@ -86,9 +86,9 @@
         app.use(cors());
         app.use(express.json());
         // app.use(express.static('public'));
-        app.get('/', function(req, res) {
-            console.log('hello dd');
-            res.sendStatus(200);
+        app.get('*', function(req, res) {
+            console.log('hello dhjkhd');
+            res.sendFile(path.join(__dirname, '../public/index.html'))
         });
         app.listen(4000);
 

@@ -18,12 +18,17 @@ const configClient = {
     output: {
         path: path.resolve(__dirname, "./public"),
         filename: 'main.js',
+        clean: true
 
     },
     devServer: {
+        compress: true,
         open: true,
         hot: true,
-        port: 3000
+        port: 3000,
+
+
+
     },
     plugins: [
         // new HtmlWebpackPlugin({
