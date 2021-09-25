@@ -21,13 +21,13 @@ const configClient = {
         clean: true
 
     },
-    stats:{errorDetails:true}, 
+    stats: { errorDetails: true },
     devtool: "inline-source-map",
     devServer: {
         compress: true,
         open: true,
         hot: true,
-        port:3000,
+        port: 3000,
         // watchFiles:{
         //     paths:['dist/**']
         // },
@@ -35,17 +35,15 @@ const configClient = {
         //     directory: path.join(__dirname, 'public'),
         //     watch: true,
         //   }
-        
 
-    // },
+
+        // },
 
     },
-    plugins:[
-        new HtmlWebpackPlugin(
-            {template:'public/index.html',hash:false}
-        ),
+    plugins: [
+        new HtmlWebpackPlugin({ template: 'public/index.html', hash: false }),
         // new StylelintPlugin()
-        
+
     ],
 
     module: {
@@ -59,17 +57,14 @@ const configClient = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                exclude: /node_modules/,
-                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader","less-loader"],
+                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
             },
             {
                 test: /\.css$/i,
-                exclude: /node_modules/,
-                use: ["style-loader", "css-loader", "postcss-loader","less-loader"],
+                use: ["style-loader", "css-loader", "postcss-loader"],
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                exclude: /node_modules/,
                 type: "javascript/auto",
             },
             {
@@ -81,14 +76,22 @@ const configClient = {
                         presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
-            }
+            },
+            {
+                test: /\.less$/i,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "less-loader",
+                ],
+            },
 
             // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/
         ],
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js",".css", ".scss"],
+        extensions: [".tsx", ".ts", ".js", ".css", ".scss"],
     },
 };
 
@@ -99,7 +102,7 @@ const configServer = {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist')
     },
-    stats:{errorDetails:true}, 
+    stats: { errorDetails: true },
     devtool: "inline-source-map",
     module: {
         rules: [{
@@ -112,7 +115,7 @@ const configServer = {
         }]
     },
     resolve: {
-        extensions: ['.ts','.js']
+        extensions: ['.ts', '.js']
     },
 
     target: 'node',
