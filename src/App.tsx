@@ -17,10 +17,10 @@ const App = () => {
   return(
     <Row>
       <Col md={8}>
-      <p>Hello</p>
+      <p>Heldlo</p>
       </Col>
       <Col md={8}>
-      <p>Hello</p>
+      <p>Heldlo</p>
       </Col>
       <Col md={8}>
       <p>Hello</p>

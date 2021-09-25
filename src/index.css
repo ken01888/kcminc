@@ -10,8 +10,7 @@ code {
 }
 
 p {
-    font-size: 4rem;
-    background-color: blue;
+    font-size: 3rem;
 }
 
 @import 'App.css';
