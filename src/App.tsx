@@ -1,5 +1,6 @@
 import * as React from 'react';
 import fetch from 'isomorphic-fetch'
+import { Col, Row } from 'antd';
 
 
 const App = () => {
@@ -14,8 +15,18 @@ const App = () => {
   // fetchServer()
 
   return(
+    <Row>
+      <Col md={8}>
+      <p>Hello</p>
+      </Col>
+      <Col md={8}>
+      <p>Hello</p>
+      </Col>
+      <Col md={8}>
+      <p>Hello</p>
+      </Col>
+    </Row>
 
-    <h1>hodhjkhdmje</h1>
   )
 }
 

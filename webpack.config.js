@@ -42,7 +42,7 @@ const configClient = {
     },
     plugins:[
         new HtmlWebpackPlugin(
-            {title:'Kcm Inc',template:'public/index.html',hash:false}
+            {template:'public/index.html',hash:false}
         ),
         // new StylelintPlugin()
         
@@ -60,12 +60,12 @@ const configClient = {
             {
                 test: /\.s[ac]ss$/i,
                 exclude: /node_modules/,
-                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader","less-loader"],
             },
             {
                 test: /\.css$/i,
                 exclude: /node_modules/,
-                use: ["style-loader", "css-loader", "postcss-loader"],
+                use: ["style-loader", "css-loader", "postcss-loader","less-loader"],
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
