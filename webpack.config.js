@@ -26,8 +26,11 @@ const configClient = {
     devServer: {
         compress: true,
         open: true,
-        hot: true,
+        hot: 'only',
         port: 3000,
+        client: {
+            overlay: true,
+        },
         // watchFiles:{
         //     paths:['dist/**']
         // },

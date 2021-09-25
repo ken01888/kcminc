@@ -23,7 +23,7 @@ const App = () => {
       <p>Heldlo</p>
       </Col>
       <Col md={8}>
-      <p>Hello</p>
+      <p>Hello1</p>
       </Col>
     </Row>
 
