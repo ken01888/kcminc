@@ -2146,6 +2146,14 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.1.tgz#20f18294f797f2209b5f65c8e3b5c8e8261d127c"
   integrity sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==
 
+"@types/stylelint@^13.13.1":
+  version "13.13.2"
+  resolved "https://registry.yarnpkg.com/@types/stylelint/-/stylelint-13.13.2.tgz#7a8a99bdbe19187b973a290dd3f821cfe5caff6e"
+  integrity sha512-5Yt1LQenR7uk+efCydQmN7ubOtO2qJ8Z9K/qqnlW87X1zkIQ8RkMCZbaOgZj/aBrR/h5Q738mJU6CYhXOj9sEg==
+  dependencies:
+    globby "11.x.x"
+    postcss "7.x.x"
+
 "@types/tapable@^1", "@types/tapable@^1.0.5":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@types/tapable/-/tapable-1.0.8.tgz#b94a4391c85666c7b73299fd3ad79d4faa435310"
@@ -6340,7 +6348,7 @@ globby@11.0.1:
     merge2 "^1.3.0"
     slash "^3.0.0"
 
-globby@^11.0.3:
+globby@11.x.x, globby@^11.0.3, globby@^11.0.4:
   version "11.0.4"
   resolved "https://registry.yarnpkg.com/globby/-/globby-11.0.4.tgz#2cbaff77c2f2a62e71e9b2813a67b97a3a3001a5"
   integrity sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==
@@ -10320,7 +10328,7 @@ postcss-values-parser@^2.0.0, postcss-values-parser@^2.0.1:
     indexes-of "^1.0.1"
     uniq "^1.0.1"
 
-postcss@7.0.36, postcss@^7, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6:
+postcss@7.0.36, postcss@7.x.x, postcss@^7, postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.26, postcss@^7.0.27, postcss@^7.0.32, postcss@^7.0.5, postcss@^7.0.6:
   version "7.0.36"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.36.tgz#056f8cffa939662a8f5905950c07d5285644dfcb"
   integrity sha512-BebJSIUMwJHRH0HAQoxN4u1CN86glsrwsW0q7T+/m44eXOUAxSNdHRkNZPYz5vVUbg17hFgOQDE7fZk7li3pZw==
@@ -12555,6 +12563,18 @@ stylehacks@^4.0.0:
     browserslist "^4.0.0"
     postcss "^7.0.0"
     postcss-selector-parser "^3.0.0"
+
+stylelint-webpack-plugin@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/stylelint-webpack-plugin/-/stylelint-webpack-plugin-3.0.1.tgz#51832909fb92745fd9afa702b772a35aa60610fc"
+  integrity sha512-1qUJTjXSGEGxsdYelZCmDZgA87H6/XR0xrl5a4mwAlIcWcNvr0QeH0e0ZY3ZJTY/rJ2xjKnt5ETvFzOZpPbuDg==
+  dependencies:
+    "@types/stylelint" "^13.13.1"
+    globby "^11.0.4"
+    jest-worker "^27.0.6"
+    micromatch "^4.0.4"
+    normalize-path "^3.0.0"
+    schema-utils "^3.1.0"
 
 supports-color@^5.3.0, supports-color@^5.5.0:
   version "5.5.0"

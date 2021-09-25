@@ -3,19 +3,19 @@ import fetch from 'isomorphic-fetch'
 
 
 const App = () => {
-  const [old,setNew] = React.useState()
+  // const [old,setNew] = React.useState()
 
-  const fetchServer = async () =>{
-    const data = await fetch('/')
-    const res = await data.json();
-    setNew(res)
-console.log(res)     
-  }
-  
+  // const fetchServer = async () =>{
+  //   const data = await fetch('/')
+  //   const newData = await data.json()
+  //  console.log(newData)
+
+  // }
+  // fetchServer()
 
   return(
 
-    <p  >{old}pjkjjkljkjkljagesfds ddddfdfadsafjdfadskhjkhddd123d</p>
+    <h1>hodhjkhdmje</h1>
   )
 }
 
