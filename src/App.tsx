@@ -17,13 +17,13 @@ const App = () => {
   return(
     <Row>
       <Col md={8}>
-      <p>Heldlo</p>
+      <p>1</p>
       </Col>
       <Col md={8}>
-      <p>Heldlo</p>
+      <p>2</p>
       </Col>
       <Col md={8}>
-      <p>Hello1</p>
+      <p>3</p>
       </Col>
     </Row>
 

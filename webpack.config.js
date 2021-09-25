@@ -26,7 +26,7 @@ const configClient = {
     devServer: {
         compress: true,
         open: true,
-        hot: 'only',
+        hot: true,
         port: 3000,
         client: {
             overlay: true,
