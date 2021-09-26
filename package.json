@@ -44,9 +44,9 @@
         "eject": "react-scripts eject",
         "build:dev": "webpack --mode=development",
         "build:prod": "webpack --mode=production --node-env=production",
-        "watch": "webpack --watch",
-        "serve": "webpack serve",
-        "node": "nodemon dist",
+        "watch:watch": "webpack --watch",
+        "watch:serve": "webpack serve",
+        "watch:node": "nodemon dist_server/index.js",
         "dev": "npm-run-all --parallel watch:*"
     },
     "eslintConfig": {
