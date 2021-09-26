@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 const nodeExternals = require('webpack-node-externals');
+
 // const StylelintPlugin = require('stylelint-webpack-plugin');
 
 
@@ -28,9 +29,9 @@ const configClient = {
         open: true,
         hot: true,
         port: 3000,
-        client: {
-            overlay: true,
-        },
+        // overlay: true,
+        liveReload: true
+
         // watchFiles:{
         //     paths:['dist/**']
         // },
@@ -107,6 +108,8 @@ const configServer = {
     },
     stats: { errorDetails: true },
     devtool: "inline-source-map",
+    watchOptions: { aggregateTimeout: 500, aggregateTimeout: 500, ignored: './node_modules' },
+
     module: {
         rules: [{
             test: /\.ts?$/,
