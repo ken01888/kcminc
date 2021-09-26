@@ -1,6 +1,6 @@
 import * as React from 'react';
 import fetch from 'isomorphic-fetch'
-import { Col, Row } from 'antd';
+import { Button, Calendar, Col, Divider, List, Row, Space, Typography } from 'antd';
 
 
 const App = () => {
@@ -14,14 +14,15 @@ const App = () => {
     })()
   },[])
 
+  function onPanelChange(value, mode) {
+    console.log(value.format('YYYY-MM-DD'), mode);
+  }
+  
   return(
-    <Row>
-      <Col md={8}>
-      <p>{old}</p>
-      </Col>
-    
-    </Row>
-
+   
+    <>
+    <Calendar onPanelChange={onPanelChange} />
+</>
   )
 }
 

@@ -90,7 +90,6 @@ const configClient = {
 };
 
 const configServer = {
-    watch:true,
     mode: 'development',
     entry: './mainDevFolder/server/index.ts',
     devtool: 'inline-source-map',
