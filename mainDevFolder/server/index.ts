@@ -7,9 +7,9 @@ const app = express();
 
 app.use(cors())
 app.use(express.json())
-app.get('/get',(req,res)=>{
+app.get('/',(req,res)=>{
     console.log(req)
-    res.json('server is running on port 4000')
+    res.json('listening on port 4000 for backend server')
 })
 
 

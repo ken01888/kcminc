@@ -8,7 +8,7 @@ const App = () => {
 
   React.useEffect(()=>{
     (async () =>{
-      const data = await fetch('http://localhost:4000/get')
+      const data = await fetch('http://localhost:4000')
       const newData = await data.json()
      setNew(newData)
     })()
@@ -21,7 +21,7 @@ const App = () => {
   return(
    
     <>
-    <Calendar onPanelChange={onPanelChange} />
+    {old}
 </>
   )
 }
