@@ -3,26 +3,23 @@ import fetch from 'isomorphic-fetch'
 import { Button, Calendar, Col, Divider, List, Row, Space, Typography } from 'antd';
 
 
-const App = () => {
+const App:React.FC = () => {
   const [old,setNew] = React.useState()
 
-  React.useEffect(()=>{
-    (async () =>{
-      const data = await fetch('http://localhost:4000')
-      const newData = await data.json()
-     setNew(newData)
-    })()
-  },[])
+  // React.useEffect(()=>{
+  //   (async () =>{
+  //     const data = await fetch('http://localhost:4000')
+  //     const newData = await data.json()
+  //    setNew(newData)
+  //   })()
+  // },[])
 
-  function onPanelChange(value, mode) {
-    console.log(value.format('YYYY-MM-DD'), mode);
-  }
+  
+
   
   return(
    
-    <>
-    {old}
-</>
+<p>Hello dd</p>
   )
 }
 
