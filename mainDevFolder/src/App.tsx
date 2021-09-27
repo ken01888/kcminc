@@ -6,20 +6,20 @@ import { Button, Calendar, Col, Divider, List, Row, Space, Typography } from 'an
 const App:React.FC = () => {
   const [old,setNew] = React.useState()
 
-  // React.useEffect(()=>{
-  //   (async () =>{
-  //     const data = await fetch('http://localhost:4000')
-  //     const newData = await data.json()
-  //    setNew(newData)
-  //   })()
-  // },[])
+  React.useEffect(()=>{
+    (async () =>{
+      const data = await fetch('http://localhost:4000')
+      const newData = await data.json()
+     setNew(newData)
+    })()
+  },[])
 
   
 
   
   return(
    
-<p>Hello dd</p>
+<p>{old}</p>
   )
 }
 
