@@ -10,7 +10,7 @@ app.all('/client_Suite', async (req, res) => {
     switch (req.method) {
         case 'GET':
             const new_Data = await database_Function.allClients();
-            console.log(new_Data)
+            console.log(new_Data[0])
             res.send(req.method)
             break;
 
