@@ -1,14 +1,14 @@
 import * as express from 'express';
 import * as cors from 'cors';
+import clientDate from './db/clients';
 
 
 const app = express();
 
 app.use(cors())
 app.use(express.json())
-app.get('/',(req,res)=>{
-    res.json('listening on port 4000 for backend server')
-})
+app.use(clientDate)
+
 
 
 

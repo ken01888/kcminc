@@ -1,14 +1,15 @@
 import * as mysql from 'mysql';
-import database_Function from './query_functions'
+import database_Function from './clients/query_clients'
 
 
 
 
 const mysqlAccess = mysql.createPool({
-host:'kenneth Cunningham 11',
-user:'',
-password:'',
-database:''
+    host:'localhost',
+    port:3306,
+    user:'ken',
+    password:'password',
+    database:'mindspace'
 })
 
 export const Query = (query:string,values?:Array<string|number>)=>{
