@@ -6,7 +6,7 @@ import * as React from 'react';
 
     const About = ()=>{
         return (
-            <p>This is about</p>
+            <p>About</p>
         );
     };
 
