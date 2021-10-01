@@ -4,7 +4,9 @@ import * as React from 'react';
 
 
 
-    const Home = ()=>{
+    const Home:React.FC = ()=>{
+    
+        
         return (
             <p>Home</p>
         );

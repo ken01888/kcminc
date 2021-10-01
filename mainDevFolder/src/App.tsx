@@ -15,16 +15,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import About from './design/mainSite/components/Page/About'
 import Contact from './design/mainSite/components/Page/Contact'
 
-const App: React.FC = () => {
-  const [old, setNew] = React.useState()
+const App = () => {
 
-  React.useEffect(() => {
-    ;(async () => {
-      const data = await fetch('http://localhost:4000')
-      const newData = await data.json()
-      setNew(newData)
-    })()
-  }, [])
+
 
   return (
     <Router>
