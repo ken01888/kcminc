@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
+
 // const StylelintPlugin = require('stylelint-webpack-plugin');
 
 
@@ -15,7 +16,7 @@ const stylesHandler = MiniCssExtractPlugin.loader;
 
 const configClient = {
 
-    mode: 'development',
+    mode: isProduction || 'development',
     entry: './mainDevFolder/src/index.tsx',
 
     output: {
@@ -92,7 +93,7 @@ const configClient = {
 };
 
 const configServer = {
-    mode: 'development',
+    mode: isProduction || 'development',
     entry: './mainDevFolder/server/index.ts',
     devtool: 'inline-source-map',
     output: {
