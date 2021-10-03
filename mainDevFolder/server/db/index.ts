@@ -5,11 +5,11 @@ import database_Function from './clients/query_clients'
 
 
 const mysqlAccess = mysql.createPool({
-    host:'localhost',
+    host:'test-connection-aws-rds.cf2pfdin25py.us-east-1.rds.amazonaws.com',
     port:3306,
-    user:'ken',
-    password:'password',
-    database:'mindspace'
+    user:'admin',
+    password:'4#MiSgh!4',
+    database:'TEMPLATE'
 })
 
 export const Query = (query:string,values?:Array<string|number>)=>{

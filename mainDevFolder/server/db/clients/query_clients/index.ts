@@ -1,7 +1,7 @@
 import { Query } from "../../index";
 
 
-const allClients = async () => Query('SELECT * FROM clients');
+const allClients = async () => Query('SELECT * FROM contact');
 // const singleChirp = async (id:string) => Query('SELECT * FROM Chirps WHERE id = ?',[id]);
 // const deleteChirp = async(id:string)=>Query('DELETE FROM Chirps WHERE id = ?',[id]);
 // const insertChirp = async(chirp :any )=>Query('INSERT INTO Chirps SET ?' ,chirp);
