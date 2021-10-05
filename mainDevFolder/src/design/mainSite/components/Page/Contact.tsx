@@ -8,13 +8,14 @@ const Contact = () => {
         (async () => {
           const data = await fetch('http://localhost:4000')
           const newData = await data.json()
-          setNew(newData)
+          console.log(newData.first_name)
+         
         })()
       }, [])
 
 
     return(
-        <p>Contact {old} </p>
+        <p>Contact  </p>
     )
 };
 
