@@ -4,31 +4,34 @@ import database_Function from './query_clients'
 
 const app = express()
 
-app.all('/client_Suite', async (req, res) => {
+app.all('/client_Suite', async (req, res, error) => {
   switch (req.method) {
     case 'GET':
-      const new_Data = await database_Function.allClients()
-      new_Data.map(i=>{
-          console.log(i.id)
+      const new_Data = await database_Function.allMessages()
+      new_Data.map(i => {
+        console.log(i)
       });
       res.send(200)
       break;
     case 'POST':
-      const newData = await database_Function.insertMessage(req.body)
-      console.log(newData)
+
+      await database_Function.insertMessages(req.body)
       res.send(req.method)
       break;
 
     case 'PUT':
-        res.send(req.method)
+      await database_Function.updateMessages(req.body, req.body.id)
+      res.send(200)
       break;
 
     case 'DELETE':
-        res.send(req.method)
+      await database_Function.deleteMessages(req.body.id)
+      res.send(req.method)
       break;
 
     default:
-        res.send()
+
+      res.send()
       break;
   }
 })
