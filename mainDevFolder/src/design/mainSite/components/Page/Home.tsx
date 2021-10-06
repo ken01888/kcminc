@@ -20,9 +20,8 @@ import * as React from 'react';
         
         return (
            <React.Fragment>
-               {old.map((i)=>(
-                   
-                   <p>{i.first_name}</p>
+               {old.map((i,j)=>( 
+                   <p key={j}>{i.first_name}</p>
                ))}
            </React.Fragment>
         )
