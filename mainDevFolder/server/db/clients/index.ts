@@ -8,9 +8,9 @@ app.all('/client_suite', async (req, res, error) => {
   switch (req.method) {
     case 'GET':
       const new_Data = await database_Function.allMessages()
-      // new_Data.map(i => {
-      //   console.log(i)
-      // });
+      new_Data.map(i => {
+        console.log(i)
+      });
       res.json(new_Data)
       break;
     case 'POST':
