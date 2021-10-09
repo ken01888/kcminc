@@ -14,7 +14,7 @@ const Contact = () => {
 
 
     return(
-        <p>Contact {old} </p>
+        <p>Contact  </p>
     )
 };
 
