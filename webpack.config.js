@@ -81,7 +81,7 @@ const configClient = {
                                 javascriptEnabled: true,
                                 modifyVars: {
                                     'primary-color': 'black',
-                                    'link-color': 'orange',
+                                    'link-color': 'black',
                                     'border-radius-base': '2px'
                                 },
                             }

@@ -6,25 +6,28 @@ import { copyFileSync } from 'fs'
 const Home: React.FC = () => {
   const [old, newOld] = React.useState([])
 
-  //   React.useEffect(() => {
-  //     (async () => {
-  //       let newData = await fetch('http://localhost:4000/client_suite')
-  //       let reply = await newData.json()
-  //       newOld(reply)
-  //     })()
-  //   }, [])
+  // React.useEffect(() => {
+  //   (async () => {
+  //     let newData = await fetch('http://localhost:4000/client_suite')
+  //     let reply = await newData.json()
+  //     newOld(reply)
+  //   })()
+  // }, [])
 
-  
+
 
 
   return (
     <React.Fragment>
       <Row>
-          
-          <Col sm={24} >
-              <h3 className='text'>KCM INC</h3>
-          </Col>
-          
+
+        <Col sm={22} push={2}>
+          <h4 className='text'>fds</h4>
+          <p>dkdk</p>
+
+        </Col>
+       
+
       </Row>
     </React.Fragment>
   )
