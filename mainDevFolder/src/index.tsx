@@ -1,9 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import './design/styles';
 import App from './App';
-import 'antd/dist/antd.css';
-// import 'antd/dist/antd.less'
+import 'antd/dist/antd.less'
 import './design/styles/index.less'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';

@@ -67,7 +67,7 @@ const configClient = {
                 }
             },
             {
-                test: /\.less$/i,
+                test: /\.less$/,
                 use: [{
                         loader: 'style-loader'
                     },
@@ -80,8 +80,8 @@ const configClient = {
                             lessOptions: {
                                 javascriptEnabled: true,
                                 modifyVars: {
-                                    'primary-color': '#1DA57A',
-                                    'link-color': '#1DA57A',
+                                    'primary-color': 'black',
+                                    'link-color': 'orange',
                                     'border-radius-base': '2px'
                                 },
                             }
