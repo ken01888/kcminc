@@ -18,18 +18,18 @@ const Home: React.FC = () => {
 
 
   return (
-    <React.Fragment>
-      <Row>
+      <Row justify='center'>
 
-        <Col sm={22} push={2}>
-          <h4 className='text'>fds</h4>
+        <Col sm={25} >
+          <h4 className='header'> Building stronger communities by  </h4>
           <p>dkdk</p>
 
         </Col>
        
+      
+       
 
       </Row>
-    </React.Fragment>
   )
 }
 
