@@ -33,7 +33,7 @@ const App = () => {
     } else {
       return (
         <React.Fragment>
-          <Menu mode='horizontal' defaultSelectedKeys={['1']}>
+          <Menu mode='horizontal' defaultSelectedKeys={['1']} className='navbar'>
             <Menu.Item key='1'>
               <a
                 href='/'

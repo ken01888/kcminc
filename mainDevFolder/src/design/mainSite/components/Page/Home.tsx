@@ -18,11 +18,11 @@ const Home: React.FC = () => {
 
 
   return (
-      <Row justify='center'>
+      <Row justify='center' className="heroSection">
 
-        <Col sm={25} >
-          <h4 className='header'> Building stronger communities by  </h4>
-          <p>dkdk</p>
+        <Col push={2} sm={22} className='hero'>
+          <h1 className='header'> Solutions built for adventurous enterprises</h1>
+          <p>At <span>KCM INC</span> we provide impactful business solutions for organizations operating within the hospitality and leisure industries. </p>
 
         </Col>
        
