@@ -21,8 +21,8 @@ const Home: React.FC = () => {
     <React.Fragment>
       <Row>
 
-        <Col sm={22} push={2}>
-          <h4 className='text'>fds</h4>
+        <Col sm={22} push={1} className='hero'>
+          <h4 className='text'></h4>
           <p>dkdk</p>
 
         </Col>
