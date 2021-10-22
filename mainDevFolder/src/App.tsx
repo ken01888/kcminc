@@ -33,55 +33,43 @@ const App = () => {
     } else {
       return (
         <React.Fragment>
-          <Menu mode='horizontal' defaultSelectedKeys={['1']} className='navbar'>
+          {/* <Row>
+            <Col span={24}>
+              fds
+            </Col>
+          </Row> */}
+          <Menu
+            mode='horizontal'
+            defaultSelectedKeys={['1']}
+            className='navbar'
+          >
             <Menu.Item key='1'>
-              <a
-                href='/'
-                target='_self'
-                rel='noopener noreferrer'
-              >
+              <a href='/' target='_self' rel='noopener noreferrer'>
                 KCM INC
               </a>
             </Menu.Item>
             <Menu.Item key='2'>
-            <a
-                href='/'
-                target='_self'
-                rel='noopener noreferrer'
-              >
+              <a href='/' target='_self' rel='noopener noreferrer'>
                 Services
               </a>
             </Menu.Item>
             <Menu.Item key='3'>
-            <a
-                href='/'
-                target='_self'
-                rel='noopener noreferrer'
-              >
+              <a href='/' target='_self' rel='noopener noreferrer'>
                 Solutions
               </a>
             </Menu.Item>
             <Menu.Item key='4'>
-            <a
-                href='/'
-                target='_self'
-                rel='noopener noreferrer'
-              >
+              <a href='/' target='_self' rel='noopener noreferrer'>
                 About
               </a>
             </Menu.Item>
+            
             <Menu.Item key='5'>
-            <a
-                href='/'
-                target='_self'
-                rel='noopener noreferrer'
-              >
-                Contact
+              <a href='/' target='_self' rel='noopener noreferrer'>
+                <Button type='primary'>Contact</Button>
               </a>
             </Menu.Item>
-
           </Menu>
-
         </React.Fragment>
       )
     }
