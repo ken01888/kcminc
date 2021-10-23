@@ -41,8 +41,8 @@ const Home: React.FC = () => {
         <Col offset={1} xs={18} >
           <h2>Philosophy </h2>
           <p>
-            Engineering innovative business solutions connect bridge consumer needs with business objectives is our primary focus.
-            We analyzing data from the world's leading public research institutions, target weaknesses associated with a specific data point and finally design integrative mutually beneficial business solutions.
+            Engineering innovative business solutions which merge consumer needs with business objectives is our primary focus.
+            We analyzing data from the world's leading public research institutions, target weaknesses associated with a specific data point and finally design integrative mutually beneficial business solutions that satisfy the needs of our business clients and their consumers.
 
           </p>
 
