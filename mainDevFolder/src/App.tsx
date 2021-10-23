@@ -10,9 +10,13 @@ import {
   Space,
   Typography,
   Layout,
-  Menu
+  Menu,
+  Anchor,
+  PageHeader,
+  Descriptions
 } from 'antd'
 const { Header, Content, Footer } = Layout
+const { Link } = Anchor
 
 import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -20,10 +24,9 @@ import About from './design/mainSite/components/Page/About'
 import Contact from './design/mainSite/components/Page/Contact'
 
 const App = () => {
-
   let key: number | boolean = window.innerWidth
   let newMenu = () => {
-    if ((key >= 280 && key <= 768)) {
+    if (key >= 280 && key <= 768) {
       return (
         <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['2']}>
           <Menu.Item key='1'>cell</Menu.Item>
@@ -32,32 +35,40 @@ const App = () => {
     } else {
       return (
         <React.Fragment>
-          <Menu mode='horizontal' defaultSelectedKeys={['1']}>
-
-            <Menu.Item key='1'>KCM INC</Menu.Item>
-            <Menu.Item key='2'>Services</Menu.Item>
-            <Menu.Item key='3'>Solutions</Menu.Item>
-            <Menu.Item key='4'>Clients</Menu.Item>
-            <Menu.Item key='5'>Contact</Menu.Item>
-          </Menu>
+          {/* <Row>
+            <Col span={24}>
+              fds
+            </Col>
+          </Row> */}
+          
+          <PageHeader
+          
+      title={<h2>KCM</h2>}
+      subTitle='INC'
+      extra={[
+        <Button key="3">Operation</Button>,
+      ]}
+    >
+    </PageHeader>
         </React.Fragment>
-
       )
     }
   }
 
-
   return (
     <Layout>
-      <Header style={{ position: 'fixed', zIndex: 1, width: '100%', background: 'white' }}>
+      <Header
+        style={{
+          position: 'fixed',
+          zIndex: 1,
+          width: '100%',
+          background: 'white'
+        }}
+      >
         <div className='logo' />
         {newMenu()}
       </Header>
-      <Content
-        className='site-layout'
-        
-      >
-
+      <Content className='site-layout'>
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />
@@ -66,11 +77,10 @@ const App = () => {
           </Switch>
         </Router>
       </Content>
-      <Footer style={{ textAlign: 'center',backgroundColor:'white' }}>
+      <Footer style={{ textAlign: 'center', backgroundColor: 'white' }}>
         Ant Design ©2018 Created by Ant UED
       </Footer>
     </Layout>
-
   )
 }
 

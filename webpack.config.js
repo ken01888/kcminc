@@ -83,6 +83,7 @@ const configClient = {
                                     'primary-color': 'black',
                                     'link-color': 'black',
                                     'border-radius-base': '2px'
+
                                 },
                             }
                         }
