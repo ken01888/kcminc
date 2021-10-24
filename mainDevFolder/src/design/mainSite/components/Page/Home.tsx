@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Layout, Breadcrumb, Menu, Row, Col, Space, List, Avatar, Timeline, Collapse, Affix, Button } from 'antd'
-import { LeftSquareOutlined } from '@ant-design/icons';
+import { LeftSquareOutlined, PlusOutlined } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import { duration } from 'moment';
 const { Panel } = Collapse
@@ -41,18 +41,30 @@ const Home: React.FC = () => {
         <Col offset={1} xs={18} >
           <h2>Philosophy </h2>
           <p>
-            Engineering innovative business solutions which merge consumer needs with business objectives is our primary focus.
-            We analyzing data from the world's leading public research institutions, target weaknesses associated with a specific data point and finally design integrative mutually beneficial business solutions that satisfy the needs of our business clients and their consumers.
+            Engineering innovative business solutions that merge consumer needs with business objectives is our primary focus.
+            We analyzing data from the world's leading public research institutions, target weaknesses associated with a specific data point and finally design integrative business solutions that satisfy the needs of our business clients and their consumers.
 
           </p>
-
-          <Timeline>
-            <Timeline.Item color="#009688">Planet</Timeline.Item>
-            <Timeline.Item color="#009688">People</Timeline.Item>
-            <Timeline.Item color="#009688">Profits</Timeline.Item>
-
-          </Timeline>
         </Col>
+      </Row>
+      <Row justify='center'>
+        <Col md={24} className="sectionTenet">          
+        <h3>Healthy Planet</h3>
+        </Col>
+        <Col md={24} className="sectionTenet">          
+        <PlusOutlined style={{ color: '#009688', fontSize: '2rem' }} />
+        </Col>
+        <Col md={24} className="sectionTenet">          
+        <h3>Healthy Planet</h3>
+        </Col>
+        <Col md={24} className="sectionTenet">          
+        <h3>Healthy Planet</h3>
+        </Col>
+        <Col md={24} className="sectionTenet">          
+        <h3>Healthy Planet</h3>
+        </Col>
+        
+ 
       </Row>
       <Row justify='center' className='heroSection' gutter={[24, 64]}>
 
@@ -81,46 +93,46 @@ const Home: React.FC = () => {
           </p>
           <Collapse ghost={true}>
             <Panel header={"Consumer Staples"} key="1">
-              <Collapse  ghost={true}>
+              <Collapse ghost={true}>
                 <Panel header="Food Distributors" key="2">
                   <p>Distributors of food products to other companies and not
                     directly to the consumer</p>
                 </Panel>
               </Collapse>
-              <Collapse  ghost={true}>
+              <Collapse ghost={true}>
                 <Panel header="Food Retail" key="3">
                   <p>Owners and operators of primarily food retail stores.</p>
                 </Panel>
               </Collapse>
-              <Collapse  ghost={true}>
+              <Collapse ghost={true}>
                 <Panel header="Hypermarkets & Super Centers" key="4">
                   <p>Owners and operators of hypermarkets and super centers selling
                     food and a wide-range of consumer staple products.</p>
                 </Panel>
               </Collapse>
-              <Collapse  ghost={true}>
+              <Collapse ghost={true}>
                 <Panel header="Brewers" key="5">
                   <p>Producers of beer and malt liquors.</p>
                 </Panel>
               </Collapse>
-              <Collapse  ghost={true}>
+              <Collapse ghost={true}>
                 <Panel header="Distillers & Vintners" key="6">
                   <p>Distillers, vintners and producers of alcoholic beverages.</p>
                 </Panel>
               </Collapse>
-              <Collapse  ghost={true}>
+              <Collapse ghost={true}>
                 <Panel header="Soft Drinks" key="7">
                   <p>Producers of non-alcoholic beverages including mineral waters. </p>
                 </Panel>
               </Collapse>
-              <Collapse  ghost={true}>
+              <Collapse ghost={true}>
                 <Panel header="Agricultural Products" key="8">
                   <p>Producers of agricultural products. Includes crop growers,
                     owners of plantations and companies that produce and process
                     foods but do not package and market them. </p>
                 </Panel>
               </Collapse>
-              <Collapse  ghost={true}>
+              <Collapse ghost={true}>
                 <Panel header="Packaged Foods & Meats" key="9">
                   <p>Producers of packaged foods including dairy products, fruit
                     juices, meats, poultry, fish and pet foods.</p>
