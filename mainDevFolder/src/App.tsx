@@ -13,7 +13,8 @@ import {
   Menu,
   Anchor,
   PageHeader,
-  Descriptions
+  Descriptions,
+  Affix
 } from 'antd'
 const { Header, Content, Footer } = Layout
 const { Link } = Anchor
@@ -77,9 +78,12 @@ const App = () => {
           </Switch>
         </Router>
       </Content>
+
       <Footer style={{ textAlign: 'center', backgroundColor: 'white' }}>
         Ant Design ©2018 Created by Ant UED
+
       </Footer>
+
     </Layout>
   )
 }

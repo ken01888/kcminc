@@ -60,10 +60,44 @@ const Home: React.FC = () => {
         <Col offset={1} xs={18}>
           <h2>Philosophy </h2>
           <p>
-            Engineering innovative business solutions that merge consumer needs
-            with business objectives is our primary focus. We analyzing data
-            from the world's leading research institutions, target weaknesses associated with 
-            a specified data point and develope business solutions that invigorate the deficient variable.  
+            Creating innovation business solutions that benefit of our clients and consumer well-being is our focus. 
+            We work across a broad set of business sector tailoring solutions that improve stakeholder satisfactions, 
+            operational effiency and business profits.  
+             
+          </p>
+        </Col>
+      </Row>
+      <Row justify='center' gutter={[16, 16]} style={{ marginTop: '1rem' }}>
+        <Col xs={24} className='sectionTenet'>
+          <h3>Healthy </h3>
+          <span className='phyEquation'>Planet</span>
+        </Col>
+        <Col xs={24} className='sectionTenet'>
+          <PlusOutlined style={{ fontSize: '2rem' }} />
+        </Col>
+        <Col xs={24} className='sectionTenet'>
+          <h3>Healthy</h3>
+          <span className='phyEquation'>Consumers</span>
+        </Col>
+        <Col xs={10} style={{ backgroundColor: 'black', height: '2px' }}></Col>
+        <Col xs={24} className='sectionTenet'>
+          <h3>Higher</h3>
+          <span className='phyEquation'>Valuations</span>
+        </Col>
+      </Row>
+
+
+
+      <Row justify='center' className='heroSection' gutter={[24, 64]}>
+      
+
+        <Col offset={1} xs={18} >
+          <h2>Methods </h2>
+          <p>
+            Creating innovation business solutions that benefit industry and consumer well-being is our focus. 
+            We work across a broad set of business sectors tailoring solutions that improve stakeholder value, 
+            operational effiency and business profits.  
+             
           </p>
         </Col>
       </Row>
@@ -160,8 +194,8 @@ const Home: React.FC = () => {
           </Collapse> 
         </Col>
       </Row>
-      <Row >
-        <Col md={24} className="contactSection">
+      <Row justify='center'>
+        <Col md={18} className="contactSection">
           <h1>Contact</h1>
         </Col>
         
