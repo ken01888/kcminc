@@ -91,7 +91,7 @@ const Home: React.FC = () => {
       
 
       {/* {Solutions Section} */}
-      <Row justify='center' gutter={[24, 64]}>
+      <Row justify='center' gutter={[24, 64]} className='solutionSection'>
         <Col offset={1} xs={18} className='heroSection'>
           <h2>Solutions</h2>
           <p>
