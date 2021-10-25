@@ -62,8 +62,9 @@ const Home: React.FC = () => {
           <p>
             Engineering innovative business solutions that merge consumer needs
             with business objectives is our primary focus. We analyzing data
-            from the world's leading research institutions, target weaknesses associated with 
-            a specified data point and develope business solutions that invigorate the deficient variable.  
+            from the world's leading research institutions, target weaknesses
+            associated with a specified data point and develope business
+            solutions that invigorate the deficient variable.
           </p>
         </Col>
       </Row>
@@ -85,19 +86,25 @@ const Home: React.FC = () => {
           <span className='phyEquation'>Valuations</span>
         </Col>
       </Row>
-     
+
+      {/* {Solutions Section} */}
       <Row justify='center' gutter={[24, 64]}>
         <Col offset={1} xs={18} className='heroSection'>
           <h2>Solutions</h2>
           <p>
-            Engineering innovative business solutions connect bridge consumer
-            needs with business objectives is our primary focus. We analyzing
-            data from the world's leading public research institutions, target
-            weaknesses associated with a specific data point and finally design
-            integrative mutually beneficial business solutions.
+            KCM INC creates solutions that improve the health of consumers and
+            business. We work work within multiple sectors creating life
+            changing metheologies that optimize business performance.
           </p>
           <Collapse ghost={true}>
-            <Panel header={<span>Consumer Staples <Tag color="#009688">Sector</Tag></span>} key='1'>
+            <Panel
+              header={
+                <span>
+                  Consumer Staples <Tag color='#009688'>Sector</Tag>
+                </span>
+              }
+              key='1'
+            >
               <Collapse ghost={true}>
                 <Panel header='Food Distributors' key='2'>
                   <p>
@@ -157,14 +164,13 @@ const Home: React.FC = () => {
                 </Panel>
               </Collapse>
             </Panel>
-          </Collapse> 
+          </Collapse>
         </Col>
       </Row>
-      <Row >
-        <Col md={24} className="contactSection">
+      <Row justify='center'>
+        <Col md={17} className='contactSection'>
           <h1>Contact</h1>
         </Col>
-        
       </Row>
     </React.Fragment>
   )
