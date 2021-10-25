@@ -60,11 +60,10 @@ const Home: React.FC = () => {
         <Col offset={1} xs={18}>
           <h2>Philosophy </h2>
           <p>
-            Engineering innovative business solutions that merge consumer needs
-            with business objectives is our primary focus. We analyzing data
-            from the world's leading research institutions, target weaknesses
-            associated with a specified data point and develope business
-            solutions that invigorate the deficient variable.
+            Creating innovation business solutions that benefit of our clients and consumer well-being is our focus. 
+            We work across a broad set of business sector tailoring solutions that improve stakeholder satisfactions, 
+            operational effiency and business profits.  
+             
           </p>
         </Col>
       </Row>
@@ -86,6 +85,10 @@ const Home: React.FC = () => {
           <span className='phyEquation'>Valuations</span>
         </Col>
       </Row>
+
+
+
+      
 
       {/* {Solutions Section} */}
       <Row justify='center' gutter={[24, 64]}>
@@ -168,7 +171,7 @@ const Home: React.FC = () => {
         </Col>
       </Row>
       <Row justify='center'>
-        <Col md={17} className='contactSection'>
+        <Col md={18} className="contactSection">
           <h1>Contact</h1>
         </Col>
       </Row>
