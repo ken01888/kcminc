@@ -18,7 +18,12 @@ import {
 import {
   LeftSquareOutlined,
   PauseOutlined,
-  PlusOutlined
+  PlusOutlined,
+  TwitterCircleFilled,
+  TwitterOutlined,
+  TwitterSquareFilled,
+  LinkedinFilled,
+  LinkedinOutlined
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
@@ -50,55 +55,60 @@ const Home: React.FC = () => {
   return (
     <React.Fragment>
       <Row justify='center' className='heroSection' gutter={[24, 64]}>
-        <Col>
+        <Col xs={12}>
           <h1 className='h1_heroSection'>
             {' '}
-            Impactful solutions for better enterprises.
+            Innovative business solutions made for Food Support Institutions
           </h1>
         </Col>
 
         <Col offset={1} xs={18}>
-          <h2>Philosophy </h2>
+          <h2>Food Support Institutions </h2>
           <p>
-            Creating innovation business solutions that benefit of our clients and consumer well-being is our focus. 
-            We work across a broad set of business sector tailoring solutions that improve stakeholder satisfactions, 
-            operational effiency and business profits.  
-             
+           We cater our service to a broad range of organization producing
+           edible products. We define Food Support Institions (FSI) 
+           as organizations that manufacture products which help nourish the body and 
+           contribute to a balanced dietary intake. 
+
           </p>
         </Col>
       </Row>
-      <Row justify='center' gutter={[16, 16]} style={{ marginTop: '1rem' }}>
-        <Col xs={24} className='sectionTenet'>
-          <h3>Healthy </h3>
-          <span className='phyEquation'>Planet</span>
-        </Col>
-        <Col xs={24} className='sectionTenet'>
-          <PlusOutlined style={{ fontSize: '2rem' }} />
-        </Col>
-        <Col xs={24} className='sectionTenet'>
-          <h3>Healthy</h3>
-          <span className='phyEquation'>Consumers</span>
-        </Col>
-        <Col xs={10} style={{ backgroundColor: 'black', height: '2px' }}></Col>
-        <Col xs={24} className='sectionTenet'>
-          <h3>Higher</h3>
-          <span className='phyEquation'>Valuations</span>
-        </Col>
-      </Row>
-
-
-
       
 
       {/* {Solutions Section} */}
-      <Row justify='center' gutter={[24, 64]} className='solutionSection'>
-        <Col offset={1} xs={18} className='heroSection'>
-          <h2>Solutions</h2>
+      <Row justify='center'  >
+        <Col offset={1} xs={16} className='heroSection'>
+          <h2 className='h2Solutions'>Solutions</h2>
           <p>
-            KCM INC creates solutions that improve the health of consumers and
-            business. We work work within multiple sectors creating life
-            changing metheologies that optimize business performance.
+            Our business solutions are thoughtfully engineered for the benefit
+            of both businesses and community. Our list of services and solutions are constantly 
+            growing.
           </p>
+            <Col className='linkSocial'>
+             
+              <TwitterSquareFilled style={{ fontSize: '2rem' }} />
+              <LinkedinFilled style={{ fontSize: '2rem' }} />
+            </Col>
+            <Col>
+            <Row gutter={16}>
+      <Col span={8}>
+        <Card title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={8}>
+        <Card title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+      <Col span={8}>
+        <Card title="Card title" bordered={false}>
+          Card content
+        </Card>
+      </Col>
+    </Row>
+            </Col>
+
           <Collapse ghost={true}>
             <Panel
               header={
@@ -170,11 +180,11 @@ const Home: React.FC = () => {
           </Collapse>
         </Col>
       </Row>
-      <Row justify='center'>
-        <Col md={18} className="contactSection">
+      {/* <Row justify='center'>
+        <Col md={18} className='contactSection'>
           <h1>Contact</h1>
         </Col>
-      </Row>
+      </Row> */}
     </React.Fragment>
   )
 }
