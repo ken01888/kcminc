@@ -23,10 +23,12 @@ import {
   TwitterOutlined,
   TwitterSquareFilled,
   LinkedinFilled,
-  LinkedinOutlined
+  LinkedinOutlined,
+  CaretRightOutlined
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
+import { FaNutritionix } from 'react-icons/fa'
 const { Panel } = Collapse
 const Home: React.FC = () => {
   const [old, newOld] = React.useState([])
@@ -60,122 +62,73 @@ const Home: React.FC = () => {
             {' '}
             Innovative business solutions made for Food Support Institutions
           </h1>
+          <p>
+            We define Food Support Institions (FSI) as organizations 
+            who manufacture products which nourish the body of people and communities.
+          </p>
         </Col>
 
         <Col offset={1} xs={18}>
           <h2>Food Support Institutions </h2>
           <p>
-           We cater our service to a broad range of organization producing
-           edible products. We define Food Support Institions (FSI) 
-           as organizations that manufacture products which help nourish the body and 
-           contribute to a balanced dietary intake. 
-
+            We define Food Support Institions (FSI) as organizations 
+            who manufacture products which nourish the body of people and communities.
           </p>
         </Col>
       </Row>
-      
 
       {/* {Solutions Section} */}
-      <Row justify='center'  >
-        <Col offset={1} xs={16} className='heroSection'>
-          <h2 className='h2Solutions'>Solutions</h2>
+      <Row justify='center'>
+        <Col offset={1} xs={18} className='heroSection'>
+          <h2 className='h2Solutions'>How we help</h2>
           <p>
-            Our business solutions are thoughtfully engineered for the benefit
-            of both businesses and community. Our list of services and solutions are constantly 
-            growing.
+            At KCM INC our mission is to create impactful business solutions
+            that benefit both individuals and our planet. We presently cater our 
+            services towards business operating within the hospitality sector. These
+            solutions are geared towards improving the well-being of consumers and 
+            the health of our planet.
           </p>
-            <Col className='linkSocial'>
-             
-              <TwitterSquareFilled style={{ fontSize: '2rem' }} />
-              <LinkedinFilled style={{ fontSize: '2rem' }} />
-            </Col>
-            <Col>
-            <Row gutter={16}>
-      <Col span={8}>
-        <Card title="Card title" bordered={false}>
-          Card content
-        </Card>
-      </Col>
-      <Col span={8}>
-        <Card title="Card title" bordered={false}>
-          Card content
-        </Card>
-      </Col>
-      <Col span={8}>
-        <Card title="Card title" bordered={false}>
-          Card content
-        </Card>
-      </Col>
-    </Row>
-            </Col>
 
-          <Collapse ghost={true}>
+          <Collapse
+           
+            expandIcon={({ isActive }) => (
+              <CaretRightOutlined rotate={isActive ? 90 : 0} />
+            )}
+          >
             <Panel
-              header={
-                <span>
-                  Consumer Staples <Tag color='#009688'>Sector</Tag>
-                </span>
-              }
+              header='Present Solutions'
               key='1'
             >
-              <Collapse ghost={true}>
-                <Panel header='Food Distributors' key='2'>
+              <Collapse >
+                <Panel header={
+                  <Tag color='#009688' >
+                   Nutritional Analysis
+                  </Tag>
+
+              } key='2'>
                   <p>
-                    Distributors of food products to other companies and not
-                    directly to the consumer
+                  Building menu items and understanding the nutrient content of food related products has never been easier. 
+                  Our nutritional analysis services compare the nutritional value of your product with (RAD), (AL), and acceptable (UL) 
+                  values from the world's leading healthcare institute in order to help you create menu items that meet the 
+                  nutritional needs of future consumers. 
                   </p>
-                </Panel>
-              </Collapse>
-              <Collapse ghost={true}>
-                <Panel header='Food Retail' key='3'>
-                  <p>Owners and operators of primarily food retail stores.</p>
-                </Panel>
-              </Collapse>
-              <Collapse ghost={true}>
-                <Panel header='Hypermarkets & Super Centers' key='4'>
+                  <Collapse >
+                <Panel header={
+                    'Nutritional Analysis Overview'
+              } key='2'>
                   <p>
-                    Owners and operators of hypermarkets and super centers
-                    selling food and a wide-range of consumer staple products.
+                  Building menu items and understanding the nutrient content of food related products has never been easier. 
+                  Our nutritional analysis services compare the nutritional value of your product with (RAD), (AL), and (UL) 
+                  values from the world's leading healthcare institute in order to help you create menu items that meet the 
+                  nutritional needs of future consumers. 
                   </p>
+                  
                 </Panel>
               </Collapse>
-              <Collapse ghost={true}>
-                <Panel header='Brewers' key='5'>
-                  <p>Producers of beer and malt liquors.</p>
+                  
                 </Panel>
               </Collapse>
-              <Collapse ghost={true}>
-                <Panel header='Distillers & Vintners' key='6'>
-                  <p>
-                    Distillers, vintners and producers of alcoholic beverages.
-                  </p>
-                </Panel>
-              </Collapse>
-              <Collapse ghost={true}>
-                <Panel header='Soft Drinks' key='7'>
-                  <p>
-                    Producers of non-alcoholic beverages including mineral
-                    waters.{' '}
-                  </p>
-                </Panel>
-              </Collapse>
-              <Collapse ghost={true}>
-                <Panel header='Agricultural Products' key='8'>
-                  <p>
-                    Producers of agricultural products. Includes crop growers,
-                    owners of plantations and companies that produce and process
-                    foods but do not package and market them.{' '}
-                  </p>
-                </Panel>
-              </Collapse>
-              <Collapse ghost={true}>
-                <Panel header='Packaged Foods & Meats' key='9'>
-                  <p>
-                    Producers of packaged foods including dairy products, fruit
-                    juices, meats, poultry, fish and pet foods.
-                  </p>
-                </Panel>
-              </Collapse>
+              
             </Panel>
           </Collapse>
         </Col>

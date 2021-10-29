@@ -12,7 +12,7 @@ const Contact = () => {
         })()
       }, [])
 
-
+console.log(old)
     return(
         <p>Contact</p>
     )
