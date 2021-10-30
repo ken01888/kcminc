@@ -60,19 +60,19 @@ const Home: React.FC = () => {
         <Col xs={12}>
           <h1 className='h1_heroSection'>
             {' '}
-            Innovative business solutions made for Food Support Institutions
+            Solutions for Food Support Institutions. 
           </h1>
-          <p>
-            We define Food Support Institions (FSI) as organizations 
-            who manufacture products which nourish the body of people and communities.
-          </p>
+         
         </Col>
 
         <Col offset={1} xs={18}>
-          <h2>Food Support Institutions </h2>
+          <h2>How we help </h2>
           <p>
-            We define Food Support Institions (FSI) as organizations 
-            who manufacture products which nourish the body of people and communities.
+          At <span>KCM</span> <sup>INC</sup> we strive to provide our clients with 
+          innovative solutions that benefit both people and 
+          the planet.Our solutions protect the longevity 
+          of your organization, its competitive position and improves 
+          stakeholder value.   
           </p>
         </Col>
       </Row>
@@ -80,13 +80,13 @@ const Home: React.FC = () => {
       {/* {Solutions Section} */}
       <Row justify='center'>
         <Col offset={1} xs={18} className='heroSection'>
-          <h2 className='h2Solutions'>How we help</h2>
+          <h2 className='h2Solutions'>Our Solutions</h2>
           <p>
-            At KCM INC our mission is to create impactful business solutions
-            that benefit both individuals and our planet. We presently cater our 
-            services towards business operating within the hospitality sector. These
-            solutions are geared towards improving the well-being of consumers and 
-            the health of our planet.
+          Changing consumer demands and 
+          environmental needs commands that institutions 
+          remain adaptive. Our solutions help optimize the performance 
+          of your organization and simplify the creation of products and 
+          strategies necessary in today's ever-changing global environment. 
           </p>
 
           <Collapse
