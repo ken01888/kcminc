@@ -17,7 +17,7 @@ const App = () => {
   return(
     <Row>
       <Col md={8}>
-      <p>Heldlo</p>
+      <p>Heldlddsso</p>
       </Col>
       <Col md={8}>
       <p>Heldlo</p>
