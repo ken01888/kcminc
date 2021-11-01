@@ -35,13 +35,16 @@ const { Panel } = Collapse
 const Home: React.FC = () => {
   const [old, newOld] = React.useState([])
 
-  // React.useEffect(() => {
-  //   (async () => {
-  //     let newData = await fetch('http://localhost:4000/client_suite')
-  //     let reply = await newData.json()
-  //     newOld(reply)
-  //   })()
-  // }, [])
+  React.useEffect(() => {
+    (async () => {
+      let newData = await fetch('http://localhost:4000')
+      let reply:{foods:any[]} = await newData.json()
+      let newReply = await reply.foods[1].foodNutrients.map(i=> i.nutrientId)
+      console.log(newReply)
+      
+   
+    })()
+  }, [])
   const data = [
     {
       title: 'Ant Design Title 1'
@@ -102,57 +105,79 @@ const Home: React.FC = () => {
               <Collapse>
                 <Panel
                   header={<Tag color='#009688'>Nutritional Analysis</Tag>}
-                  key='1'
+                  key='2'
                 >
                   <p>
                     Our nutritional analysis solution gives food manufactures a
                     complete nutritional breakdown of their products based on
                     ingredient weight and serving size. This solution provides a
                     nutritional graph very similar to those found on the back of
-                    household nondurable goods. 
+                    household nondurable goods.
                   </p>
 
-                  <Descriptions title="User Info" layout="vertical" bordered>
+                  <Descriptions title="Product Info" layout="horizontal" >
                     <Descriptions.Item label="Product">Chick-fil-a Chicken Sandwich</Descriptions.Item>
-                    <Descriptions.Item label="Billing Mode">Prepaid</Descriptions.Item>
-                    <Descriptions.Item label="Automatic Renewal">YES</Descriptions.Item>
-                    <Descriptions.Item label="Order time">2018-04-24 18:00:00</Descriptions.Item>
-                    <Descriptions.Item label="Usage Time" span={2}>
-                      2019-04-24 18:00:00
+                    <Descriptions.Item label="Serving Size">183g</Descriptions.Item>
+                    <Descriptions.Item label="Test">Nutritional Content</Descriptions.Item>
+                    <Descriptions.Item label="Calories">440</Descriptions.Item>
+                    <Descriptions.Item label="FAT (G)">
+                      17
                     </Descriptions.Item>
-                    <Descriptions.Item label="Status" span={3}>
-                      <Badge status="processing" text="Running" />
+                    <Descriptions.Item label="SAT. FAT (G)">
+                      4
                     </Descriptions.Item>
-                    <Descriptions.Item label="Negotiated Amount">$80.00</Descriptions.Item>
-                    <Descriptions.Item label="Discount">$20.00</Descriptions.Item>
-                    <Descriptions.Item label="Official Receipts">$60.00</Descriptions.Item>
-                    <Descriptions.Item label="Config Info">
-                      Data disk type: MongoDB
-                      <br />
-                      Database version: 3.4
-                      <br />
-                      Package: dds.mongo.mid
-                      <br />
-                      Storage space: 10 GB
-                      <br />
-                      Replication factor: 3
-                      <br />
-                      Region: East China 1<br />
+                    <Descriptions.Item label="TRANS FAT (G)">0</Descriptions.Item>
+                    <Descriptions.Item label="CHOLESTEROL (MG)">70</Descriptions.Item>
+                    <Descriptions.Item label="SODIUM (MG)">1400</Descriptions.Item>
+                    <Descriptions.Item label="CARBOHYDRATES(G)">41</Descriptions.Item>
+                    <Descriptions.Item label="FIBER">1</Descriptions.Item>
+                    <Descriptions.Item label="SUGAR (G)">6</Descriptions.Item>
+                    <Descriptions.Item label="PROTEIN">29</Descriptions.Item>
+
+
+
+                    <Descriptions.Item label="Source" span={2}>
+                      <a href="https://www.chick-fil-a.com/nutrition-allergens" target='_blank'>Chick-fil-a</a>
+                    </Descriptions.Item>
+
+                    <Descriptions.Item label="Information">
+                      <a href="https://www.chick-fil-a.com/nutrition-allergens" target='_blank'>Chick-fil-a</a>
                     </Descriptions.Item>
                   </Descriptions>
+                  
 
                   <Collapse ghost>
-                    <Panel header={'Overview '} key='2'>
-                      <p>
-                        Building menu items and understanding the nutrient
-                        content of food related products has never been easier.
-                        Our nutritional analysis services compare the
-                        nutritional value of your product with (RAD), (AL), and
-                        (UL) values from the world's leading healthcare
-                        institute in order to help you create menu items that
-                        meet the nutritional needs of future consumers.
-                      </p>
+                    <Panel header={'Deep Analysis'} key='2'>
+                      
+                      <Descriptions title={`Chick-fil-a Chicken Sandwich`} layout="horizontal" >
+                    <Descriptions.Item label="Product">{`Chick-fil-a Chicken Sandwich`}</Descriptions.Item>
+                    <Descriptions.Item label="Serving Size">183g</Descriptions.Item>
+                    <Descriptions.Item label="Test">Nutritional Content</Descriptions.Item>
+                    <Descriptions.Item label="Calories">440</Descriptions.Item>
+                    <Descriptions.Item label="FAT (G)">
+                      17
+                    </Descriptions.Item>
+                    <Descriptions.Item label="SAT. FAT (G)">
+                      4
+                    </Descriptions.Item>
+                    <Descriptions.Item label="TRANS FAT (G)">0</Descriptions.Item>
+                    <Descriptions.Item label="CHOLESTEROL (MG)">70</Descriptions.Item>
+                    <Descriptions.Item label="SODIUM (MG)">1400</Descriptions.Item>
+                    <Descriptions.Item label="CARBOHYDRATES(G)">41</Descriptions.Item>
+                    <Descriptions.Item label="FIBER">1</Descriptions.Item>
+                    <Descriptions.Item label="SUGAR (G)">6</Descriptions.Item>
+                    <Descriptions.Item label="PROTEIN">29</Descriptions.Item>
 
+
+
+                    <Descriptions.Item label="Source" span={2}>
+                      <a href="https://www.chick-fil-a.com/nutrition-allergens" target='_blank'>Chick-fil-a</a>
+                    </Descriptions.Item>
+
+                    <Descriptions.Item label="Information">
+                      <a href="https://www.chick-fil-a.com/nutrition-allergens" target='_blank'>Chick-fil-a</a>
+                    </Descriptions.Item>
+                  </Descriptions>
                     </Panel>
                   </Collapse>
                 </Panel>
