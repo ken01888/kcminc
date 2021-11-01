@@ -1,44 +1,55 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
-const nodeExternals = require('webpack-node-externals')
-
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const nodeExternals = require('webpack-node-externals');
 // const StylelintPlugin = require('stylelint-webpack-plugin');
 
-const isProduction = process.env.NODE_ENV == 'production'
 
-const stylesHandler = MiniCssExtractPlugin.loader
+const isProduction = process.env.NODE_ENV == "production";
+
+const stylesHandler = MiniCssExtractPlugin.loader;
 
 const configClient = {
-    mode: isProduction || 'development',
-    entry: './mainDevFolder/src/index.tsx',
-
+    mode: "development",
+    entry: "./src/index.tsx",
     output: {
-        path: path.resolve(__dirname, 'dist_client'),
+        path: path.resolve(__dirname, "dist"),
         filename: 'main.js',
         clean: true
+
     },
-    devtool: 'inline-source-map',
+    stats: { errorDetails: true },
+    devtool: "inline-source-map",
     devServer: {
-        liveReload: false,
         compress: true,
         open: true,
         hot: true,
         port: 3000,
-        historyApiFallback: true
+        // watchFiles:{
+        //     paths:['dist/**']
+        // },
+        // static: {
+        //     directory: path.join(__dirname, 'public'),
+        //     watch: true,
+        //   }
+
+
+        // },
+
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: 'public/index.html', hash: false })
+        new HtmlWebpackPlugin({ template: 'public/index.html', hash: false }),
         // new StylelintPlugin()
+
     ],
 
     module: {
         rules: [{
                 test: /\.(ts|tsx)$/i,
-                loader: 'ts-loader',
+                loader: "ts-loader",
                 exclude: /node_modules/,
                 options: {
                     configFile: 'tsconfig.client.json'
@@ -46,72 +57,53 @@ const configClient = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
             },
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader', 'postcss-loader']
+                use: ["style-loader", "css-loader", "postcss-loader"],
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'javascript/auto'
+                type: "javascript/auto",
             },
             {
                 test: /\.?js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: "babel-loader",
                     options: {
                         presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
             },
             {
-                test: /\.less$/,
-                use: [{
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'less-loader',
-                        options: {
-                            lessOptions: {
-                                javascriptEnabled: true,
-                                modifyVars: {
-                                    'primary-color': 'black',
-                                    'link-color': 'black',
-                                    'border-radius-base': '2px'
-
-                                },
-                            }
-                        }
-
-                    },
-
-                ]
-            }
+                test: /\.less$/i,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "less-loader",
+                ],
+            },
 
             // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/
-        ]
+        ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js', '.css', '.scss']
-    }
-}
+        extensions: [".tsx", ".ts", ".js", ".css", ".scss"],
+    },
+};
 
 const configServer = {
-    mode: isProduction || 'development',
-    entry: './mainDevFolder/server/index.ts',
-    devtool: 'inline-source-map',
+    mode: "development",
+    entry: './server/index.ts',
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, 'dist_server'),
-        clean: true
+        path: path.resolve(__dirname, 'dist')
     },
-
+    stats: { errorDetails: true },
+    devtool: "inline-source-map",
     module: {
         rules: [{
             test: /\.ts?$/,
@@ -131,6 +123,6 @@ const configServer = {
         __dirname: false
     },
     externals: [nodeExternals()]
-}
+};
 
-module.exports = [configServer, configClient]
+module.exports = [configServer, configClient];

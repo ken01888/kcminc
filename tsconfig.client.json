@@ -24,7 +24,7 @@
     "noEmit": false
   },
   "include": [
-    "./mainDevFolder/src/**/*"
+    "src"
   ],
   "exclude": [
     "node_modules"

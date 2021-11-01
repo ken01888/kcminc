@@ -13,7 +13,7 @@
     ]
   },
   "include": [
-      "./mainDevFolder/server/**/*"
+      "server"
   ],
   "exclude": [
       "node_modules"
