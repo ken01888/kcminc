@@ -62,17 +62,18 @@ const Home: React.FC = () => {
         <Col xs={12}>
           <h1 className='h1_heroSection'>
             {' '}
-            Solutions for Food Support Institutions.
+            Solutions built for impactful organizations.
           </h1>
         </Col>
 
         <Col offset={1} xs={18}>
           <h2>How we help </h2>
           <p>
-            At <span>KCM</span> <sup>INC</sup> we strive to provide our clients
-            with innovative solutions that benefit both people and the
-            planet.Our solutions protect the longevity of your organization, its
-            competitive position and improves stakeholder value.
+            At <span>KCM</span> <sup>INC</sup> we provide innovative solutions 
+            that benefit both people and the planet.
+            Our solutions protect the longevity of your organization, its
+            competitive position and improves stakeholder value. We gear our services towards 
+            food support institutions and the hospitality industry.
           </p>
         </Col>
       </Row>
