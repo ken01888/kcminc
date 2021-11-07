@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Parallax } from 'rc-scroll-anim';
+import * as React from 'react'
+import { Parallax } from 'rc-scroll-anim'
 
 import {
   Layout,
@@ -45,7 +45,8 @@ import {
   LikeOutlined,
   SmileOutlined,
   DollarOutlined,
-  FacebookFilled
+  FacebookFilled,
+  BorderOutlined
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
@@ -124,7 +125,9 @@ const Home: React.FC = () => {
       description: (
         <div>
           <p>
-            Vitamin A, Vitamin C, Vitamin D, Vitamin E, Vitamin K, Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, Choline.
+            Vitamin A, Vitamin C, Vitamin D, Vitamin E, Vitamin K, Thiamin,
+            Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic
+            Acid, Biotin, Choline.
           </p>
           <p className='nutrientD'>
             Insufficient or unreliable data will not be considered, and may
@@ -145,16 +148,15 @@ const Home: React.FC = () => {
     })
   }
 
-  const openNotificationM= () => {
+  const openNotificationM = () => {
     notification.open({
       message: '7 Macronutrients',
       duration: 10,
       description: (
         <div>
           <p>
-          Total Water, Carbohydrate, Total Fiber, Fat, Linoleic Acid, α-Linolenic Acid, Protein
-           
-          
+            Total Water, Carbohydrate, Total Fiber, Fat, Linoleic Acid,
+            α-Linolenic Acid, Protein
           </p>
           <p className='nutrientD'>
             Insufficient or unreliable data will not be considered, and may
@@ -181,102 +183,82 @@ const Home: React.FC = () => {
         <Col xs={24}>
           <h1 className='h1_heroSection'>
             {' '}
-            Institutional quality solutions for public and private 
-            organizations. 
+            Institutional quality solutions for public and private
+            organizations.
           </h1>
         </Col>
 
-        <Col offset={1} xs={22} md={11}>
-        <Parallax
-          animation={{ x: 0, opacity: 1, playScale: [0.2, 0.4] }}
-          style={{ transform: 'translateX(-100px)', opacity: 0 }}
-        >
-          <h2 >How we help </h2>
-          <p className='pHelp'>
-            We assist both private and public enterprises develope 
-            innovative business solutions that help improve consumer
-            well-being and operational efficiency. 
-          </p>
-          </Parallax>
-          
+        <Col offset={1} xs={22} md={11} className='sectionTitle'>
+          <h2 className='superH2'>
+            Our <span className='superSpan'>Organization</span>{' '}
+          </h2>
         </Col>
         <Col offset={1} xs={22} md={11}>
-          <h2 >How</h2><span>we help</span>
           <p className='pHelp'>
-            We assist both private and public enterprises develope 
-            innovative business solutions that help improve consumer
-            well-being and operational efficiency. 
+            We assist both private and public enterprises develope innovative
+            business solutions that help improve consumer well-being and
+            operational efficiency .
           </p>
         </Col>
       </Row>
 
       <Row justify='center' className='heroSection' gutter={[24, 64]}>
         <Col xs={24} md={24} className='sectionHeader'>
-          <div className='divClient'>
-            <h2>Our Solutions</h2>
-            <BuildOutlined
-              rotate={180}
-              style={{
-                fontSize: '12rem',
-                color: '#009688',
-                borderBottom: '5px solid #009688'
-              }}
+          <h2 className='superH2'>
+            Solutions{' '}
+          </h2>
+        </Col>
+
+        <Col xs={23} md={10}>
+          <motion.div className='serviceSection' whileHover={{borderBottom:'3px solid #009688'}}>
+            <h3>Nutritional Analysis</h3>
+            <p>
+              Understanding the nutritient components of food related products
+              can be time-consumming. Our nutritional analysis solution provides
+              a complete breakdown of your product by its: element, vitamin and
+              micronutrient levels.
+            </p>
+
+            <Space size={[16, 0]} style={{ marginBottom: 25 }}>
+              <motion.button
+                whileHover={{ color: 'white', backgroundColor: '#009688' }}
+                whileTap={{ scale: 0.9 }}
+                onClick={openNotification}
+              >
+                Elements
+              </motion.button>
+              <motion.button
+                whileHover={{ color: 'white', backgroundColor: '#009688' }}
+                whileTap={{ scale: 0.9 }}
+                onClick={openNotificationV}
+              >
+                Nutrients
+              </motion.button>
+              <motion.button
+                whileHover={{ color: 'white', backgroundColor: '#009688' }}
+                whileTap={{ scale: 0.9 }}
+                onClick={openNotificationM}
+              >
+                Macronutrients
+              </motion.button>
+            </Space>
+            <Statistic
+              title='Prices start at:'
+              value={`${500.0}`}
+              prefix={<DollarOutlined style={{ color: '#009688' }} />}
             />
-          </div>
-        
+          </motion.div>
         </Col>
-       
-
-        <Col offset={1} xs={23} md={10}>
-          <motion.div>
-
-          <h3>Nutritional Analysis</h3>
-          <p>
-            Understanding the nutritient components of food related products can
-            be time-consumming. Our nutritional analysis solution provides a
-            complete breakdown of your product by its: element, vitamin and
-            micronutrient levels.
-          </p>
-
-          <Space size={[16,0]} style={{marginBottom:25}}>
-            <motion.button
-              whileHover={{ color: 'white', backgroundColor: '#009688' }}
-              whileTap={{ scale: 0.9 }}
-              onClick={openNotification}
-            >
-              Elements
-            </motion.button>
-            <motion.button
-              whileHover={{ color: 'white', backgroundColor: '#009688' }}
-              whileTap={{ scale: 0.9 }}
-              onClick={openNotificationV}
-            >
-              Nutrients
-            </motion.button>
-            <motion.button
-              whileHover={{ color: 'white', backgroundColor: '#009688' }}
-              whileTap={{ scale: 0.9 }}
-              onClick={openNotificationM}
-            >
-              Macronutrients
-            </motion.button>
-          
-          </Space>
-        <Statistic title="Prices start at:" value={`${500.00}`} 
-        prefix={<DollarOutlined style={{color:'#009688'}}/>} />
-         </motion.div>
-
-        </Col>
-        
-
-       
       </Row>
       <Row justify='center' className='heroSection' gutter={[24, 64]}>
         <Col offset={1} xs={23} md={10}>
-        <h3>Nutritional Analysis Pricing</h3>
-        
-        <Statistic title="Prices start at:" value={`${500.00}`} 
-        prefix={<DollarOutlined style={{color:'#009688'}}/>} />
+          <h3>Nutritional Analysis Pricing</h3>
+
+          <Statistic
+            title='Prices start at:'
+            value={`${500.0}`}
+            prefix={<DollarOutlined style={{ color: '#009688' }} />}
+          />
         </Col>
 
         <Col offset={1} xs={23} md={10}>
@@ -287,23 +269,16 @@ const Home: React.FC = () => {
             complete breakdown of your product by its: element, vitamin and
             micronutrient levels.
           </p>
-
-         
         </Col>
       </Row>
 
       <Row justify='center' className='heroSection' gutter={[24, 64]}>
-       
         <Col offset={1} xs={22} md={11}>
           <h2>Stay Informed </h2>
-          
         </Col>
       </Row>
 
-
       {/* {Solutions Section} */}
-
-     
     </React.Fragment>
   )
 }
