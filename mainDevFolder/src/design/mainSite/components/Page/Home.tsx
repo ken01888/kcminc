@@ -188,29 +188,28 @@ const Home: React.FC = () => {
           </h1>
         </Col>
 
-        <Col offset={1} xs={22} md={11} className='sectionTitle'>
+        <Col xs={22} md={6} className='sectionTitle'>
           <h2 className='superH2'>
             Our <span className='superSpan'>Organization</span>{' '}
           </h2>
         </Col>
-        <Col offset={1} xs={22} md={11}>
+        <Col xs={22} md={6}>
           <p className='pHelp'>
-            We assist both private and public enterprises develope innovative
-            business solutions that help improve consumer well-being and
-            operational efficiency .
+          We develop solutions that help optimize the performance 
+          of commercial and noncommercial enterprises. 
+
           </p>
         </Col>
       </Row>
 
-      <Row justify='center' className='heroSection' gutter={[24, 64]}>
-        <Col xs={24} md={24} className='sectionHeader'>
+      <Row justify='center' className='heroSection' gutter={[24, 32]}>
+      <Col xs={22} md={6} className='sectionTitle'>
           <h2 className='superH2'>
-            Solutions{' '}
+            Our <span className='superSpan'>Solutions</span>{' '}
           </h2>
         </Col>
-
-        <Col xs={23} md={10}>
-          <motion.div className='serviceSection' whileHover={{borderBottom:'3px solid #009688'}}>
+        <Col xs={22} md={6}>
+        <motion.div className='serviceSection' whileHover={{boxShadow:'#b8b8b8 1px 0px 5px 1px'}}>
             <h3>Nutritional Analysis</h3>
             <p>
               Understanding the nutritient components of food related products
@@ -219,7 +218,7 @@ const Home: React.FC = () => {
               micronutrient levels.
             </p>
 
-            <Space size={[16, 0]} style={{ marginBottom: 25 }}>
+            <Space size={[16, 0]} style={{ marginBottom: 25 }} wrap>
               <motion.button
                 whileHover={{ color: 'white', backgroundColor: '#009688' }}
                 whileTap={{ scale: 0.9 }}
@@ -241,34 +240,68 @@ const Home: React.FC = () => {
               >
                 Macronutrients
               </motion.button>
-            </Space>
-            <Statistic
+              {/* <Statistic
               title='Prices start at:'
               value={`${500.0}`}
               prefix={<DollarOutlined style={{ color: '#009688' }} />}
-            />
+            /> */}
+            </Space>
+           
+           
           </motion.div>
         </Col>
+        
       </Row>
-      <Row justify='center' className='heroSection' gutter={[24, 64]}>
-        <Col offset={1} xs={23} md={10}>
-          <h3>Nutritional Analysis Pricing</h3>
 
-          <Statistic
-            title='Prices start at:'
-            value={`${500.0}`}
-            prefix={<DollarOutlined style={{ color: '#009688' }} />}
-          />
+
+
+      <Row justify='center' className='heroSection' gutter={[24, 32]}>
+        <Col xs={24} md={24} className='sectionHeader'>
+          <h2 className='superH2'>
+            Solutions{' '}
+          </h2>
         </Col>
 
-        <Col offset={1} xs={23} md={10}>
-          <h3>Contact Us</h3>
-          <p>
-            Understanding the nutritient components of food related products can
-            be time-consumming. Our nutritional analysis solution provides a
-            complete breakdown of your product by its: element, vitamin and
-            micronutrient levels.
-          </p>
+        <Col xs={23} md={8}>
+          <motion.div className='serviceSection' whileHover={{boxShadow:'0px 0px 5px 0px #009688'}}>
+            <h3>Nutritional Analysis</h3>
+            <p>
+              Understanding the nutritient components of food related products
+              can be time-consumming. Our nutritional analysis solution provides
+              a complete breakdown of your product by its: element, vitamin and
+              micronutrient levels.
+            </p>
+
+            <Space size={[16, 0]} style={{ marginBottom: 25 }} wrap>
+              <motion.button
+                whileHover={{ color: 'white', backgroundColor: '#009688' }}
+                whileTap={{ scale: 0.9 }}
+                onClick={openNotification}
+              >
+                Elements
+              </motion.button>
+              <motion.button
+                whileHover={{ color: 'white', backgroundColor: '#009688' }}
+                whileTap={{ scale: 0.9 }}
+                onClick={openNotificationV}
+              >
+                Nutrients
+              </motion.button>
+              <motion.button
+                whileHover={{ color: 'white', backgroundColor: '#009688' }}
+                whileTap={{ scale: 0.9 }}
+                onClick={openNotificationM}
+              >
+                Macronutrients
+              </motion.button>
+              {/* <Statistic
+              title='Prices start at:'
+              value={`${500.0}`}
+              prefix={<DollarOutlined style={{ color: '#009688' }} />}
+            /> */}
+            </Space>
+           
+          </motion.div>
         </Col>
       </Row>
 
