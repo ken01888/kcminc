@@ -1,4 +1,6 @@
-import * as React from 'react'
+import * as React from 'react';
+import { Parallax } from 'rc-scroll-anim';
+
 import {
   Layout,
   Breadcrumb,
@@ -15,7 +17,14 @@ import {
   Card,
   Tag,
   Descriptions,
-  Badge
+  Badge,
+  Popover,
+  Tabs,
+  Input,
+  Form,
+  InputNumber,
+  Statistic,
+  notification
 } from 'antd'
 import {
   LeftSquareOutlined,
@@ -26,148 +35,275 @@ import {
   TwitterSquareFilled,
   LinkedinFilled,
   LinkedinOutlined,
-  CaretRightOutlined
+  CaretRightOutlined,
+  AppleOutlined,
+  AndroidOutlined,
+  ToolOutlined,
+  ExperimentOutlined,
+  DollarCircleOutlined,
+  BuildOutlined,
+  LikeOutlined,
+  SmileOutlined,
+  DollarOutlined,
+  FacebookFilled
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
-import { FcOrgUnit, FcGenealogy } from 'react-icons/fc'
+import { MdHealthAndSafety } from 'react-icons/Md'
 const { Panel } = Collapse
+
+const validateMessages = {
+  required: '${label} is required!',
+  types: {
+    email: '${label} is not a valid email!',
+    number: '${label} is not a valid number!'
+  },
+  number: {
+    range: '${label} must be between ${min} and ${max}'
+  }
+}
+
 const Home: React.FC = () => {
   const [old, newOld] = React.useState([])
 
   // React.useEffect(() => {
-  //   (async () => {
-  //     let newData = await fetch('http://localhost:4000/client_suite')
-  //     let reply = await newData.json()
-  //     newOld(reply)
+  //   ;(async () => {
+  //     let newData = await fetch('http://localhost:4000')
+  //     let reply: { foods: any[] } = await newData.json()
+  //     let newReply: [] = await reply.foods[1].foodNutrients
+
+  //     newReply.map(i => {
+  //       console.log(i)
+  //     })
   //   })()
   // }, [])
-  const data = [
-    {
-      title: 'Ant Design Title 1'
-    },
-    {
-      title: 'Ant Design Title 2'
-    },
-    {
-      title: 'Ant Design Title 3'
-    },
-    {
-      title: 'Ant Design Title 4'
-    }
-  ]
+
+  const onFinish = (values: any) => {
+    console.log(values)
+  }
+
+  const layout = {
+    labelCol: { span: 5 },
+    wrapperCol: { span: 16 }
+  }
+
+  const openNotification = () => {
+    notification.open({
+      message: '15 Elements',
+      duration: 10,
+      description: (
+        <div>
+          <p>
+            Calcium, Chromium, Copper, Fluoride, Iodine , Iron, Magnesium,
+            Manganese, Molybdenum , Phosphorus, Selenium, Zinc, Potassium ,
+            Sodium, Chloride{' '}
+          </p>
+          <p className='nutrientD'>
+            Insufficient or unreliable data will not be considered, and may
+            effect nutrient breakdown.
+          </p>
+        </div>
+      ),
+      icon: (
+        <BuildOutlined
+          rotate={180}
+          style={{
+            fontSize: '1rem',
+            color: '#009688'
+            // borderBottom: '5px solid #009688'
+          }}
+        />
+      )
+    })
+  }
+
+  const openNotificationV = () => {
+    notification.open({
+      message: '14 Vitamins',
+      duration: 10,
+      description: (
+        <div>
+          <p>
+            Vitamin A, Vitamin C, Vitamin D, Vitamin E, Vitamin K, Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, Choline.
+          </p>
+          <p className='nutrientD'>
+            Insufficient or unreliable data will not be considered, and may
+            effect results.
+          </p>
+        </div>
+      ),
+      icon: (
+        <BuildOutlined
+          rotate={180}
+          style={{
+            fontSize: '1rem',
+            color: '#009688'
+            // borderBottom: '5px solid #009688'
+          }}
+        />
+      )
+    })
+  }
+
+  const openNotificationM= () => {
+    notification.open({
+      message: '7 Macronutrients',
+      duration: 10,
+      description: (
+        <div>
+          <p>
+          Total Water, Carbohydrate, Total Fiber, Fat, Linoleic Acid, α-Linolenic Acid, Protein
+           
+          
+          </p>
+          <p className='nutrientD'>
+            Insufficient or unreliable data will not be considered, and may
+            effect results.
+          </p>
+        </div>
+      ),
+      icon: (
+        <BuildOutlined
+          rotate={180}
+          style={{
+            fontSize: '1rem',
+            color: '#009688'
+            // borderBottom: '5px solid #009688'
+          }}
+        />
+      )
+    })
+  }
+
   return (
     <React.Fragment>
       <Row justify='center' className='heroSection' gutter={[24, 64]}>
-        <Col xs={12}>
+        <Col xs={24}>
           <h1 className='h1_heroSection'>
             {' '}
-            Solutions built for impactful organizations.
+            Institutional quality solutions for public and private 
+            organizations. 
           </h1>
         </Col>
 
-        <Col offset={1} xs={18}>
-          <h2>How we help </h2>
-          <p>
-            At <span>KCM</span> <sup>INC</sup> we provide innovative solutions 
-            that benefit both people and the planet.
-            Our solutions protect the longevity of your organization, its
-            competitive position and improves stakeholder value. We gear our services towards 
-            food support institutions and the hospitality industry.
+        <Col offset={1} xs={22} md={11}>
+        <Parallax
+          animation={{ x: 0, opacity: 1, playScale: [0.2, 0.4] }}
+          style={{ transform: 'translateX(-100px)', opacity: 0 }}
+        >
+          <h2 >How we help </h2>
+          <p className='pHelp'>
+            We assist both private and public enterprises develope 
+            innovative business solutions that help improve consumer
+            well-being and operational efficiency. 
+          </p>
+          </Parallax>
+          
+        </Col>
+        <Col offset={1} xs={22} md={11}>
+          <h2 >How</h2><span>we help</span>
+          <p className='pHelp'>
+            We assist both private and public enterprises develope 
+            innovative business solutions that help improve consumer
+            well-being and operational efficiency. 
           </p>
         </Col>
       </Row>
+
+      <Row justify='center' className='heroSection' gutter={[24, 64]}>
+        <Col xs={24} md={24} className='sectionHeader'>
+          <div className='divClient'>
+            <h2>Our Solutions</h2>
+            <BuildOutlined
+              rotate={180}
+              style={{
+                fontSize: '12rem',
+                color: '#009688',
+                borderBottom: '5px solid #009688'
+              }}
+            />
+          </div>
+        
+        </Col>
+       
+
+        <Col offset={1} xs={23} md={10}>
+          <motion.div>
+
+          <h3>Nutritional Analysis</h3>
+          <p>
+            Understanding the nutritient components of food related products can
+            be time-consumming. Our nutritional analysis solution provides a
+            complete breakdown of your product by its: element, vitamin and
+            micronutrient levels.
+          </p>
+
+          <Space size={[16,0]} style={{marginBottom:25}}>
+            <motion.button
+              whileHover={{ color: 'white', backgroundColor: '#009688' }}
+              whileTap={{ scale: 0.9 }}
+              onClick={openNotification}
+            >
+              Elements
+            </motion.button>
+            <motion.button
+              whileHover={{ color: 'white', backgroundColor: '#009688' }}
+              whileTap={{ scale: 0.9 }}
+              onClick={openNotificationV}
+            >
+              Nutrients
+            </motion.button>
+            <motion.button
+              whileHover={{ color: 'white', backgroundColor: '#009688' }}
+              whileTap={{ scale: 0.9 }}
+              onClick={openNotificationM}
+            >
+              Macronutrients
+            </motion.button>
+          
+          </Space>
+        <Statistic title="Prices start at:" value={`${500.00}`} 
+        prefix={<DollarOutlined style={{color:'#009688'}}/>} />
+         </motion.div>
+
+        </Col>
+        
+
+       
+      </Row>
+      <Row justify='center' className='heroSection' gutter={[24, 64]}>
+        <Col offset={1} xs={23} md={10}>
+        <h3>Nutritional Analysis Pricing</h3>
+        
+        <Statistic title="Prices start at:" value={`${500.00}`} 
+        prefix={<DollarOutlined style={{color:'#009688'}}/>} />
+        </Col>
+
+        <Col offset={1} xs={23} md={10}>
+          <h3>Contact Us</h3>
+          <p>
+            Understanding the nutritient components of food related products can
+            be time-consumming. Our nutritional analysis solution provides a
+            complete breakdown of your product by its: element, vitamin and
+            micronutrient levels.
+          </p>
+
+         
+        </Col>
+      </Row>
+
+      <Row justify='center' className='heroSection' gutter={[24, 64]}>
+       
+        <Col offset={1} xs={22} md={11}>
+          <h2>Stay Informed </h2>
+          
+        </Col>
+      </Row>
+
 
       {/* {Solutions Section} */}
-      <Row justify='center'>
-        <Col offset={1} xs={18} className='heroSection'>
-          <h2 className='h2Solutions'>Our Solutions</h2>
-          <p>
-            Changes in consumer demands and environmental needs command that
-            institutions remain adaptive. Our solutions help optimize your
-            organization's performance and simplify the development of nutrient
-            rich products.
-          </p>
 
-          <Collapse
-            activeKey={1}
-            expandIcon={({ isActive }) => (
-              <CaretRightOutlined
-                rotate={isActive ? 90 : 0}
-                style={{ color: '#009688' }}
-
-              />
-            )}
-          >
-            <Panel header='Present Solutions' key='1'>
-              <Collapse>
-                <Panel
-                  header={<Tag color='#009688'>Nutritional Analysis</Tag>}
-                  key='1'
-                >
-                  <p>
-                    Our nutritional analysis solution gives food manufactures a
-                    complete nutritional breakdown of their products based on
-                    ingredient weight and serving size. This solution provides a
-                    nutritional graph very similar to those found on the back of
-                    household nondurable goods. 
-                  </p>
-
-                  <Descriptions title="User Info" layout="vertical" bordered>
-                    <Descriptions.Item label="Product">Chick-fil-a Chicken Sandwich</Descriptions.Item>
-                    <Descriptions.Item label="Billing Mode">Prepaid</Descriptions.Item>
-                    <Descriptions.Item label="Automatic Renewal">YES</Descriptions.Item>
-                    <Descriptions.Item label="Order time">2018-04-24 18:00:00</Descriptions.Item>
-                    <Descriptions.Item label="Usage Time" span={2}>
-                      2019-04-24 18:00:00
-                    </Descriptions.Item>
-                    <Descriptions.Item label="Status" span={3}>
-                      <Badge status="processing" text="Running" />
-                    </Descriptions.Item>
-                    <Descriptions.Item label="Negotiated Amount">$80.00</Descriptions.Item>
-                    <Descriptions.Item label="Discount">$20.00</Descriptions.Item>
-                    <Descriptions.Item label="Official Receipts">$60.00</Descriptions.Item>
-                    <Descriptions.Item label="Config Info">
-                      Data disk type: MongoDB
-                      <br />
-                      Database version: 3.4
-                      <br />
-                      Package: dds.mongo.mid
-                      <br />
-                      Storage space: 10 GB
-                      <br />
-                      Replication factor: 3
-                      <br />
-                      Region: East China 1<br />
-                    </Descriptions.Item>
-                  </Descriptions>
-
-                  <Collapse ghost>
-                    <Panel header={'Overview '} key='2'>
-                      <p>
-                        Building menu items and understanding the nutrient
-                        content of food related products has never been easier.
-                        Our nutritional analysis services compare the
-                        nutritional value of your product with (RAD), (AL), and
-                        (UL) values from the world's leading healthcare
-                        institute in order to help you create menu items that
-                        meet the nutritional needs of future consumers.
-                      </p>
-
-                    </Panel>
-                  </Collapse>
-                </Panel>
-              </Collapse>
-            </Panel>
-          </Collapse>
-        </Col>
-      </Row>
-
-      {/* <Row justify='center'>
-        <Col md={18} className='contactSection'>
-          <h1>Contact</h1>
-        </Col>
-      </Row> */}
+     
     </React.Fragment>
   )
 }

@@ -23,6 +23,10 @@ import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import About from './design/mainSite/components/Page/About'
 import Contact from './design/mainSite/components/Page/Contact'
+import {
+  FacebookFilled,
+  TwitterSquareFilled
+} from '@ant-design/icons'
 
 const App = () => {
   let key: number | boolean = window.innerWidth
@@ -41,16 +45,12 @@ const App = () => {
               fds
             </Col>
           </Row> */}
-          
+
           <PageHeader
-          
-      title={<h2>KCM</h2>}
-      subTitle='INC'
-      extra={[
-        <Button key="3">Operation</Button>,
-      ]}
-    >
-    </PageHeader>
+            title={<h2>KCM</h2>}
+            subTitle='INC'
+            extra={[<Button key='3'>Operation</Button>]}
+          ></PageHeader>
         </React.Fragment>
       )
     }
@@ -80,10 +80,11 @@ const App = () => {
       </Content>
 
       <Footer style={{ textAlign: 'center', backgroundColor: 'white' }}>
-        Ant Design ©2018 Created by Ant UED
+        KCM INC EST.2016 <a href="tel:+4047400093">404-740-0093</a>
 
+        <FacebookFilled />
+        <TwitterSquareFilled />
       </Footer>
-
     </Layout>
   )
 }

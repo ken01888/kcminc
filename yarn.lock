@@ -11360,7 +11360,7 @@ rc-resize-observer@^1.0.0:
 
 rc-scroll-anim@^2.7.6:
   version "2.7.6"
-  resolved "https://registry.npmjs.org/rc-scroll-anim/-/rc-scroll-anim-2.7.6.tgz"
+  resolved "https://registry.yarnpkg.com/rc-scroll-anim/-/rc-scroll-anim-2.7.6.tgz#f7e6622f2930ca3e1e258f7275bc2e1c26ce791c"
   integrity sha512-VwXJYXjZy9TtH1wcQIG7/yjt/Ay3VEjQl/TITaWzK9O7ujjOXRVOYY/tqKshmBMgaJ2oGeFQNmCN8zTwXguq0g==
   dependencies:
     babel-runtime "6.x"
