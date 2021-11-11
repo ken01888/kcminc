@@ -46,7 +46,8 @@ import {
   SmileOutlined,
   DollarOutlined,
   FacebookFilled,
-  BorderOutlined
+  BorderOutlined,
+  FieldNumberOutlined
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
@@ -179,139 +180,131 @@ const Home: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Row justify='center' className='heroSection' gutter={[24, 64]}>
-        <Col xs={24}>
+      <Row justify='center' className='heroSection' >
+        <Col  offset={1} xs={23}>
           <h1 className='h1_heroSection'>
-            {' '}
-            Institutional quality solutions for public and private
-            organizations.
+            Institutional quality business solutions.
           </h1>
-        </Col>
-
-        <Col xs={22} md={6} className='sectionTitle'>
-          <h2 className='superH2'>
-            Our <span className='superSpan'>Organization</span>{' '}
-          </h2>
-        </Col>
-        <Col xs={22} md={6}>
-          <p className='pHelp'>
-          We develop solutions that help optimize the performance 
-          of commercial and noncommercial enterprises. 
-
-          </p>
-        </Col>
+       
+        </Col>     
       </Row>
 
-      <Row justify='center' className='heroSection' gutter={[24, 32]}>
-      <Col xs={22} md={6} className='sectionTitle'>
-          <h2 className='superH2'>
-            Our <span className='superSpan'>Solutions</span>{' '}
-          </h2>
+      
+          
+      
+      <Row justify='center' className='heroSection' gutter={[24, 16]}>
+        
+        <Col xs={24} md={13} className='sectionHeader'>
+          <h2 className='superH2'>Solutions we offer. </h2>
         </Col>
-        <Col xs={22} md={6}>
-        <motion.div className='serviceSection' whileHover={{boxShadow:'#b8b8b8 1px 0px 5px 1px'}}>
-            <h3>Nutritional Analysis</h3>
-            <p>
-              Understanding the nutritient components of food related products
-              can be time-consumming. Our nutritional analysis solution provides
-              a complete breakdown of your product by its: element, vitamin and
-              micronutrient levels.
-            </p>
-
-            <Space size={[16, 0]} style={{ marginBottom: 25 }} wrap>
-              <motion.button
-                whileHover={{ color: 'white', backgroundColor: '#009688' }}
-                whileTap={{ scale: 0.9 }}
-                onClick={openNotification}
-              >
-                Elements
-              </motion.button>
-              <motion.button
-                whileHover={{ color: 'white', backgroundColor: '#009688' }}
-                whileTap={{ scale: 0.9 }}
-                onClick={openNotificationV}
-              >
-                Nutrients
-              </motion.button>
-              <motion.button
-                whileHover={{ color: 'white', backgroundColor: '#009688' }}
-                whileTap={{ scale: 0.9 }}
-                onClick={openNotificationM}
-              >
-                Macronutrients
-              </motion.button>
-              {/* <Statistic
-              title='Prices start at:'
-              value={`${500.0}`}
-              prefix={<DollarOutlined style={{ color: '#009688' }} />}
-            /> */}
-            </Space>
-           
-           
-          </motion.div>
+        <Col xs={24} md={13}  className='sectionHeader'>
+          <p>A suite of responsible solutions
+            developed to improve organizations 
+            and communities. 
+           </p>
         </Col>
         
-      </Row>
+        
 
-
-
-      <Row justify='center' className='heroSection' gutter={[24, 32]}>
-        <Col xs={24} md={24} className='sectionHeader'>
-          <h2 className='superH2'>
-            Solutions{' '}
-          </h2>
-        </Col>
-
-        <Col xs={23} md={8}>
-          <motion.div className='serviceSection' whileHover={{boxShadow:'0px 0px 5px 0px #009688'}}>
+        <Col xs={24} md={13}>
+        <ExperimentOutlined style={{color:'#009866',fontSize:'2rem'}}/>
+          <motion.div
+            className='serviceSection'
+          >
             <h3>Nutritional Analysis</h3>
             <p>
-              Understanding the nutritient components of food related products
-              can be time-consumming. Our nutritional analysis solution provides
-              a complete breakdown of your product by its: element, vitamin and
-              micronutrient levels.
+            Nutritional analysis refers to the process of determining 
+            the nutritional content of food and food products. 
+            Our methodology returns the nutrient compositions of food 
+            items based on size and nutritional labeling. 
+            This  provides your institutions with the information 
+            necessary for the development of safer products. 
             </p>
 
-            <Space size={[16, 0]} style={{ marginBottom: 25 }} wrap>
-              <motion.button
-                whileHover={{ color: 'white', backgroundColor: '#009688' }}
-                whileTap={{ scale: 0.9 }}
-                onClick={openNotification}
-              >
-                Elements
-              </motion.button>
-              <motion.button
-                whileHover={{ color: 'white', backgroundColor: '#009688' }}
-                whileTap={{ scale: 0.9 }}
-                onClick={openNotificationV}
-              >
-                Nutrients
-              </motion.button>
-              <motion.button
-                whileHover={{ color: 'white', backgroundColor: '#009688' }}
-                whileTap={{ scale: 0.9 }}
-                onClick={openNotificationM}
-              >
-                Macronutrients
-              </motion.button>
-              {/* <Statistic
-              title='Prices start at:'
-              value={`${500.0}`}
-              prefix={<DollarOutlined style={{ color: '#009688' }} />}
-            /> */}
-            </Space>
-           
-          </motion.div>
+          </motion.div>         
+   
         </Col>
+
+        <Col xs={24} md={13}>
+        <ExperimentOutlined style={{color:'#009866',fontSize:'2rem'}}/>
+          <motion.div
+            className='serviceSection'
+          >
+            <h3>Nutritional Analysis</h3>
+            <p>
+            Nutritional analysis refers to the process of determining 
+            the nutritional content of food and food products. 
+            Our methodology returns the nutrient compositions of food 
+            items based on size and nutritional labeling. 
+            This  provides your institutions with the information 
+            necessary for the development of safer products. 
+            </p>
+
+          </motion.div>         
+   
+        </Col>
+        <Col xs={23} md={15}>
+        <Descriptions
+      title="Responsive Descriptions"
+      bordered
+      column={{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }}
+    >
+      <Descriptions.Item label="Product">Cloud Database</Descriptions.Item>
+      <Descriptions.Item label="Billing">Prepaid</Descriptions.Item>
+      <Descriptions.Item label="time">18:00:00</Descriptions.Item>
+      <Descriptions.Item label="Amount">$80.00</Descriptions.Item>
+      <Descriptions.Item label="Discount">$20.00</Descriptions.Item>
+      <Descriptions.Item label="Official">$60.00</Descriptions.Item>
+      <Descriptions.Item label="Config Info">
+        Data disk type: MongoDB
+        <br />
+        Database version: 3.4
+        <br />
+        Package: dds.mongo.mid
+        <br />
+        Storage space: 10 GB
+        <br />
+        Replication factor: 3
+        <br />
+        Region: East China 1
+      </Descriptions.Item>
+    </Descriptions>
+        {/* <motion.div
+          className='serviceSection'
+        >
+         
+          <Space size={[16, 16]} style={{ marginBottom: 25 }} >
+            <motion.button
+              whileHover={{ color: 'white', backgroundColor: '#009688' }}
+              whileTap={{ scale: 0.9 }}
+              onClick={openNotification}
+            >
+              Elements
+            </motion.button>
+            <motion.button
+              whileHover={{ color: 'white', backgroundColor: '#009688' }}
+              whileTap={{ scale: 0.9 }}
+              onClick={openNotificationV}
+            >
+              Nutrients
+            </motion.button>
+            <motion.button
+              whileHover={{ color: 'white', backgroundColor: '#009688' }}
+              whileTap={{ scale: 0.9 }}
+              onClick={openNotificationM}
+            >
+              Macronutrients
+            </motion.button>
+          
+          </Space>
+        </motion.div>          */}
+       
+       
+      </Col>
       </Row>
 
-      <Row justify='center' className='heroSection' gutter={[24, 64]}>
-        <Col offset={1} xs={22} md={11}>
-          <h2>Stay Informed </h2>
-        </Col>
-      </Row>
+      
 
-      {/* {Solutions Section} */}
     </React.Fragment>
   )
 }

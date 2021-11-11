@@ -46,11 +46,11 @@ const App = () => {
             </Col>
           </Row> */}
 
-          <PageHeader
+          {/* <PageHeader
             title={<h2>KCM</h2>}
             subTitle='INC'
             extra={[<Button key='3'>Operation</Button>]}
-          ></PageHeader>
+          ></PageHeader> */}
         </React.Fragment>
       )
     }
