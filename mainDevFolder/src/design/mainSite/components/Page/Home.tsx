@@ -24,7 +24,8 @@ import {
   Form,
   InputNumber,
   Statistic,
-  notification
+  notification,
+  Table
 } from 'antd'
 import {
   LeftSquareOutlined,
@@ -178,6 +179,33 @@ const Home: React.FC = () => {
     })
   }
 
+  const data = [
+    {
+      key: '1',
+      firstName: 'John',
+      lastName: 'Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+      tags: ['nice', 'developer'],
+    },
+    {
+      key: '2',
+      firstName: 'Jim',
+      lastName: 'Green',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+      tags: ['loser'],
+    },
+    {
+      key: '3',
+      firstName: 'Joe',
+      lastName: 'Black',
+      age: 32,
+      address: 'Sidney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+  ]
+
   return (
     <React.Fragment>
       <Row justify='center' className='heroSection' >
@@ -243,32 +271,30 @@ const Home: React.FC = () => {
           </motion.div>         
    
         </Col>
-        <Col xs={23} md={15}>
-        <Descriptions
-      title="Responsive Descriptions"
-      bordered
-      column={{ xxl: 4, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 }}
-    >
-      <Descriptions.Item label="Product">Cloud Database</Descriptions.Item>
-      <Descriptions.Item label="Billing">Prepaid</Descriptions.Item>
-      <Descriptions.Item label="time">18:00:00</Descriptions.Item>
-      <Descriptions.Item label="Amount">$80.00</Descriptions.Item>
-      <Descriptions.Item label="Discount">$20.00</Descriptions.Item>
-      <Descriptions.Item label="Official">$60.00</Descriptions.Item>
-      <Descriptions.Item label="Config Info">
-        Data disk type: MongoDB
-        <br />
-        Database version: 3.4
-        <br />
-        Package: dds.mongo.mid
-        <br />
-        Storage space: 10 GB
-        <br />
-        Replication factor: 3
-        <br />
-        Region: East China 1
-      </Descriptions.Item>
-    </Descriptions>
+        <Col xs={23} md={13}>
+        <Table dataSource={data}>
+    <Table.ColumnGroup title="Name">
+      <Table.Column title="First Name" dataIndex="firstName" key="firstName" />
+      <Table.Column title="Last Name" dataIndex="lastName" key="lastName" />
+    </Table.ColumnGroup>
+    <Table.Column title="Age" dataIndex="age" key="age" />
+    <Table.Column title="Address" dataIndex="address" key="address" />
+    <Table.Column
+      title="Tags"
+      dataIndex="tags"
+      key="tags"
+      render={tags => (
+        <>
+          {tags.map(tag => (
+            <Tag color="blue" key={tag}>
+              {tag}
+            </Tag>
+          ))}
+        </>
+      )}
+    />
+    
+  </Table>
         {/* <motion.div
           className='serviceSection'
         >
