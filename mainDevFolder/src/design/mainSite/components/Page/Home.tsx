@@ -26,7 +26,8 @@ import {
   Statistic,
   notification,
   Table,
-  Divider
+  Divider,
+  Select
 } from 'antd'
 import {
   LeftSquareOutlined,
@@ -56,28 +57,30 @@ import {
   FileFilled,
   FileTextOutlined,
   ArrowLeftOutlined,
-  PieChartOutlined
+  PieChartOutlined,
+  EditOutlined,
+  EllipsisOutlined
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
 import { MdHealthAndSafety } from 'react-icons/Md'
-const { Panel } = Collapse
+const { Option, OptGroup } = Select;
+
 
 const Home: React.FC = () => {
-  const [old, newOld] = React.useState([])
-  const [nutrition, setnutrition] = React.useState(false)
+  const [old, newOld] = React.useState(undefined)
+  const [nutrition, setnutrition] = React.useState('')
 
-  // React.useEffect(() => {
-  //   ;(async () => {
-  //     let newData = await fetch('http://localhost:4000')
-  //     let reply: { foods: any[] } = await newData.json()
-  //     let newReply: [] = await reply.foods[1].foodNutrients
+  React.useEffect(() => {
+    (async () => {
+      let newData = await fetch('http://localhost:4000')
+      let data = await newData.json()
+      setnutrition(data.fdc)
+     
 
-  //     newReply.map(i => {
-  //       console.log(i)
-  //     })
-  //   })()
-  // }, [])
+     
+    })()
+  }, [])
 
   const element = (
     <motion.h3
@@ -91,6 +94,10 @@ const Home: React.FC = () => {
 
   console.log(nutrition)
 
+  function handleChange(value) {
+  console.log(`selected ${value}`);
+  }
+
   return (
     <React.Fragment>
       <Row justify='center' className='heroSection'>
@@ -103,115 +110,127 @@ const Home: React.FC = () => {
             and communities.
           </p>
         </Col>
-        {/* <Col xs={23} md={11}>
-          <motion.div className='serviceSection'>
-            <motion.button onTap={(e)=>{setnutrition(!nutrition)}} whileTap={{scale:.9}}>
-              {nutrition?<FolderOpenFilled style={{color:'#009688',fontSize:'2rem'}}/>:<FolderFilled style={{color:'#009688',fontSize:'2rem'}} />}
-            </motion.button>
-            {nutrition?element:<p>View Solutions</p>}
-           
-            <p>
-            Nutritional analysis refers to the process of determining 
-            the nutritional content of food and food products. 
-            Our methodology returns the nutrient compositions of food 
-            items based on size and the nutritional values.
-            </p>
-          </motion.div>
-          <Col offset={2} md={8} className='treeSolutions'>
-          <a href='http://localhost:3000/'>Nutritional Analysis</a>
-
-          </Col>
-
-        </Col> */}
       </Row>
 
-      {/* <Row>
-      <Col xs={23} md={8} className='needColumn'>
-         
-            <h4>Health</h4><span className='heroSpan'>Improving the health </span>
-        </Col>
-        <Col xs={23} md={8} className='needColumn'>
-          <motion.div
-            className='needItems'
-            whileHover={{ border: '3px solid #009688', borderRadius: '50px' }}
+
+
+      <Row justify='center'>
+        <Col span={12}>
+          <Card title="Select solution " headStyle={{ display: 'flex', justifyContent: 'center' }}
+
           >
-            <h4>Shelter</h4>
-          </motion.div>
+            <Col span={12} onClick={() => console.log('fdd')} >
+              <motion.div >
+                <Card.Grid style={{
+                  textAlign: 'center',
+                  width: 'fit-content',
+                }}
+                >Nutritional Analysis
+                </Card.Grid>
+
+              </motion.div>
+
+            </Col>
+          </Card>,
         </Col>
-        <Col xs={23} md={8} className='needColumn'>
-          <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+      </Row>
 
-          viewport={{ once: true }}
-          className='needItems'
-          whileHover={{ border: '3px solid #009688', borderRadius: '50px' }}
-          >
-            <h4>Security</h4>
-          </motion.div>
-        </Col>
-      </Row> */}
 
-   
 
-     
 
       <Row justify='space-around' className='heroSection'>
-      <Col xs={23} md={6}>
+        <Col xs={23} md={8}>
+          <h2>Nutritional Analysis</h2>
+
           <motion.div className='heroHeader'>
-            <h3>Our Institution</h3>
-            <p>
-              At KCM INC we focus on the development of life changing business
-              solutions. We target a specific set of basic human needs
-              categories, locate weaknesses associated with a specific human
-              need and finally engineer responsible solutions that help improve
-              upon a isolated item .
+            <p> A comprehensive analysis of your product utilizing a
+              combination of database and laboratory analysis. The analysis
+              includes laboratory moisture analysis of the finished product,
+              serving size determination, and testing product testing to determine
+              the accurate weight for nutrition labeling. Includes the nutrition analysis,
+              nutrition facts label, ingredient statement and allergen declaration,
+              plus nutrient content claims and voluntary nutrients added to your label.
             </p>
-          </motion.div>
-        </Col>
 
-        <Col xs={23} md={12}>
-           
-        </Col>
-
-       
-      </Row>
-
-      <Row>
-      <Col xs={23} md={8} className='needColumn'>
-          <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-          viewport={{ once: true }}
-            className='needItems'
-            whileHover={{ border: '3px solid #009688', borderRadius: '50px' }}
-          >
-            <h4>Health</h4>
-          </motion.div>
-        </Col>
-        <Col xs={23} md={8} className='needColumn'>
-          <motion.div
-            className='needItems'
-            whileHover={{ border: '3px solid #009688', borderRadius: '50px' }}
-          >
-            <h4>Shelter</h4>
-          </motion.div>
-        </Col>
-        <Col xs={23} md={8} className='needColumn'>
-          <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2 }}
-          viewport={{ once: true }}
-            className='needItems'
-            whileHover={{ border: '3px solid #009688', borderRadius: '50px' }}
-          >
-            <h4>Security</h4>
           </motion.div>
         </Col>
       </Row>
+
+      <Row justify='space-around' className='pricingSection'>
+        <Col xs={23} md={8}>
+          <h2>Pricing - <span style={{color:'#009688'}}>$500</span></h2>
+
+            <p> A comprehensive analysis of your product utilizing a
+              combination of database and laboratory analysis. The analysis
+              includes laboratory moisture analysis of the finished product,
+              serving size determination, and testing product testing to determine
+              the accurate weight for nutrition labeling. Includes the nutrition analysis,
+              nutrition facts label, ingredient statement and allergen declaration,
+              plus nutrient content claims and voluntary nutrients added to your label.
+            </p>
+
+        </Col>
+      </Row>
+
+      <Row justify='space-around' className='pricingSection'>
+        <Col xs={23} md={8}>
+          <h2>Includes:</h2>
+
+            <p><CaretRightOutlined style={{color:'#009688',fontSize:'1rem'}}/> A comprehensive analysis of your product utilizing a
+              combination of database and laboratory analysis. The analysis
+              includes laboratory moisture analysis of the finished product,
+              serving size determination, and testing product testing to determine
+              the accurate weight for nutrition labeling. Includes the nutrition analysis,
+              nutrition facts label, ingredient statement and allergen declaration,
+              plus nutrient content claims and voluntary nutrients added to your label.
+            </p>
+            <p><CaretRightOutlined style={{color:'#009688',fontSize:'1rem'}}/> A comprehensive analysis of your product utilizing a
+              combination of database and laboratory analysis. The analysis
+              includes laboratory moisture analysis of the finished product,
+              serving size determination, and testing product testing to determine
+              the accurate weight for nutrition labeling. Includes the nutrition analysis,
+              nutrition facts label, ingredient statement and allergen declaration,
+              plus nutrient content claims and voluntary nutrients added to your label.
+            </p>
+            <p><CaretRightOutlined style={{color:'#009688',fontSize:'1rem'}}/> A comprehensive analysis of your product utilizing a
+              combination of database and laboratory analysis. The analysis
+              includes laboratory moisture analysis of the finished product,
+              serving size determination, and testing product testing to determine
+              the accurate weight for nutrition labeling. Includes the nutrition analysis,
+              nutrition facts label, ingredient statement and allergen declaration,
+              plus nutrient content claims and voluntary nutrients added to your label.
+            </p>
+            <p><CaretRightOutlined style={{color:'#009688',fontSize:'1rem'}}/> A comprehensive analysis of your product utilizing a
+              combination of database and laboratory analysis. The analysis
+              includes laboratory moisture analysis of the finished product,
+              serving size determination, and testing product testing to determine
+              the accurate weight for nutrition labeling. Includes the nutrition analysis,
+              nutrition facts label, ingredient statement and allergen declaration,
+              plus nutrient content claims and voluntary nutrients added to your label.
+            </p>
+
+        </Col>
+      </Row>
+
+      <Row justify='space-around' className='pricingSection'>
+        <Col xs={23} md={8}>
+          <h2>Example</h2>
+
+          <Select defaultValue="lucy" style={{ width: 200 }} onChange={handleChange}>
+    <OptGroup label="Manager">
+      <Option value="eyere">Jack</Option>
+      <Option value="lucy">Lucy</Option>
+    </OptGroup>
+    <OptGroup label="Engineer">
+      <Option value="Yiminghe">yiminghe</Option>
+    </OptGroup>
+  </Select>
+  <h2>{nutrition}</h2>
+
+        </Col>
+      </Row>
+
+
     </React.Fragment>
   )
 }

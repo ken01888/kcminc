@@ -11,11 +11,14 @@ app.use(express.json())
 app.use(clientDate)
 
 app.use('/', async (req,res)=>{
-    let brandName= 'apple'
-    // const data = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?query=${brandName}&pageSize=11&api_key=tz8FikxFkSfY7V5vpSChMeqgxthoR9ILcvLtA0Ya`)
-    // const reply=await data.json();
-    console.log(req)
-    res.json('listening on port 4000')
+    let brandName= 'McDouble'
+    const data = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?query=${brandName}&pageSize=11&api_key=tz8FikxFkSfY7V5vpSChMeqgxthoR9ILcvLtA0Ya`)
+    const reply=await data.json();
+  
+    reply.foods.map((i:any)=>{
+        res.json({fdc:i.fdcId,description:i.description,foodNutrients:i.foodNutrients})
+
+    })
 })
 
 
@@ -26,3 +29,5 @@ app.use('/', async (req,res)=>{
 
 
 app.listen(4000)
+
+
