@@ -93,9 +93,9 @@ const Home: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Row justify='space-around' className='heroSection'>
-        <Col xs={23} md={24} className='heroDiv'>
-          <h1 className='h1_heroSection'>
+      <Row justify='center' className='heroSection'>
+        <Col xs={23} md={24} >
+          <h1 className='h1Hero'>
             Institutional quality business solutions.
           </h1>
           <p className='pHero'>
@@ -125,14 +125,10 @@ const Home: React.FC = () => {
         </Col> */}
       </Row>
 
-      <Row>
+      {/* <Row>
       <Col xs={23} md={8} className='needColumn'>
-          <motion.div
-            className='needItems'
-            whileHover={{ border: '3px solid #009688', borderRadius: '50px' }}
-          >
-            <h4>Health</h4>
-          </motion.div>
+         
+            <h4>Health</h4><span className='heroSpan'>Improving the health </span>
         </Col>
         <Col xs={23} md={8} className='needColumn'>
           <motion.div
@@ -155,39 +151,16 @@ const Home: React.FC = () => {
             <h4>Security</h4>
           </motion.div>
         </Col>
-      </Row>
+      </Row> */}
+
+   
+
+     
 
       <Row justify='space-around' className='heroSection'>
-        <Col xs={23}>
-          <motion.div>
-            <h3>Our Institution</h3>
-           
-          </motion.div>
-        </Col>
-      </Row>
-
-      <Row justify='center' className='heroSection'>
-        <Col xs={23} md={12}>
-          <motion.div>
-            <p>
-              At KCM INC we focus on the development of life changing business
-              solutions. We target a specific set of basic human needs
-              categories, locate weaknesses associated with a specific human
-              need and finally engineer responsible solutions that help improve
-              upon a isolated item .
-            </p>
-          </motion.div>
-        </Col>
-      </Row>
-
-      <Row justify='space-around' className='heroSection'>
-        <Col xs={23}>
+      <Col xs={23} md={6}>
           <motion.div className='heroHeader'>
-            <h3>Human needs we benefit.</h3>
-          </motion.div>
-        </Col>
-
-        <Col xs={23} md={12}>
+            <h3>Our Institution</h3>
             <p>
               At KCM INC we focus on the development of life changing business
               solutions. We target a specific set of basic human needs
@@ -195,6 +168,11 @@ const Home: React.FC = () => {
               need and finally engineer responsible solutions that help improve
               upon a isolated item .
             </p>
+          </motion.div>
+        </Col>
+
+        <Col xs={23} md={12}>
+           
         </Col>
 
        
