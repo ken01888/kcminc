@@ -103,7 +103,7 @@ const Home: React.FC = () => {
         <Col xs={23} md={24}>
           <h1 className='h1Hero'>Institutional quality business solutions.</h1>
           <p className='pHero'>
-            A suite of responsible solutions developed to improve organizations
+            A suite of responsible solutions developed to assist organizations
             and communities.
           </p>
         </Col>
