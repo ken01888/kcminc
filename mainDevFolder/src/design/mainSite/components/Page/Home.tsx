@@ -1,69 +1,9 @@
 import * as React from 'react'
 import { Parallax } from 'rc-scroll-anim'
-
-import {
-  Layout,
-  Breadcrumb,
-  Menu,
-  Row,
-  Col,
-  Space,
-  List,
-  Avatar,
-  Timeline,
-  Collapse,
-  Affix,
-  Button,
-  Card,
-  Tag,
-  Descriptions,
-  Badge,
-  Popover,
-  Tabs,
-  Input,
-  Form,
-  InputNumber,
-  Statistic,
-  notification,
-  Table,
-  Divider,
-  Select
-} from 'antd'
-import {
-  LeftSquareOutlined,
-  PauseOutlined,
-  PlusOutlined,
-  TwitterCircleFilled,
-  TwitterOutlined,
-  TwitterSquareFilled,
-  LinkedinFilled,
-  LinkedinOutlined,
-  CaretRightOutlined,
-  AppleOutlined,
-  AndroidOutlined,
-  ToolOutlined,
-  ExperimentOutlined,
-  DollarCircleOutlined,
-  BuildOutlined,
-  LikeOutlined,
-  SmileOutlined,
-  DollarOutlined,
-  FacebookFilled,
-  BorderOutlined,
-  FieldNumberOutlined,
-  SettingOutlined,
-  FolderFilled,
-  FolderOpenFilled,
-  FileFilled,
-  FileTextOutlined,
-  ArrowLeftOutlined,
-  PieChartOutlined,
-  EditOutlined,
-  EllipsisOutlined
-} from '@ant-design/icons'
+import {Row,Col,Select} from 'antd'
+import {ArrowLeftOutlined, CaretLeftFilled, CaretRightOutlined,RightCircleOutlined} from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
-import { MdHealthAndSafety } from 'react-icons/Md'
 const { Option, OptGroup } = Select
 
 const Home: React.FC = () => {
@@ -71,11 +11,11 @@ const Home: React.FC = () => {
   const [nutrition, setnutrition] = React.useState('')
 
   React.useEffect(() => {
-    ;(async () => {
+     (async () => {
       let newData = await fetch('http://localhost:4000')
       let data = await newData.json()
-      data.foodNutrients.map(i=>{
-        if (i.nutrientName=="Protein"){
+      data.foodNutrients.map(i => {
+        if (i.nutrientName == "Protein") {
           setnutrition(i.value)
         }
       })
@@ -93,7 +33,7 @@ const Home: React.FC = () => {
   )
 
 
-  function handleChange (value) {
+  function handleChange(value) {
     console.log(`selected ${value}`)
   }
 
@@ -110,51 +50,34 @@ const Home: React.FC = () => {
       </Row>
 
       <Row justify='center'>
-        <Col span={12}>
-          <Card
-            title='Select solution '
-            headStyle={{ display: 'flex', justifyContent: 'center' }}
-          >
-            <Col span={12} onClick={() => console.log('fdd')}>
-              <motion.div>
-                <Card.Grid
-                  style={{
-                    textAlign: 'center',
-                    width: 'fit-content'
-                  }}
-                >
-                  Nutritional Analysis
-                </Card.Grid>
-              </motion.div>
-            </Col>
-          </Card>
-          ,
+        <Col md={12} xs={24} className='selectSolution'>
+        <h2>Select category</h2>
         </Col>
       </Row>
 
       <Row justify='space-around' className='heroSection'>
-        <Col xs={23} md={8}>
-          <h2>Nutritional Analysis</h2>
+        <Col xs={23} md={6}>
+          <motion.h2  whileHover={{cursor:'pointer',scale:1.1}} whileTap={{scale:.9,color:'#009688'}}    onClick={()=>{console.log('hello')}}>Health</motion.h2 >
 
           <motion.div className='heroHeader'>
-            <p>
-              {' '}
-              A comprehensive analysis of your product utilizing a combination
-              of database and laboratory analysis. The analysis includes
-              laboratory moisture analysis of the finished product, serving size
-              determination, and testing product testing to determine the
-              accurate weight for nutrition labeling. Includes the nutrition
-              analysis, nutrition facts label, ingredient statement and allergen
-              declaration, plus nutrient content claims and voluntary nutrients
-              added to your label.
-            </p>
+            <h3>Nutritional Analysis</h3><span><CaretLeftFilled style={{color:'#009688',fontSize:'1.5rem'}}/></span>
+            
           </motion.div>
         </Col>
 
-        <Col xs={23} md={8}>
+        <Col xs={23} md={6} className='nutritionalLabel'>
           <h2>
-            Pricing - <span style={{ color: '#009688' }}>$500</span>
+            Nutritional Facts 
           </h2>
+          <p>Serving Size</p>
+          <hr></hr>
+          <p>Amount Per Serving</p>
+          <hr></hr>
+          <div>
+            <p>Calories</p>
+            <p>dd</p>
+          </div>
+
 
           <p>
             {' '}
@@ -168,6 +91,8 @@ const Home: React.FC = () => {
             added to your label.
           </p>
         </Col>
+
+        
       </Row>
 
       <Row justify='space-around' className='pricingSection'>
@@ -246,7 +171,7 @@ const Home: React.FC = () => {
               <Option value='Yiminghe'>yiminghe</Option>
             </OptGroup>
           </Select>
-       {<p>{nutrition}</p>}
+          {<p>{nutrition}</p>}
         </Col>
       </Row>
     </React.Fragment>
