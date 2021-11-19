@@ -1,24 +1,35 @@
 import * as React from 'react'
 import { Parallax } from 'rc-scroll-anim'
-import {Row,Col,Select} from 'antd'
-import {ArrowLeftOutlined, CaretLeftFilled, CaretRightOutlined,RightCircleOutlined} from '@ant-design/icons'
+import { Row, Col, Select, Input } from 'antd'
+import {
+  ArrowLeftOutlined,
+  CaretLeftFilled,
+  CaretRightOutlined,
+  RightCircleOutlined
+} from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
+import { json } from 'express'
 const { Option, OptGroup } = Select
 
 const Home: React.FC = () => {
   const [old, newOld] = React.useState(undefined)
   const [nutrition, setnutrition] = React.useState('')
+  const [amount,setAmount] = React.useState(false)
 
   React.useEffect(() => {
-     (async () => {
-      let newData = await fetch('http://localhost:4000')
-      let data = await newData.json()
-      data.foodNutrients.map(i => {
-        if (i.nutrientName == "Protein") {
-          setnutrition(i.value)
-        }
+    (async () => {
+      let newData = await fetch('http://localhost:4000/post',{
+     method:"POST",
+     headers:{
+       "Content-Type":"application/json"
+     },
+     body:JSON.stringify([`Dominos's`])
       })
+
+      let data = await newData.json()
+      console.log(data)
+      
     })()
   }, [])
 
@@ -32,10 +43,18 @@ const Home: React.FC = () => {
     </motion.h3>
   )
 
-
-  function handleChange(value) {
+  function handleChange (value) {
     console.log(`selected ${value}`)
   }
+
+  const selectAfter = (
+    <Select defaultValue='.com' className='select-after'>
+      <Option value='.com'>.com</Option>
+      <Option value='.jp'>.jp</Option>
+      <Option value='.cn'>.cn</Option>
+      <Option value='.org'>.org</Option>
+    </Select>
+  )
 
   return (
     <React.Fragment>
@@ -51,25 +70,47 @@ const Home: React.FC = () => {
 
       <Row justify='center'>
         <Col md={12} xs={24} className='selectSolution'>
-        <h2>Select category</h2>
+          <h2>Select category</h2>
         </Col>
       </Row>
 
       <Row justify='space-around' className='heroSection'>
         <Col xs={23} md={6}>
-          <motion.h2  whileHover={{cursor:'pointer',scale:1.1}} whileTap={{scale:.9,color:'#009688'}}    onClick={()=>{console.log('hello')}}>Health</motion.h2 >
+          <motion.h2
+            whileHover={{ cursor: 'pointer', scale: 1.1 }}
+            whileTap={{ scale: 0.9, color: '#009688' }}
+            onClick={() => {
+              console.log('hello')
+            }}
+          >
+            Health
+          </motion.h2>
 
-          <motion.div className='heroHeader'>
-            <h3>Nutritional Analysis</h3><span><CaretLeftFilled style={{color:'#009688',fontSize:'1.5rem'}}/></span>
-            
+          <motion.div className='heroHeader' onClick={()=>{setAmount(!amount)}}>
+            <h3>Nutritional Analysis</h3>
+            <span>
+             {amount?<CaretRightOutlined style={{ color:'#009688', fontSize: '1.5rem' }}/>: <CaretLeftFilled style={{ color:'#009688', fontSize: '1.5rem' }}/>}
+             
+            </span>
           </motion.div>
         </Col>
 
-        <Col xs={23} md={6} className='nutritionalLabel'>
-          <h2>
-            Nutritional Facts 
-          </h2>
-          <p>Serving Size</p>
+        <Col xs={23} md={8} className='nutritionalLabel'>
+          <h2>Nutritional Facts</h2>
+          <p>
+            Serving Size{' '}
+            <Select
+              defaultValue='lucy'
+              onChange={handleChange}
+            >
+              <Option value='jack'>Jack</Option>
+              <Option value='lucy'>Lucy</Option>
+              <Option value='disabled' disabled>
+                Disabled
+              </Option>
+              <Option value='Yiminghe'>yiminghe</Option>
+            </Select>
+          </p>{' '}
           <hr></hr>
           <p>Amount Per Serving</p>
           <hr></hr>
@@ -77,8 +118,6 @@ const Home: React.FC = () => {
             <p>Calories</p>
             <p>dd</p>
           </div>
-
-
           <p>
             {' '}
             A comprehensive analysis of your product utilizing a combination of
@@ -91,8 +130,6 @@ const Home: React.FC = () => {
             added to your label.
           </p>
         </Col>
-
-        
       </Row>
 
       <Row justify='space-around' className='pricingSection'>
@@ -171,7 +208,7 @@ const Home: React.FC = () => {
               <Option value='Yiminghe'>yiminghe</Option>
             </OptGroup>
           </Select>
-          {<p>{nutrition}</p>}
+          {/* {<p>{nutrition}</p>} */}
         </Col>
       </Row>
     </React.Fragment>
