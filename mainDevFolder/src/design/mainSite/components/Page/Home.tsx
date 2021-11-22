@@ -14,24 +14,11 @@ const { Option, OptGroup } = Select
 
 const Home: React.FC = () => {
   const [old, newOld] = React.useState(undefined)
-  const [nutrition, setnutrition] = React.useState('')
-  const [amount,setAmount] = React.useState(false)
-
-  React.useEffect(() => {
-    (async () => {
-      let newData = await fetch('http://localhost:4000/post',{
-     method:"POST",
-     headers:{
-       "Content-Type":"application/json"
-     },
-     body:JSON.stringify([`Dominos's`])
-      })
-
-      let data = await newData.json()
-      console.log(data)
-      
-    })()
-  }, [])
+  const [nutrition, setnutrition] = React.useState<any>({
+    totalHits: '',
+    foods: [{ foodNutrients: [] }]
+  })
+  const [amount, setAmount] = React.useState(false)
 
   const element = (
     <motion.h3
@@ -44,17 +31,20 @@ const Home: React.FC = () => {
   )
 
   function handleChange (value) {
-    console.log(`selected ${value}`)
-  }
+    ;(async () => {
+      let newData = await fetch('http://localhost:4000/post', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify([`${value}`])
+      })
 
-  const selectAfter = (
-    <Select defaultValue='.com' className='select-after'>
-      <Option value='.com'>.com</Option>
-      <Option value='.jp'>.jp</Option>
-      <Option value='.cn'>.cn</Option>
-      <Option value='.org'>.org</Option>
-    </Select>
-  )
+      let data: any = await newData.json()
+      
+      setnutrition(data)
+    })()
+  }
 
   return (
     <React.Fragment>
@@ -86,38 +76,48 @@ const Home: React.FC = () => {
             Health
           </motion.h2>
 
-          <motion.div className='heroHeader' onClick={()=>{setAmount(!amount)}}>
+          <motion.div
+            className='heroHeader'
+            onClick={() => {
+              setAmount(!amount)
+            }}
+          >
             <h3>Nutritional Analysis</h3>
             <span>
-             {amount?<CaretRightOutlined style={{ color:'#009688', fontSize: '1.5rem' }}/>: <CaretLeftFilled style={{ color:'#009688', fontSize: '1.5rem' }}/>}
-             
+              {amount ? (
+                <CaretRightOutlined
+                  style={{ color: '#009688', fontSize: '1.5rem' }}
+                />
+              ) : (
+                <CaretLeftFilled
+                  style={{ color: '#009688', fontSize: '1.5rem' }}
+                />
+              )}
             </span>
           </motion.div>
         </Col>
 
         <Col xs={23} md={8} className='nutritionalLabel'>
+          <Select
+            defaultValue='Select Product'
+            onChange={handleChange}
+            style={{ width: 'fit-content' }}
+          >
+            <Option value='1104067'>100 GRAND Bar</Option>
+            <Option value='1104101'>Reese's Peanut Butter Cup</Option>
+            <Option value='171884'>Minute Maid, Lemonade</Option>
+            <Option value='1101816'>Trix Cereal</Option>
+          </Select>
+
           <h2>Nutritional Facts</h2>
-          <p>
-            Serving Size{' '}
-            <Select
-              defaultValue='lucy'
-              onChange={handleChange}
-            >
-              <Option value='jack'>Jack</Option>
-              <Option value='lucy'>Lucy</Option>
-              <Option value='disabled' disabled>
-                Disabled
-              </Option>
-              <Option value='Yiminghe'>yiminghe</Option>
-            </Select>
-          </p>{' '}
           <hr></hr>
-          <p>Amount Per Serving</p>
+          <p>Amount Per Serving: 100g / 3.5oz</p>
           <hr></hr>
-          <div>
-            <p>Calories</p>
-            <p>dd</p>
-          </div>
+          {/* {nutrition.foods[0].foodNutrients.map(i => {
+            if (i.nutrientName === 'Protein' && 'Carbohydrates') {
+              return (<p>{i.nutrientName.Protein}<span>{i.value}</span></p>)
+            }
+          })} */}
           <p>
             {' '}
             A comprehensive analysis of your product utilizing a combination of
