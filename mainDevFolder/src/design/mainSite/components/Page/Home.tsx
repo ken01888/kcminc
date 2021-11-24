@@ -1,10 +1,12 @@
 import * as React from 'react'
 import { Parallax } from 'rc-scroll-anim'
-import { Row, Col, Select, Input } from 'antd'
+import { Row, Col, Select, Input, Button } from 'antd'
 import {
   ArrowLeftOutlined,
   CaretLeftFilled,
   CaretRightOutlined,
+  DownloadOutlined,
+  GlobalOutlined,
   RightCircleOutlined
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
@@ -49,32 +51,47 @@ const Home: React.FC = () => {
   return (
     <React.Fragment>
       <Row justify='center' className='heroSection'>
-        <Col xs={23} md={24}>
-          <h1 className='h1Hero'>Institutional quality business solutions.</h1>
-          <p className='pHero'>
-            A suite of responsible solutions developed to assist organizations
-            and communities.
+        <Col xs={23} md={18}>
+          <h1 className='h1Hero'>
+          Institutional quality business solutions 
+          designed for modern enterprises.
+          </h1>
+         
+        </Col>
+        <Col xs={23} md={18}>
+        <p>
+          Improve the well-being of communities and stakeholders 
+          by utilizing our suite of responsibly designed solutions 
+          developed to improve organizations and the people they serve.
+          </p>
+        </Col>
+        <Col xs={23} md={18}>
+        <p>
+        <Button type="primary" shape="round"  size={'large'}>
+          Contact us 
+          </Button>
+
           </p>
         </Col>
       </Row>
 
-      <Row justify='center'>
-        <Col md={12} xs={24} className='selectSolution'>
-          <h2>Select category</h2>
-        </Col>
-      </Row>
+     
 
       <Row justify='space-around' className='heroSection'>
         <Col xs={23} md={6}>
-          <motion.h2
+          <motion.h1
             whileHover={{ cursor: 'pointer', scale: 1.1 }}
             whileTap={{ scale: 0.9, color: '#009688' }}
             onClick={() => {
               console.log('hello')
             }}
+            className='h1Hero'
           >
-            Health
-          </motion.h2>
+            <CaretRightOutlined
+                  style={{ color: '#009688', fontSize: '1.5rem' }}
+                />
+            Who We Are
+          </motion.h1>
 
           <motion.div
             className='heroHeader'
@@ -83,7 +100,7 @@ const Home: React.FC = () => {
             }}
           >
             <h3>Nutritional Analysis</h3>
-            <span>
+            {/* <span>
               {amount ? (
                 <CaretRightOutlined
                   style={{ color: '#009688', fontSize: '1.5rem' }}
@@ -93,7 +110,7 @@ const Home: React.FC = () => {
                   style={{ color: '#009688', fontSize: '1.5rem' }}
                 />
               )}
-            </span>
+            </span> */}
           </motion.div>
         </Col>
 
