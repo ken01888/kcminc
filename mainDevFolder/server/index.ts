@@ -16,8 +16,13 @@ app.post('/post', async (req,res) =>{
     const data = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?query=${firstdata}&pageSize=11&api_key=tz8FikxFkSfY7V5vpSChMeqgxthoR9ILcvLtA0Ya`)
     const item = await data.json()
 
+<<<<<<< HEAD
     console.log(item.foods)
     
+=======
+    item.foods[0].foodNutrients.map((i:any)=>{console.log(i)})
+
+>>>>>>> 228355e5edae3c73f85381fe73155d8db100ed5b
     res.send(item)
 })
 

@@ -5,9 +5,7 @@ import {
   ArrowLeftOutlined,
   CaretLeftFilled,
   CaretRightOutlined,
-  DownloadOutlined,
-  GlobalOutlined,
-  RightCircleOutlined
+
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
@@ -95,9 +93,7 @@ const Home: React.FC = () => {
 
           <motion.div
             className='heroHeader'
-            onClick={() => {
-              setAmount(!amount)
-            }}
+           
           >
             <h3>Nutritional Analysis</h3>
             {/* <span>
@@ -114,7 +110,36 @@ const Home: React.FC = () => {
           </motion.div>
         </Col>
 
-        <Col xs={23} md={8} className='nutritionalLabel'>
+        <Col xs={24} md={12} style={{display:'flex',justifyContent:'center'}}>
+        <div
+            className='heroHeader'
+           
+          >
+           
+            <p className='pHero'>
+            A comprehensive nutrient breakdown of food items for food support institutions and food service establishments.
+          </p>
+            {/* <span>
+              {amount ? (
+                <CaretRightOutlined
+                  style={{ color: '#009688', fontSize: '1.5rem' }}
+                />
+              ) : (
+                <CaretLeftFilled
+                  style={{ color: '#009688', fontSize: '1.5rem' }}
+                />
+              )}
+            </span> */}
+
+          </div>
+          
+         
+        </Col>
+      
+      
+        </Row>
+        <Row justify='space-around' className='heroSection'>
+        <Col xs={23} md={6} className='nutritionalLabel'>
           <Select
             defaultValue='Select Product'
             onChange={handleChange}
@@ -127,107 +152,47 @@ const Home: React.FC = () => {
           </Select>
 
           <h2>Nutritional Facts</h2>
-          <hr></hr>
+          <hr ></hr>
           <p>Amount Per Serving: 100g / 3.5oz</p>
           <hr></hr>
-          {/* {nutrition.foods[0].foodNutrients.map(i => {
-            if (i.nutrientName === 'Protein' && 'Carbohydrates') {
-              return (<p>{i.nutrientName.Protein}<span>{i.value}</span></p>)
-            }
-          })} */}
-          <p>
-            {' '}
-            A comprehensive analysis of your product utilizing a combination of
-            database and laboratory analysis. The analysis includes laboratory
-            moisture analysis of the finished product, serving size
-            determination, and testing product testing to determine the accurate
-            weight for nutrition labeling. Includes the nutrition analysis,
-            nutrition facts label, ingredient statement and allergen
-            declaration, plus nutrient content claims and voluntary nutrients
-            added to your label.
-          </p>
-        </Col>
-      </Row>
+          {nutrition.foods[0].foodNutrients.map(i => {
+             if (i.nutrientName =='Fatty acids, total saturated'|| i.nutrientName =='Cholesterol'|| i.nutrientName=='Sodium, Na'|| i.nutrientName =='Carbohydrate, by difference'|| i.nutrientName=='Fiber, total dietary'||i.nutrientName=='Sugars, total including NLEA'||i.nutrientName=='Protein') {
+              return (<p>{i.nutrientName} <span>{i.value}</span> <span>{i.unitName}</span></p>)
 
-      <Row justify='space-around' className='pricingSection'>
+             }
+            
+          })}
+         
+        </Col>
         <Col xs={23} md={8}>
-          <h2>Includes:</h2>
-
           <p>
-            <CaretRightOutlined
-              style={{ color: '#009688', fontSize: '1rem' }}
-            />{' '}
-            A comprehensive analysis of your product utilizing a combination of
-            database and laboratory analysis. The analysis includes laboratory
-            moisture analysis of the finished product, serving size
-            determination, and testing product testing to determine the accurate
-            weight for nutrition labeling. Includes the nutrition analysis,
-            nutrition facts label, ingredient statement and allergen
-            declaration, plus nutrient content claims and voluntary nutrients
-            added to your label.
+          <CheckSquareOutlined />{' '}
+            A comprehensive analysis of 
           </p>
           <p>
-            <CaretRightOutlined
-              style={{ color: '#009688', fontSize: '1rem' }}
-            />{' '}
-            A comprehensive analysis of your product utilizing a combination of
-            database and laboratory analysis. The analysis includes laboratory
-            moisture analysis of the finished product, serving size
-            determination, and testing product testing to determine the accurate
-            weight for nutrition labeling. Includes the nutrition analysis,
-            nutrition facts label, ingredient statement and allergen
-            declaration, plus nutrient content claims and voluntary nutrients
-            added to your label.
+          <CheckSquareOutlined />{' '}
+            A comprehensive analysis of 
           </p>
           <p>
-            <CaretRightOutlined
-              style={{ color: '#009688', fontSize: '1rem' }}
-            />{' '}
-            A comprehensive analysis of your product utilizing a combination of
-            database and laboratory analysis. The analysis includes laboratory
-            moisture analysis of the finished product, serving size
-            determination, and testing product testing to determine the accurate
-            weight for nutrition labeling. Includes the nutrition analysis,
-            nutrition facts label, ingredient statement and allergen
-            declaration, plus nutrient content claims and voluntary nutrients
-            added to your label.
+          <CheckSquareOutlined />{' '}
+            A comprehensive analysis of 
           </p>
           <p>
-            <CaretRightOutlined
-              style={{ color: '#009688', fontSize: '1rem' }}
-            />{' '}
-            A comprehensive analysis of your product utilizing a combination of
-            database and laboratory analysis. The analysis includes laboratory
-            moisture analysis of the finished product, serving size
-            determination, and testing product testing to determine the accurate
-            weight for nutrition labeling. Includes the nutrition analysis,
-            nutrition facts label, ingredient statement and allergen
-            declaration, plus nutrient content claims and voluntary nutrients
-            added to your label.
+          <CheckSquareOutlined />{' '}
+            A comprehensive analysis of 
           </p>
+          <p>
+          <CheckSquareOutlined />{' '}
+            A comprehensive analysis of 
+          </p>
+         
+         
         </Col>
       </Row>
 
-      <Row justify='space-around' className='pricingSection'>
-        <Col xs={23} md={8}>
-          <h2>Example</h2>
+     
 
-          <Select
-            defaultValue='lucy'
-            style={{ width: 200 }}
-            onChange={handleChange}
-          >
-            <OptGroup label='Manager'>
-              <Option value='eyere'>Jack</Option>
-              <Option value='lucy'>Lucy</Option>
-            </OptGroup>
-            <OptGroup label='Engineer'>
-              <Option value='Yiminghe'>yiminghe</Option>
-            </OptGroup>
-          </Select>
-          {/* {<p>{nutrition}</p>} */}
-        </Col>
-      </Row>
+      
     </React.Fragment>
   )
 }
