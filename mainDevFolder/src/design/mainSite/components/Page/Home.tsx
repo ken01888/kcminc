@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { Parallax } from 'rc-scroll-anim'
-import { Row, Col, Select, Input, Button } from 'antd'
+import { Row, Col, Select, Input, Button, Card } from 'antd'
 import {
   ArrowLeftOutlined,
+  ArrowRightOutlined,
   CaretLeftFilled,
   CaretRightOutlined,
 
@@ -10,6 +11,12 @@ import {
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
 import { json } from 'express'
+import { RiHealthBookFill } from 'react-icons/Ri';
+import{FaHome} from 'react-icons/fa';
+import {MdSecurity} from 'react-icons/Md';
+import {Link} from 'react-router-dom'
+
+
 const { Option, OptGroup } = Select
 
 const Home: React.FC = () => {
@@ -75,9 +82,9 @@ const Home: React.FC = () => {
 
      
 
-      <Row justify='space-around' className='heroSection'>
+      <Row justify='center' className='heroSection'>
         <Col xs={23} md={6}>
-          <motion.h1
+          <motion.h2
             whileHover={{ cursor: 'pointer', scale: 1.1 }}
             whileTap={{ scale: 0.9, color: '#009688' }}
             onClick={() => {
@@ -85,17 +92,19 @@ const Home: React.FC = () => {
             }}
             className='h1Hero'
           >
-            <CaretRightOutlined
-                  style={{ color: '#009688', fontSize: '1.5rem' }}
-                />
+            
             Who We Are
-          </motion.h1>
+          </motion.h2>
 
           <motion.div
             className='heroHeader'
            
           >
-            <h3>Nutritional Analysis</h3>
+            <p style={{width:'28rem'}}>At KCM INC we focus on engineering responsible business 
+              solutions that benefit individuals, communities and organizations. 
+              Our methodologies focus on the improvement of 3 basic human needs: 
+              health, shelter and security. When we recognize environmental
+               weakness we build solutions that heal.</p>
             {/* <span>
               {amount ? (
                 <CaretRightOutlined
@@ -110,36 +119,26 @@ const Home: React.FC = () => {
           </motion.div>
         </Col>
 
-        <Col xs={24} md={12} style={{display:'flex',justifyContent:'center'}}>
-        <div
-            className='heroHeader'
-           
-          >
-           
-            <p className='pHero'>
-            A comprehensive nutrient breakdown of food items for food support institutions and food service establishments.
-          </p>
-            {/* <span>
-              {amount ? (
-                <CaretRightOutlined
-                  style={{ color: '#009688', fontSize: '1.5rem' }}
-                />
-              ) : (
-                <CaretLeftFilled
-                  style={{ color: '#009688', fontSize: '1.5rem' }}
-                />
-              )}
-            </span> */}
-
-          </div>
-          
-         
+        <Col xs={24} md={12} style={{display:'flex',justifyContent:'space-evenly',alignItems:'center',height:'299px'}}>
+       <motion.div className='solutionsLink'>
+       <RiHealthBookFill style={{fontSize:'5rem',color:'#009688'}} />
+       <Link to='/about'><p>Health based solutions  <ArrowRightOutlined /></p></Link>
+       </motion.div>
+       <motion.div className='solutionsLink'>
+       <FaHome style={{fontSize:'5rem',color:'#009688'}} />
+       <Link to='/about'><p>Shelter based solutions  <ArrowRightOutlined /></p></Link>
+       </motion.div>
+       <motion.div className='solutionsLink'>
+       <MdSecurity style={{fontSize:'5rem',color:'#009688'}} />
+       <Link to='/about'><p>Security based solutions  <ArrowRightOutlined /></p></Link>
+       </motion.div>
         </Col>
-      
-      
         </Row>
-        <Row justify='space-around' className='heroSection'>
-        <Col xs={23} md={6} className='nutritionalLabel'>
+
+
+        <Row className='heroSection' justify='center'>
+          
+        {/* <Col xs={23} md={6} className='nutritionalLabel'>
           <Select
             defaultValue='Select Product'
             onChange={handleChange}
@@ -163,8 +162,8 @@ const Home: React.FC = () => {
             
           })}
          
-        </Col>
-        <Col xs={23} md={8}>
+        </Col> */}
+        {/* <Col xs={23} md={8}>
           <p>
           <CheckSquareOutlined />{' '}
             A comprehensive analysis of 
@@ -187,12 +186,8 @@ const Home: React.FC = () => {
           </p>
          
          
-        </Col>
-      </Row>
-
-     
-
-      
+        </Col> */}
+      </Row>  
     </React.Fragment>
   )
 }
