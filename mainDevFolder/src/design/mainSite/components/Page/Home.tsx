@@ -122,7 +122,7 @@ const Home: React.FC = () => {
         <Col xs={24} md={12} style={{display:'flex',justifyContent:'space-evenly',alignItems:'center',height:'299px'}}>
        <motion.div className='solutionsLink'>
        <RiHealthBookFill style={{fontSize:'5rem',color:'#009688'}} />
-       <Link to='/about'><p>Health based solutions  <ArrowRightOutlined /></p></Link>
+       <Link to='/health'><p>Health based solutions  <ArrowRightOutlined /></p></Link>
        </motion.div>
        <motion.div className='solutionsLink'>
        <FaHome style={{fontSize:'5rem',color:'#009688'}} />

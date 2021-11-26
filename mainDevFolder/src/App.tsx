@@ -1,32 +1,14 @@
 import * as React from 'react'
-import fetch from 'isomorphic-fetch'
-import {
-  Button,
-  Calendar,
-  Col,
-  Divider,
-  List,
-  Row,
-  Space,
-  Typography,
-  Layout,
-  Menu,
-  Anchor,
-  PageHeader,
-  Descriptions,
-  Affix
-} from 'antd'
-const { Header, Content, Footer } = Layout
-const { Link } = Anchor
-
+import {  Layout,Menu,Anchor,} from 'antd'
 import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import About from './design/mainSite/components/Page/About'
+import Health from './design/mainSite/components/Page/Health'
 import Contact from './design/mainSite/components/Page/Contact'
-import {
-  FacebookFilled,
-  TwitterSquareFilled
-} from '@ant-design/icons'
+import {FacebookFilled,TwitterSquareFilled} from '@ant-design/icons'
+import Nutrition from './design/mainSite/components/Page/Nutrition'
+
+const { Header, Content, Footer } = Layout
+const { Link } = Anchor
 
 const App = () => {
   let key: number | boolean = window.innerWidth
@@ -63,7 +45,7 @@ const App = () => {
           position: 'fixed',
           zIndex: 1,
           width: '100%',
-          background: 'white'
+          background: '#fafafa'
         }}
       >
         <div className='logo' />
@@ -73,13 +55,14 @@ const App = () => {
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
+            <Route path='/health/nutritionalanalysis' component={Nutrition} />
+            <Route path='/health' component={Health} />
             <Route path='/contact' component={Contact} />
           </Switch>
         </Router>
       </Content>
 
-      <Footer style={{ textAlign: 'center', backgroundColor: 'white' }}>
+      <Footer style={{ textAlign: 'center', backgroundColor: '#fafafa' }}>
         KCM INC EST.2016 <a href="tel:+4047400093">404-740-0093</a>
 
         <FacebookFilled />
