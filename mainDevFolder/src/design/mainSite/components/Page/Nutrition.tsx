@@ -25,8 +25,8 @@ const Nutrition = () => {
         console.log('Failed:', errorInfo);
     };
 
-    const nextStep = (e) =>{
-        history.push('/health/nutritionalanalysis')
+    const nextStep = () =>{
+        history.push('/health/nutritionalanalysis/2')
      }
 
     
@@ -41,8 +41,8 @@ const Nutrition = () => {
 <Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
                 <RiHealthBookFill style={{ fontSize: '5rem', color: '#009688' }} />
                 <br></br>
-                <h3>Nutritional Analysis</h3>
-                <p className='pHero'>Nutritional Analysis</p>
+                <h3>Nutritional Analysis<span>1</span></h3>
+                <p className='pHero'>Tell us about yourself.</p>
                 <Form
                     name="basic"
                     labelCol={{ span: 8 }}
@@ -50,22 +50,37 @@ const Nutrition = () => {
                     initialValues={{ remember: true }}
                     onFinish={onFinish}
                     onFinishFailed={onFinishFailed}
-                    autoComplete="off"
+                    autoComplete="on"
                 >
                     <Form.Item
-                        label="Username"
-                        name="username"
+                        label="First name"
+                        name="firstname"
                         rules={[{ required: true, message: 'Please input your username!' }]}
                     >
                         <Input />
                     </Form.Item>
 
                     <Form.Item
-                        label="Password"
-                        name="password"
+                        label="Last name"
+                        name="lastname"
                         rules={[{ required: true, message: 'Please input your password!' }]}
                     >
-                        <Input.Password />
+                        <Input/>
+                    </Form.Item>
+                    <Form.Item
+                        label="Phone number"
+                        name="phonenumber"
+                        rules={[{ required: true, message: 'Please input your username!' }]}
+                    >
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Email"
+                        name="email"
+                        rules={[{ required: true, message: 'Please input your password!' }]}
+                    >
+                        <Input />
                     </Form.Item>
 
                     <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
