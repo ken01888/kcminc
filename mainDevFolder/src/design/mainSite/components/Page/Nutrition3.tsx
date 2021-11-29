@@ -25,9 +25,9 @@ const Nutrition3 = () => {
         console.log('Failed:', errorInfo);
     };
 
-    // const nextStep = (e) =>{
-    //     history.push('/health/nutritionalanalysis/3')
-    //  }
+    const nextStep = (e) =>{
+        history.push('/health/nutritionalanalysis/3')
+     }
 
     function onChange(checkedValues) {
         console.log('checked = ', checkedValues);
@@ -44,7 +44,7 @@ const Nutrition3 = () => {
                 <RiHealthBookFill style={{ fontSize: '5rem', color: '#009688' }} />
                 <br></br>
                 <h3>Nutritional Analysis step 3</h3>
-                <p className='pHero'>What are your needs? </p>
+                <p className='pHero'>What solutions do you need? </p>
                 <Form
                     name="basic"
                     labelCol={{ span: 9 }}
@@ -68,10 +68,18 @@ const Nutrition3 = () => {
                                     <Checkbox value="Digital Nutritional Label">Digital Nutritional Label</Checkbox>
                                 </Col>
                                 <Col span={24}>
-                                    <Checkbox value="Health Breakdown">Product Consumption Report</Checkbox>
+                                    <Checkbox value="Health Breakdown">Product Health Report</Checkbox>
                                 </Col>
                             </Row>
                         </Checkbox.Group>
+                    </Form.Item>
+                    <Form.Item wrapperCol={{ offset: 0, span: 16 }}>
+                        <Button onClick={()=>{history.goBack()}} type="primary" shape="round" size={'large'}>
+                            Next
+                        </Button>
+                        <Button onClick={nextStep} type="primary" shape="round" size={'large'}>
+                            Next
+                        </Button>
                     </Form.Item>
 
                  </Form>
