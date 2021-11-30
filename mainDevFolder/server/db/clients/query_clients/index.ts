@@ -1,7 +1,7 @@
 import { Query } from "../../index";
 
 
-const allMessages = async () => Query('SELECT * FROM contact');
+const allMessages = async () => Query('SELECT * FROM Nutrientmap.lifestagereference');
 // const singleChirp = async (id:string) => Query('SELECT * FROM Chirps WHERE id = ?',[id]);
 const deleteMessages= async(id:string)=>Query('DELETE FROM contact WHERE id = ?',[id]);
 const insertMessages = async(values :any )=>Query('INSERT INTO contact SET ?' ,values);

@@ -8,6 +8,7 @@ import {FacebookFilled,TwitterSquareFilled} from '@ant-design/icons'
 import Nutrition from './design/mainSite/components/Page/Nutrition'
 import Nutrition2 from './design/mainSite/components/Page/Nutrition2'
 import Nutrition3 from './design/mainSite/components/Page/Nutrition3'
+import Nutrition4 from './design/mainSite/components/Page/Nutrition4'
 
 
 const { Header, Content, Footer } = Layout
@@ -57,7 +58,7 @@ const App = () => {
       <Content className='site-layout'>
         <Router>
           <Switch>
-            <Route exact path='/' component={Nutrition3} />
+            <Route exact path='/' component={Nutrition4} />
             {/* <Route path='/health/nutritionalanalysis/3' component={Nutrition3} /> */}
 
             <Route path='/health/nutritionalanalysis/2' component={Nutrition2} />
