@@ -1,6 +1,6 @@
 import * as express from 'express';
 import * as cors from 'cors';
-import clientDate from './db/clients';
+import Nutrientmap from './db/nutrientmap';
 import * as fetch from 'isomorphic-fetch';
 
 
@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors())
 app.use(express.json())
-app.use(clientDate)
+app.use(Nutrientmap)
 
 // app.post('/post', async (req,res) =>{
 //     let firstdata= req.body[0]

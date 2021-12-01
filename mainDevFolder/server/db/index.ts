@@ -1,5 +1,5 @@
 import * as mysql from 'mysql';
-import database_Function from './clients/query_clients'
+import database_Function from './nutrientmap/queries_nutrientmap'
 
 
 
