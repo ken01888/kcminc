@@ -27,12 +27,12 @@ const Nutrition = () => {
 
     const nextStep = (values:any) =>{
         // (async () => {
-        //     let newData = await fetch('http://localhost:4000/post', {
+        //     let newData = await fetch('http://localhost:4000/nutrientmap', {
         //       method: 'POST',
         //       headers: {
         //         'Content-Type': 'application/json'
         //       },
-        //       body: JSON.stringify([`${value}`])
+        //       body: JSON.stringify(values)
         //     })
       
         //     let data: any = await newData.json()
@@ -40,7 +40,7 @@ const Nutrition = () => {
         //   })()
         //   setnutrition(data)
 
-        history.push('/health/nutritionalanalysis/2')
+        // history.push('/health/nutritionalanalysis/2')
         // e.preventDefault
         // let newData = await fetch('http://localhost:4000/nutrientmap')
             console.log(values)
@@ -98,10 +98,6 @@ const Nutrition = () => {
                         rules={[{ required: true, message: 'Please enter a valid email address!' }]}
                     >
                         <Input />
-                    </Form.Item>
-
-                    <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-                        <Checkbox>Remember me</Checkbox>
                     </Form.Item>
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>

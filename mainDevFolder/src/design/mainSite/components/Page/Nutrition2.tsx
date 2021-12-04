@@ -68,7 +68,7 @@ const Nutrition_2 = () => {
                         name="industry"
                         rules={[{ required: true, message: 'Please input your username!' }]}
                     >
-                        <Select style={{ width: 210 }} onChange={handleChange}>
+                        <Select style={{ width: 185.05 }} onChange={handleChange}>
                             <Select.OptGroup label="Consumer Services">
                                 <Select.Option value="Casinos">Casinos</Select.Option>
                                 <Select.Option value="Cruise Line">Cruise Line</Select.Option>
