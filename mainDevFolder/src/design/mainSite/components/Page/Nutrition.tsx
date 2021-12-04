@@ -25,8 +25,25 @@ const Nutrition = () => {
         console.log('Failed:', errorInfo);
     };
 
-    const nextStep = () =>{
+    const nextStep = (values:any) =>{
+        // (async () => {
+        //     let newData = await fetch('http://localhost:4000/post', {
+        //       method: 'POST',
+        //       headers: {
+        //         'Content-Type': 'application/json'
+        //       },
+        //       body: JSON.stringify([`${value}`])
+        //     })
+      
+        //     let data: any = await newData.json()
+            
+        //   })()
+        //   setnutrition(data)
+
         history.push('/health/nutritionalanalysis/2')
+        // e.preventDefault
+        // let newData = await fetch('http://localhost:4000/nutrientmap')
+            console.log(values)
      }
 
     
@@ -41,7 +58,7 @@ const Nutrition = () => {
 <Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
                 <RiHealthBookFill style={{ fontSize: '5rem', color: '#009688' }} />
                 <br></br>
-                <h3>Nutritional Analysis<span>1</span></h3>
+                <h3>Nutrimap<span>1</span></h3>
                 <p className='pHero'>Tell us about yourself.</p>
                 <Form
                     name="basic"
@@ -55,7 +72,7 @@ const Nutrition = () => {
                     <Form.Item
                         label="First name"
                         name="firstname"
-                        rules={[{ required: true, message: 'Please input your username!' }]}
+                        rules={[{ required: true, message: 'Please your first name!' }]}
                     >
                         <Input />
                     </Form.Item>
@@ -63,14 +80,14 @@ const Nutrition = () => {
                     <Form.Item
                         label="Last name"
                         name="lastname"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
+                        rules={[{ required: true, message: 'Please enter your last name!' }]}
                     >
                         <Input/>
                     </Form.Item>
                     <Form.Item
                         label="Phone number"
                         name="phonenumber"
-                        rules={[{ required: true, message: 'Please input your username!' }]}
+                        rules={[{ required: true, message: 'Please enter a valid phone number!' }]}
                     >
                         <Input />
                     </Form.Item>
@@ -78,7 +95,7 @@ const Nutrition = () => {
                     <Form.Item
                         label="Email"
                         name="email"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
+                        rules={[{ required: true, message: 'Please enter a valid email address!' }]}
                     >
                         <Input />
                     </Form.Item>
@@ -91,7 +108,7 @@ const Nutrition = () => {
                         <Button onClick={()=>{history.goBack()}} type="primary" shape="round" size={'large'}>
                             Next
                         </Button>
-                        <Button onClick={nextStep} type="primary" shape="round" size={'large'}>
+                        <Button onClick={nextStep}  type="primary" shape="round" size={'large'} htmlType='submit'>
                             Next
                         </Button>
                     </Form.Item>

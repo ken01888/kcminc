@@ -1,10 +1,10 @@
 import { data } from 'autoprefixer'
 import * as express from 'express'
-import database_Function from './query_clients'
+import database_Function from './queries_nutrientmap'
 
 const app = express()
 
-app.all('/client_suite', async (req, res, error) => {
+app.all('/nutrientmap', async (req, res, error) => {
   switch (req.method) {
     case 'GET':
       const new_Data = await database_Function.allMessages()
@@ -15,7 +15,7 @@ app.all('/client_suite', async (req, res, error) => {
       
       break;
     case 'POST':
-
+      console.log('post')
       await database_Function.insertMessages(req.body)
       res.send(req.method)
       break;

@@ -1,3 +1,4 @@
+import { CheckCircleOutlined } from '@ant-design/icons';
 import { Row, Col, Button } from 'antd';
 import * as React from 'react';
 import { RiHealthBookFill } from 'react-icons/Ri';
@@ -28,8 +29,17 @@ const Health = () => {
             <Col xs={23} md={5} >
                 <RiHealthBookFill style={{ fontSize: '5rem', color: '#009688' }} />
 
-                <h3>Nutritional Analysis</h3>
-                <p style={{width:'20rem'}}>Create healthier products by analyzing the nutritional content of food items.</p>
+                <h3>Nutrimap</h3>
+                <p style={{width:'20rem'}}><span style={{color:'#009688'}}>Nutrimap</span> provides institutions with a complete nutrient breakdown of individual food items based weight and components. </p>
+                <p style={{width:'20rem'}}>What's provided:</p>
+
+
+                <p style={{width:'20rem'}}><CheckCircleOutlined style={{color:'#009688', marginRight:'5px'}}/>Micro and Macro nutrient component breakdown</p>
+                <p style={{width:'20rem'}}><CheckCircleOutlined style={{color:'#009688', marginRight:'5px'}}/>Dietary Reference Intakes breakdown</p>
+                <p style={{width:'20rem'}}><CheckCircleOutlined style={{color:'#009688', marginRight:'5px'}}/>Product Health Report</p>
+
+
+
                 
                     <Button onClick={pushHome} type="primary" shape="round" size={'large'}>Back</Button>
                 

@@ -1,5 +1,5 @@
 import { LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Col, Form, Input, notification, Row, Steps } from 'antd';
+import { Button, Checkbox, Col, Form, Input, Row, Steps } from 'antd';
 import * as React from 'react';
 import { RiHealthBookFill } from 'react-icons/Ri';
 
@@ -8,7 +8,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 
 
-const Nutrition3 = () => {
+const Nutrition4 = () => {
 
     const history = useHistory()
 
@@ -33,17 +33,6 @@ const Nutrition3 = () => {
         console.log('checked = ', checkedValues);
       }
 
-      const openNotification = () => {
-        notification.open({
-          message: 'Notification Title',
-          description:
-            'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-          onClick: () => {
-            console.log('Notification Clicked!');
-          },
-        });
-      };
-
 
 
     return (
@@ -54,7 +43,7 @@ const Nutrition3 = () => {
             <Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
                 <RiHealthBookFill style={{ fontSize: '5rem', color: '#009688' }} />
                 <br></br>
-                <h3>Nutrimap step 3</h3>
+                <h3>Nutritional Analysis step 3</h3>
                 <p className='pHero'>What solutions do you need? </p>
                 <Form
                     name="basic"
@@ -68,12 +57,12 @@ const Nutrition3 = () => {
                     <Form.Item
                         
                         name="institution_name"
-                        rules={[{ required: true, message: 'Please select your desired solution!' }]}
+                        rules={[{ required: true, message: 'Please input your username!' }]}
                     >
                         <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
                             <Row>
                                 <Col span={24}>
-                                    <Checkbox value="Nutritional Analysis" onClick={openNotification}>Nutrient Analysis</Checkbox>
+                                    <Checkbox value="Nutritional Analysis">Nutrient Analysis</Checkbox>
                                 </Col>
                                 <Col span={24}>
                                     <Checkbox value="Digital Nutritional Label">Digital Nutritional Label</Checkbox>
@@ -93,45 +82,7 @@ const Nutrition3 = () => {
                         </Button>
                     </Form.Item>
 
-                    <Form.Item
-                        label="Street address"
-                        name="street_address"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
-                    >
-                        <Input/>
-                    </Form.Item>
-                    <Form.Item
-                        label="State"
-                        name="state"
-                        rules={[{ required: true, message: 'Please input your username!' }]}
-                    >
-                        <Input />
-                    </Form.Item>
-
-                    <Form.Item
-                        label="Zipcode"
-                        name="zipcode"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
-                    >
-                        <Input />
-                    </Form.Item>
-
-                    
-
-                    <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
-
-                    <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button onClick={()=>{history.goBack()}} type="primary" shape="round" size={'large'}>
-                            Next
-                        </Button>
-                        <Button onClick={nextStep} type="primary" shape="round" size={'large'}>
-                            Next
-                        </Button>
-                    </Form.Item>
-              
-                </Form>
+                 </Form>
             </Col>
 
         </Row>
@@ -139,4 +90,4 @@ const Nutrition3 = () => {
     )
 };
 
-export default Nutrition3;
+export default Nutrition4;

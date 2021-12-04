@@ -6,6 +6,7 @@ import {
   ArrowRightOutlined,
   CaretLeftFilled,
   CaretRightOutlined,
+  PhoneOutlined,
 
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
@@ -58,32 +59,58 @@ const Home: React.FC = () => {
       <Row justify='center' className='heroSection'>
         <Col xs={23} md={18}>
           <h1 className='h1Hero'>
-          Institutional quality business solutions 
-          designed for modern enterprises.
+          Responsibily designed business solutions.
           </h1>
          
         </Col>
         <Col xs={23} md={18}>
         <p>
-          Improve the well-being of communities and stakeholders 
-          by utilizing our suite of responsibly designed solutions 
-          developed to improve organizations and the people they serve.
+        Business solutions that benefit individuals, communities and organizations.
           </p>
         </Col>
         <Col xs={23} md={18}>
         <p>
-        <Button type="primary" shape="round"  size={'large'}>
+        <Button icon={<PhoneOutlined style={{fontSize:'1.25rem'}}/>} type="primary" shape="round"  size={'large'}>
           Contact us 
           </Button>
-
           </p>
         </Col>
+      </Row>
+
+      <Row justify='space-around' className='heroSection'>
+      
+        <Col xs={23} md={6}>
+          <h1 className='h1solutions'>
+          Nutrimap
+          </h1>
+          <p>
+        
+        A complete nutrient analysis solution that helps food support instituions create healthier food products.
+          </p>
+          <Link to='/health'><motion.p whileHover={{color:'black',scale:1.1,x:15,fontWeight:900}} whileTap={{scale:.9}} style={{color:'#009688'}}>Enter  <ArrowRightOutlined /></motion.p></Link>
+
+         
+        </Col>
+        <Col xs={23} md={6}>
+          {/* <h1 className='h1solutions'>
+          Ikigai
+          </h1>
+          <p>
+        
+        Business solutions that benefit individuals, communities and organizations.
+          </p>
+          <Button  type="primary" shape="round"  size={'large'}>
+          Contact us 
+          </Button> */}
+         
+        </Col>
+        
       </Row>
 
      
 
       <Row justify='center' className='heroSection'>
-        <Col xs={23} md={6}>
+        <Col xs={23} >
           <motion.h2
             whileHover={{ cursor: 'pointer', scale: 1.1 }}
             whileTap={{ scale: 0.9, color: '#009688' }}
@@ -100,8 +127,7 @@ const Home: React.FC = () => {
             className='heroHeader'
            
           >
-            <p style={{width:'28rem'}}>At KCM INC we focus on engineering responsible business 
-              solutions that benefit individuals, communities and organizations. 
+            <p style={{width:'28rem'}}>At KCM INC  
               Our methodologies focus on the improvement of 3 basic human needs: 
               health, shelter and security. When we recognize environmental
                weakness we build solutions that heal.</p>

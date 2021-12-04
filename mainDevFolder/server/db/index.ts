@@ -1,15 +1,15 @@
 import * as mysql from 'mysql';
-import database_Function from './clients/query_clients'
+import database_Function from './nutrientmap/queries_nutrientmap'
 
 
 
 
 const mysqlAccess = mysql.createPool({
-    host:'test-connection-aws-rds.cf2pfdin25py.us-east-1.rds.amazonaws.com',
+    host:'127.0.0.1',
     port:3306,
-    user:'admin',
-    password:'4#MiSgh!4',
-    database:'TEMPLATE'
+    user:'me',
+    password:'password',
+    database:'Nutrientmap'
 })
 
 export const Query = (query:string,values?:Array<string|number>)=>{
