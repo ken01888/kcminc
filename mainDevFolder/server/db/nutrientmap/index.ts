@@ -16,7 +16,7 @@ app.all('/nutrientmap', async (req, res, error) => {
       break;
     case 'POST':
       console.log(req.body)
-      // await database_Function.insertCLIENT(req.body)
+      await database_Function.insertCLIENT(req.body)
       res.send(req.method)
       break;
 

@@ -19,6 +19,17 @@ const Nutrition = () => {
 
     const onFinish = (values: any) => {
         console.log('Success:', values);
+        (async () => {
+            let newData = await fetch('http://localhost:4000/nutrientmap', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(values)
+            })
+      
+            
+          })()
     };
 
     const onFinishFailed = (errorInfo: any) => {
@@ -26,24 +37,13 @@ const Nutrition = () => {
     };
 
     const nextStep = (values:any) =>{
-        // (async () => {
-        //     let newData = await fetch('http://localhost:4000/nutrientmap', {
-        //       method: 'POST',
-        //       headers: {
-        //         'Content-Type': 'application/json'
-        //       },
-        //       body: JSON.stringify(values)
-        //     })
       
-        //     let data: any = await newData.json()
-            
-        //   })()
         //   setnutrition(data)
 
         // history.push('/health/nutritionalanalysis/2')
         // e.preventDefault
         // let newData = await fetch('http://localhost:4000/nutrientmap')
-            console.log(values)
+            console.log(...values)
      }
 
     
@@ -71,7 +71,7 @@ const Nutrition = () => {
                 >
                     <Form.Item
                         label="First name"
-                        name="firstname"
+                        name="first_name"
                         rules={[{ required: true, message: 'Please your first name!' }]}
                     >
                         <Input />
@@ -79,14 +79,14 @@ const Nutrition = () => {
 
                     <Form.Item
                         label="Last name"
-                        name="lastname"
+                        name="last_name"
                         rules={[{ required: true, message: 'Please enter your last name!' }]}
                     >
                         <Input/>
                     </Form.Item>
                     <Form.Item
                         label="Phone number"
-                        name="phonenumber"
+                        name="phone_number"
                         rules={[{ required: true, message: 'Please enter a valid phone number!' }]}
                     >
                         <Input />
