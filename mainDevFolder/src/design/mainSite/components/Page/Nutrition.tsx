@@ -1,4 +1,4 @@
-import { LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';
+import { ExperimentFilled, LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Col, Form, Input, Row, Steps } from 'antd';
 import * as React from 'react';
 import { RiHealthBookFill } from 'react-icons/Ri';
@@ -20,16 +20,17 @@ const Nutrition = () => {
     const onFinish = (values: any) => {
         console.log('Success:', values);
         (async () => {
-            let newData = await fetch('http://localhost:4000/nutrientmap', {
+            let newData = await fetch('http://localhost:4000/nutrientmap/client', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify(values)
             })
-      
-            
+       history.push('/health/nutritionalanalysis/2')
           })()
+
+
     };
 
     const onFinishFailed = (errorInfo: any) => {
@@ -40,7 +41,7 @@ const Nutrition = () => {
       
         //   setnutrition(data)
 
-        // history.push('/health/nutritionalanalysis/2')
+       
         // e.preventDefault
         // let newData = await fetch('http://localhost:4000/nutrientmap')
             console.log(...values)
@@ -56,14 +57,13 @@ const Nutrition = () => {
 <Row style={{ height: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fafafa' }}>
 
 <Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
-                <RiHealthBookFill style={{ fontSize: '5rem', color: '#009688' }} />
                 <br></br>
-                <h3>Nutrimap<span>1</span></h3>
-                <p className='pHero'>Tell us about yourself.</p>
+                <h3 style={{display:'flex',justifyContent:'end',alignItems:'center',width:'auto'}}> <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap</h3>
+                <p style={{display:'flex',justifyContent:'end'}}>Client registration section.</p>
                 <Form
                     name="basic"
-                    labelCol={{ span: 8 }}
-                    wrapperCol={{ span: 16 }}
+                    labelCol={{ span: 10 }}
+                    wrapperCol={{ span: 14 }}
                     initialValues={{ remember: true }}
                     onFinish={onFinish}
                     onFinishFailed={onFinishFailed}
@@ -99,6 +99,7 @@ const Nutrition = () => {
                     >
                         <Input />
                     </Form.Item>
+                   
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                         <Button onClick={()=>{history.goBack()}} type="primary" shape="round" size={'large'}>
