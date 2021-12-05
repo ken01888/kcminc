@@ -87,7 +87,7 @@ const Home: React.FC = () => {
         
         A complete nutrient analysis solution that helps food support instituions create healthier food products.
           </p>
-          <Link to='/health'><motion.p whileHover={{color:'black',scale:1.1,x:15,fontWeight:900}} whileTap={{scale:.9}} style={{color:'#009688'}}>Enter  <ArrowRightOutlined /></motion.p></Link>
+          <Link to='/health'><motion.p whileHover={{color:'black',fontWeight:900}} whileTap={{scale:1}} style={{color:'#009688'}}>Enter  <ArrowRightOutlined /></motion.p></Link>
 
          
         </Col>
