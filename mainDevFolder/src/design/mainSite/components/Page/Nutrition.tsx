@@ -59,7 +59,7 @@ const Nutrition = () => {
 <Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
                 <br></br>
                 <h3 style={{display:'flex',justifyContent:'end',alignItems:'center',width:'auto'}}> <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap</h3>
-                <p style={{display:'flex',justifyContent:'end'}}>Client registration section.</p>
+                <p style={{display:'flex',justifyContent:'end'}}>Tell us about yourself.</p>
                 <Form
                     name="basic"
                     labelCol={{ span: 10 }}

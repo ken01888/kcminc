@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {  Layout,Menu,Anchor,} from 'antd'
+import {  Layout,Menu,Anchor,Row,Col} from 'antd'
 import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Health from './design/mainSite/components/Page/Health'
@@ -67,8 +67,22 @@ const App = () => {
         </Router>
       </Content>
 
-      <Footer style={{ textAlign: 'center', backgroundColor: '#fafafa' }}>
+      <Footer style={{ backgroundColor: '#009688',width:'auto' }}>
+        <Row>
+{/* <Col xs={24} md={8}>
+  d
+</Col>
+<Col xs={24} md={8}>
+  d
+</Col>
+<Col xs={24} md={8}>
+  d
+</Col> */}
+
+        </Row>
         KCM INC EST.2016 <a href="tel:+4047400093">404-740-0093</a>
+      
+
 
         <FacebookFilled />
         <TwitterSquareFilled />

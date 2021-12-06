@@ -54,7 +54,7 @@ const Nutrition_2 = () => {
 
             <Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
                 <h3 style={{display:'flex',justifyContent:'end',alignItems:'center',width:'auto'}}> <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap</h3>
-                <p style={{display:'flex',justifyContent:'end'}}>Enter information related to your institution.</p>
+                <p style={{display:'flex',justifyContent:'end'}}>Tell us about your institution</p>
                 <Form
                     name="basic"
                     labelCol={{ span: 9 }}
