@@ -30,7 +30,8 @@ const Health = () => {
                 <RiHealthBookFill style={{ fontSize: '5rem', color: '#009688' }} />
 
                 <h3>Nutrimap</h3>
-                <p style={{width:'20rem'}}><span style={{color:'#009688'}}>Nutrimap</span> provides institutions with a complete nutrient breakdown of individual food items based weight and components. </p>
+                <p style={{width:'20rem'}}><span style={{color:'#009688'}}>Nutrimap</span> provides institutions with a complete 
+                nutrient breakdown of individual food items based weight and ingredients. </p>
                 <p style={{width:'20rem'}}>What's provided:</p>
 
 

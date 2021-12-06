@@ -1,4 +1,4 @@
-import { LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';
+import { ExperimentFilled, LoadingOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Col, Form, Input, Row, Select, Steps } from 'antd';
 import * as React from 'react';
 import { RiHealthBookFill } from 'react-icons/Ri';
@@ -18,7 +18,17 @@ const Nutrition_2 = () => {
     }
 
     const onFinish = (values: any) => {
-        console.log('Success:', values);
+        (async () => {
+            let newData = await fetch('http://localhost:4000/nutrientmap/institution', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(values)
+            })
+    //    history.push('/health/nutritionalanalysis/2')
+    console.log(newData)
+          })()
     };
 
     const onFinishFailed = (errorInfo: any) => {
@@ -43,10 +53,8 @@ const Nutrition_2 = () => {
         <Row style={{ height: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fafafa' }}>
 
             <Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
-                <RiHealthBookFill style={{ fontSize: '5rem', color: '#009688' }} />
-                <br></br>
-                <h3>Nutrimap</h3>
-                <p className='pHero'>Tell us about your institution.</p>
+                <h3 style={{display:'flex',justifyContent:'end',alignItems:'center',width:'auto'}}> <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap</h3>
+                <p style={{display:'flex',justifyContent:'end'}}>Enter information related to your institution.</p>
                 <Form
                     name="basic"
                     labelCol={{ span: 9 }}
@@ -57,7 +65,7 @@ const Nutrition_2 = () => {
                     autoComplete="on"
                 >
                     <Form.Item
-                        label="Institution:"
+                        label="Name:"
                         name="institution_name"
                         rules={[{ required: true, message: 'Please input your username!' }]}
                     >
@@ -68,7 +76,7 @@ const Nutrition_2 = () => {
                         name="industry"
                         rules={[{ required: true, message: 'Please input your username!' }]}
                     >
-                        <Select style={{ width: 185 }} onChange={handleChange}>
+                        <Select style={{ width: '-webkit-fill-available' }} onChange={handleChange}>
                             <Select.OptGroup label="Consumer Services">
                                 <Select.Option value="Casinos">Casinos</Select.Option>
                                 <Select.Option value="Cruise Line">Cruise Line</Select.Option>
@@ -92,14 +100,26 @@ const Nutrition_2 = () => {
                     </Form.Item>
 
                     <Form.Item
-                        label="Street address"
+                        label="Size:"
+                        name="institution_size"
+                        rules={[{ required: true, message: 'Please enter a valid email address!' }]}
+                    >
+                        <Select style={{ width: '-webkit-fill-available' }} onChange={handleChange}>
+                                <Select.Option value="Casinos">Small</Select.Option>
+                                <Select.Option value="Cruise Line">Medium</Select.Option>
+                                <Select.Option value="Hotel">Large</Select.Option>
+                        </Select>
+                    </Form.Item>
+
+                    <Form.Item
+                        label="Street address:"
                         name="street_address"
                         rules={[{ required: true, message: 'Please input your password!' }]}
                     >
                         <Input />
                     </Form.Item>
                     <Form.Item
-                        label="State"
+                        label="State:"
                         name="state"
                         rules={[{ required: true, message: 'Please input your username!' }]}
                     >
@@ -107,7 +127,7 @@ const Nutrition_2 = () => {
                     </Form.Item>
 
                     <Form.Item
-                        label="Zipcode"
+                        label="Zipcode:"
                         name="zipcode"
                         rules={[{ required: true, message: 'Please input your password!' }]}
                     >
@@ -116,15 +136,13 @@ const Nutrition_2 = () => {
 
 
 
-                    <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
+                  
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                         <Button onClick={() => { history.goBack() }} type="primary" shape="round" size={'large'}>
                             Next
                         </Button>
-                        <Button onClick={nextStep} type="primary" shape="round" size={'large'}>
+                        <Button type="primary" shape="round" size={'large'} htmlType='submit'>
                             Next
                         </Button>
                     </Form.Item>
