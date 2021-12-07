@@ -18,17 +18,17 @@ const Nutrition = () => {
     }
 
     const onFinish = (values: any) => {
-    //     (async () => {
-    //         let newData = await fetch('http://localhost:4000/nutrientmap/client', {
-    //           method: 'POST',
-    //           headers: {
-    //             'Content-Type': 'application/json'
-    //           },
-    //           body: JSON.stringify(values)
-    //         })
-    
-       history.push(`/health/nutritionalanalysis/2/${values}`)
-    //       })()
+        (async () => {
+            let newData = await fetch('http://localhost:4000/nutrientmap/client', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(values)
+            })
+            let newInsert = await newData.json()
+            history.push(`/health/nutritionalanalysis/2/${newInsert}`)
+          })()
 
 
     };
@@ -37,16 +37,7 @@ const Nutrition = () => {
         console.log('Failed:', errorInfo);
     };
 
-    const nextStep = (values:any) =>{
-      
-        //   setnutrition(data)
-
-       
-        // e.preventDefault
-        // let newData = await fetch('http://localhost:4000/nutrientmap')
-            console.log(values)
-     }
-
+ 
     
     
 
@@ -105,7 +96,7 @@ const Nutrition = () => {
                         <Button onClick={()=>{history.goBack()}} type="primary" shape="round" size={'large'}>
                             Next
                         </Button>
-                        <Button onClick={nextStep}  type="primary" shape="round" size={'large'} htmlType='submit'>
+                        <Button   type="primary" shape="round" size={'large'} htmlType='submit'>
                             Next
                         </Button>
                     </Form.Item>

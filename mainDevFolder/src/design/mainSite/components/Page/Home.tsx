@@ -6,6 +6,7 @@ import {
   ArrowRightOutlined,
   CaretLeftFilled,
   CaretRightOutlined,
+  ExperimentFilled,
   PhoneOutlined,
 
 } from '@ant-design/icons'
@@ -38,21 +39,8 @@ const Home: React.FC = () => {
     </motion.h3>
   )
 
-  function handleChange (value) {
-    ;(async () => {
-      let newData = await fetch('http://localhost:4000/post', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify([`${value}`])
-      })
 
-      let data: any = await newData.json()
-      
-      setnutrition(data)
-    })()
-  }
+ 
 
   return (
     <React.Fragment>
@@ -79,9 +67,11 @@ const Home: React.FC = () => {
 
       <Row justify='space-around' className='heroSection'>
       
+      
+      
         <Col xs={23} md={6}>
           <h1 className='h1solutions'>
-          Nutrimap
+          <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap
           </h1>
           <p>
         
@@ -93,18 +83,17 @@ const Home: React.FC = () => {
         </Col>
         <Col xs={23} md={6}>
           {/* <h1 className='h1solutions'>
-          Ikigai
+          <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap
           </h1>
           <p>
         
-        Business solutions that benefit individuals, communities and organizations.
+        A complete nutrient analysis solution that helps food support instituions create healthier food products.
           </p>
-          <Button  type="primary" shape="round"  size={'large'}>
-          Contact us 
-          </Button> */}
+          <Link to='/health'><motion.p whileHover={{color:'black',fontWeight:900}} whileTap={{scale:1}} style={{color:'#009688'}}>Enter  <ArrowRightOutlined /></motion.p></Link> */}
+
          
         </Col>
-        
+       
       </Row>
 
      

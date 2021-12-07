@@ -15,10 +15,8 @@ app.all('/nutrientmap/client', async (req, res, error) => {
       
       break;
     case 'POST':
-      console.log(req.body)
       let {insertId}:any = await database_Function.insertCLIENT(req.body)
-      console.log(insertId)
-      res.send(req.method)
+      res.json(insertId)
       break;
 
     case 'PUT':
@@ -38,7 +36,7 @@ app.all('/nutrientmap/client', async (req, res, error) => {
   }
 })
 
-app.all('/nutrientmap/institution', async (req, res, error) => {
+app.all('/nutrientmap/institution/:id', async (req, res, error) => {
   switch (req.method) {
     case 'GET':
       const new_Data = await database_Function.allMessages()
@@ -49,11 +47,11 @@ app.all('/nutrientmap/institution', async (req, res, error) => {
       
       break;
     case 'POST':
-      req.body.client_id = 10
+      req.body.client_Id = req.params.id
       console.log(req.body)
 
-      let {insertId}:any = await database_Function.insertInstitution(req.body)
-      console.log(insertId)
+      // let {insertId}:any = await database_Function.insertInstitution(req.body)
+      // console.log(insertId)
       res.send(req.method)
       break;
 

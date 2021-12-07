@@ -18,9 +18,9 @@ const Nutrition_2 = (props) => {
 
     }
 
-    const onFinish = (values: any) => {
+    const onFinish = (values:any) => {
         (async () => {
-            let newData = await fetch('http://localhost:4000/nutrientmap/institution', {
+            let newData = await fetch(`http://localhost:4000/nutrientmap/institution/${props.match.params.client}`, {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -28,8 +28,8 @@ const Nutrition_2 = (props) => {
               body: JSON.stringify(values)
             })
     //    history.push('/health/nutritionalanalysis/2')
-    console.log(newData)
-          })()
+    console.log(values)
+})()
     };
 
     const onFinishFailed = (errorInfo: any) => {
@@ -106,9 +106,9 @@ const Nutrition_2 = (props) => {
                         rules={[{ required: true, message: 'Please enter a valid email address!' }]}
                     >
                         <Select style={{ width: '-webkit-fill-available' }} >
-                                <Select.Option value="Casinos">Small</Select.Option>
-                                <Select.Option value="Cruise Line">Medium</Select.Option>
-                                <Select.Option value="Hotel">Large</Select.Option>
+                                <Select.Option value="small">Small</Select.Option>
+                                <Select.Option value="medium">Medium</Select.Option>
+                                <Select.Option value="large">Large</Select.Option>
                         </Select>
                     </Form.Item>
 
@@ -125,9 +125,7 @@ const Nutrition_2 = (props) => {
                   
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button onClick={() => { history.goBack() }} type="primary" shape="round" size={'large'}>
-                            Next
-                        </Button>
+                     
                         <Button type="primary" shape="round" size={'large'} htmlType='submit'>
                             Next
                         </Button>
