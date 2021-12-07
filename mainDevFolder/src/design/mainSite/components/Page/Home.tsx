@@ -68,13 +68,13 @@ const Home: React.FC = () => {
         Business solutions that benefit individuals, communities and organizations.
           </p>
         </Col>
-        <Col xs={23} md={18}>
+        {/* <Col xs={23} md={18}>
         <p>
         <Button icon={<PhoneOutlined style={{fontSize:'1.25rem'}}/>} type="primary" shape="round"  size={'large'}>
           Contact us 
           </Button>
           </p>
-        </Col>
+        </Col> */}
       </Row>
 
       <Row justify='space-around' className='heroSection'>

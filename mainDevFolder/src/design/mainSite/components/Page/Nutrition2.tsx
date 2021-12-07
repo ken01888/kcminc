@@ -8,7 +8,8 @@ import { Link, useHistory } from 'react-router-dom';
 
 
 
-const Nutrition_2 = () => {
+const Nutrition_2 = (props) => {
+    console.log(props)
 
     const history = useHistory()
 
@@ -54,7 +55,7 @@ const Nutrition_2 = () => {
 
             <Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
                 <h3 style={{display:'flex',justifyContent:'end',alignItems:'center',width:'auto'}}> <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap</h3>
-                <p style={{display:'flex',justifyContent:'end'}}>Enter information related to your institution.</p>
+                <p style={{display:'flex',justifyContent:'end'}}>Tell us about your institution</p>
                 <Form
                     name="basic"
                     labelCol={{ span: 9 }}
@@ -76,7 +77,7 @@ const Nutrition_2 = () => {
                         name="industry"
                         rules={[{ required: true, message: 'Please input your username!' }]}
                     >
-                        <Select style={{ width: '-webkit-fill-available' }} onChange={handleChange}>
+                        <Select style={{ width: '-webkit-fill-available' }} >
                             <Select.OptGroup label="Consumer Services">
                                 <Select.Option value="Casinos">Casinos</Select.Option>
                                 <Select.Option value="Cruise Line">Cruise Line</Select.Option>
@@ -104,26 +105,11 @@ const Nutrition_2 = () => {
                         name="institution_size"
                         rules={[{ required: true, message: 'Please enter a valid email address!' }]}
                     >
-                        <Select style={{ width: '-webkit-fill-available' }} onChange={handleChange}>
+                        <Select style={{ width: '-webkit-fill-available' }} >
                                 <Select.Option value="Casinos">Small</Select.Option>
                                 <Select.Option value="Cruise Line">Medium</Select.Option>
                                 <Select.Option value="Hotel">Large</Select.Option>
                         </Select>
-                    </Form.Item>
-
-                    <Form.Item
-                        label="Street address:"
-                        name="street_address"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
-                    >
-                        <Input />
-                    </Form.Item>
-                    <Form.Item
-                        label="State:"
-                        name="state"
-                        rules={[{ required: true, message: 'Please input your username!' }]}
-                    >
-                        <Input />
                     </Form.Item>
 
                     <Form.Item
