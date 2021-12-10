@@ -15,8 +15,8 @@ app.all('/nutrientmap/client', async (req, res, error) => {
       
       break;
     case 'POST':
-      let {insertId}:any = await database_Function.insertCLIENT(req.body)
-      res.json(insertId)
+      // let {insertId}:any = await database_Function.insertCLIENT(req.body)
+      res.json(req.body)
       break;
 
     case 'PUT':

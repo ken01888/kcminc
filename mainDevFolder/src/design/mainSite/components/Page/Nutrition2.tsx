@@ -27,7 +27,7 @@ const Nutrition_2 = (props) => {
               },
               body: JSON.stringify(values)
             })
-    //    history.push('/health/nutritionalanalysis/2')
+       history.push('/health/nutritionalanalysis/3')
     console.log(values)
 })()
     };
