@@ -91,46 +91,7 @@ const Nutrition3 = () => {
                         <Button onClick={nextStep} type="primary" shape="round" size={'large'}>
                             Next
                         </Button>
-                    </Form.Item>
-
-                    <Form.Item
-                        label="Street address"
-                        name="street_address"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
-                    >
-                        <Input/>
-                    </Form.Item>
-                    <Form.Item
-                        label="State"
-                        name="state"
-                        rules={[{ required: true, message: 'Please input your username!' }]}
-                    >
-                        <Input />
-                    </Form.Item>
-
-                    <Form.Item
-                        label="Zipcode"
-                        name="zipcode"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
-                    >
-                        <Input />
-                    </Form.Item>
-
-                    
-
-                    <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
-                        <Checkbox>Remember me</Checkbox>
-                    </Form.Item>
-
-                    <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button onClick={()=>{history.goBack()}} type="primary" shape="round" size={'large'}>
-                            Next
-                        </Button>
-                        <Button onClick={nextStep} type="primary" shape="round" size={'large'}>
-                            Next
-                        </Button>
-                    </Form.Item>
-              
+                    </Form.Item> 
                 </Form>
             </Col>
 

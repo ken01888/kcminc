@@ -1,23 +1,25 @@
 import * as React from 'react'
 import { Parallax } from 'rc-scroll-anim'
-import { Row, Col, Select, Input, Button, Card } from 'antd'
+import { Row, Col, Select, Input, Button, Card,Tag } from 'antd'
 import {
+  AreaChartOutlined,
   ArrowLeftOutlined,
   ArrowRightOutlined,
   CaretLeftFilled,
   CaretRightOutlined,
+  DollarCircleOutlined,
   ExperimentFilled,
   PhoneOutlined,
-
+  PieChartOutlined,
+  TwitterOutlined
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 import { duration } from 'moment'
 import { json } from 'express'
-import { RiHealthBookFill } from 'react-icons/Ri';
-import{FaHome} from 'react-icons/fa';
-import {MdSecurity} from 'react-icons/Md';
-import {Link} from 'react-router-dom'
-
+import { RiHealthBookFill } from 'react-icons/Ri'
+import { FaHome } from 'react-icons/fa'
+import { MdSecurity } from 'react-icons/Md'
+import { Link } from 'react-router-dom'
 
 const { Option, OptGroup } = Select
 
@@ -39,170 +41,97 @@ const Home: React.FC = () => {
     </motion.h3>
   )
 
-
- 
-
   return (
     <React.Fragment>
-      <Row justify='center' className='heroSection'>
-        <Col xs={23} md={18}>
-          <h1 className='h1Hero'>
-          Responsibily designed business solutions.
-          </h1>
-         
-        </Col>
-        <Col xs={23} md={18}>
-        <p>
-        Business solutions that benefit individuals, communities and organizations.
-          </p>
-        </Col>
-        {/* <Col xs={23} md={18}>
-        <p>
-        <Button icon={<PhoneOutlined style={{fontSize:'1.25rem'}}/>} type="primary" shape="round"  size={'large'}>
-          Contact us 
-          </Button>
-          </p>
-        </Col> */}
-      </Row>
-
       <Row justify='space-around' className='heroSection'>
-      
-      
-      
+        <Col xs={23} md={10}>
+          <h1 className='h1Hero'>Responsibily designed business solutions.</h1>
+          <p>
+            <span style={{ color: '#009688', fontWeight: 600 }}>KCM INC</span>{' '}
+            provides integrative technological solutions to institutions
+            operating within a broad set of industries. Our solutions are
+            designed to improve the well-being of both national and global
+            communities.
+          </p>
+        </Col>
+        <Col xs={23} md={10} >
         <Col xs={23} md={6}>
           <h1 className='h1solutions'>
-          <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap
+            <ExperimentFilled style={{ fontSize: '2rem', color: '#009688' }} />
+            Nutrimap
           </h1>
-          <p>
-        
-        A complete nutrient analysis solution that helps food support instituions create healthier food products.
+          <p style={{ width: '17rem' }}>
+            A complete nutrient analysis solution that helps food support
+            instituions create healthier food products.
           </p>
-          <Link to='/health'><motion.p whileHover={{color:'black',fontWeight:900}} whileTap={{scale:1}} style={{color:'#009688'}}>Enter  <ArrowRightOutlined /></motion.p></Link>
-
-         
+          <Link to='/health'>
+            <motion.p
+              whileHover={{ textDecoration: 'underline', color: 'black' }}
+              style={{ color: '#009688' }}
+            >
+              Enter <ArrowRightOutlined />
+            </motion.p>
+          </Link>
         </Col>
         <Col xs={23} md={6}>
-          {/* <h1 className='h1solutions'>
-          <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap
+          <h1 className='h1solutions'>
+            <ExperimentFilled style={{ fontSize: '2rem', color: '#009688' }} />
+            Intravest
           </h1>
-          <p>
-        
-        A complete nutrient analysis solution that helps food support instituions create healthier food products.
+          <p style={{ width: '17rem' }}>
+            A complete nutrient analysis solution that helps food support
+            instituions create healthier food products.
           </p>
-          <Link to='/health'><motion.p whileHover={{color:'black',fontWeight:900}} whileTap={{scale:1}} style={{color:'#009688'}}>Enter  <ArrowRightOutlined /></motion.p></Link> */}
-
-         
+          <Link to='/health'>
+            <motion.p
+              whileHover={{ textDecoration: 'underline', color: 'black' }}
+              style={{ color: '#009688' }}
+            >
+              Enter <ArrowRightOutlined />
+            </motion.p>
+          </Link>
         </Col>
-       
+        </Col>
       </Row>
 
-     
-
-      <Row justify='center' className='heroSection'>
-        <Col xs={23} >
-          <motion.h2
-            whileHover={{ cursor: 'pointer', scale: 1.1 }}
-            whileTap={{ scale: 0.9, color: '#009688' }}
-            onClick={() => {
-              console.log('hello')
-            }}
-            className='h1Hero'
-          >
-            
-            Who We Are
-          </motion.h2>
-
-          <motion.div
-            className='heroHeader'
-           
-          >
-            <p style={{width:'28rem'}}>At KCM INC  
-              Our methodologies focus on the improvement of 3 basic human needs: 
-              health, shelter and security. When we recognize environmental
-               weakness we build solutions that heal.</p>
-            {/* <span>
-              {amount ? (
-                <CaretRightOutlined
-                  style={{ color: '#009688', fontSize: '1.5rem' }}
-                />
-              ) : (
-                <CaretLeftFilled
-                  style={{ color: '#009688', fontSize: '1.5rem' }}
-                />
-              )}
-            </span> */}
-          </motion.div>
+      <Row  className='heroSection'>
+        <Col xs={23} md={6}>
+          <h1 className='h1solutions'>
+            <ExperimentFilled style={{ fontSize: '2rem', color: '#009688' }} />
+            Nutrimap
+          </h1>
+          <p style={{ width: '17rem' }}>
+            A complete nutrient analysis solution that helps food support
+            instituions create healthier food products.
+          </p>
+          <Link to='/health'>
+            <motion.p
+              whileHover={{ textDecoration: 'underline', color: 'black' }}
+              style={{ color: '#009688' }}
+            >
+              Enter <ArrowRightOutlined />
+            </motion.p>
+          </Link>
         </Col>
-
-        <Col xs={24} md={12} style={{display:'flex',justifyContent:'space-evenly',alignItems:'center',height:'299px'}}>
-       <motion.div className='solutionsLink'>
-       <RiHealthBookFill style={{fontSize:'5rem',color:'#009688'}} />
-       <Link to='/health'><p>Health based solutions  <ArrowRightOutlined /></p></Link>
-       </motion.div>
-       <motion.div className='solutionsLink'>
-       <FaHome style={{fontSize:'5rem',color:'#009688'}} />
-       <Link to='/about'><p>Shelter based solutions  <ArrowRightOutlined /></p></Link>
-       </motion.div>
-       <motion.div className='solutionsLink'>
-       <MdSecurity style={{fontSize:'5rem',color:'#009688'}} />
-       <Link to='/about'><p>Security based solutions  <ArrowRightOutlined /></p></Link>
-       </motion.div>
+        <Col xs={23} md={6}>
+          <h1 className='h1solutions'>
+            <ExperimentFilled style={{ fontSize: '2rem', color: '#009688' }} />
+            Intravest
+          </h1>
+          <p style={{ width: '17rem' }}>
+            A complete nutrient analysis solution that helps food support
+            instituions create healthier food products.
+          </p>
+          <Link to='/health'>
+            <motion.p
+              whileHover={{ textDecoration: 'underline', color: 'black' }}
+              style={{ color: '#009688' }}
+            >
+              Enter <ArrowRightOutlined />
+            </motion.p>
+          </Link>
         </Col>
-        </Row>
-
-
-        <Row className='heroSection' justify='center'>
-          
-        {/* <Col xs={23} md={6} className='nutritionalLabel'>
-          <Select
-            defaultValue='Select Product'
-            onChange={handleChange}
-            style={{ width: 'fit-content' }}
-          >
-            <Option value='1104067'>100 GRAND Bar</Option>
-            <Option value='1104101'>Reese's Peanut Butter Cup</Option>
-            <Option value='171884'>Minute Maid, Lemonade</Option>
-            <Option value='1101816'>Trix Cereal</Option>
-          </Select>
-
-          <h2>Nutritional Facts</h2>
-          <hr ></hr>
-          <p>Amount Per Serving: 100g / 3.5oz</p>
-          <hr></hr>
-          {nutrition.foods[0].foodNutrients.map(i => {
-             if (i.nutrientName =='Fatty acids, total saturated'|| i.nutrientName =='Cholesterol'|| i.nutrientName=='Sodium, Na'|| i.nutrientName =='Carbohydrate, by difference'|| i.nutrientName=='Fiber, total dietary'||i.nutrientName=='Sugars, total including NLEA'||i.nutrientName=='Protein') {
-              return (<p>{i.nutrientName} <span>{i.value}</span> <span>{i.unitName}</span></p>)
-
-             }
-            
-          })}
-         
-        </Col> */}
-        {/* <Col xs={23} md={8}>
-          <p>
-          <CheckSquareOutlined />{' '}
-            A comprehensive analysis of 
-          </p>
-          <p>
-          <CheckSquareOutlined />{' '}
-            A comprehensive analysis of 
-          </p>
-          <p>
-          <CheckSquareOutlined />{' '}
-            A comprehensive analysis of 
-          </p>
-          <p>
-          <CheckSquareOutlined />{' '}
-            A comprehensive analysis of 
-          </p>
-          <p>
-          <CheckSquareOutlined />{' '}
-            A comprehensive analysis of 
-          </p>
-         
-         
-        </Col> */}
-      </Row>  
+      </Row>
     </React.Fragment>
   )
 }

@@ -57,7 +57,7 @@ const App = () => {
       <Content className='site-layout'>
         <Router>
           <Switch>
-            <Route exact path='/' component={Nutrition3} />
+            <Route exact path='/' component={Home} />
             <Route path='/health/nutritionalanalysis/3' component={Nutrition3} />
             <Route path='/health/nutritionalanalysis/2/:client' component={Nutrition2} />
             <Route path='/health/nutritionalanalysis' component={Nutrition} />

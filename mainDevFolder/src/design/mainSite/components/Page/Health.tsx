@@ -41,7 +41,6 @@ const Health = () => {
 
 
 
-                <Button onClick={pushHome} type="primary" shape="round" size={'large'}>Back</Button>
 
                 <Button onClick={nextStep} type="primary" shape="round" size={'large'}>
                     Next

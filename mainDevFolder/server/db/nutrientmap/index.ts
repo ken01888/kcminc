@@ -50,8 +50,8 @@ app.all('/nutrientmap/institution/:id', async (req, res, error) => {
       req.body.client_Id = req.params.id
       console.log(req.body)
 
-      // let {insertId}:any = await database_Function.insertInstitution(req.body)
-      // console.log(insertId)
+      let {insertId}:any = await database_Function.insertInstitution(req.body)
+      console.log(insertId)
       res.send(req.method)
       break;
 

@@ -93,9 +93,7 @@ const Nutrition = () => {
                    
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button onClick={()=>{history.goBack()}} type="primary" shape="round" size={'large'}>
-                            Next
-                        </Button>
+                        
                         <Button   type="primary" shape="round" size={'large'} htmlType='submit'>
                             Next
                         </Button>
