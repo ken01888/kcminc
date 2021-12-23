@@ -67,17 +67,17 @@ const App = () => {
         </Router>
       </Content>
 
-      <Footer style={{ backgroundColor: '#009688',width:'auto' }}>
+      {/* <Footer style={{ backgroundColor: '#009688',width:'auto' }}>
         <Row>
-{/* <Col xs={24} md={8}>
-  d
-</Col>
 <Col xs={24} md={8}>
   d
 </Col>
 <Col xs={24} md={8}>
   d
-</Col> */}
+</Col>
+<Col xs={24} md={8}>
+  d
+</Col>
 
         </Row>
         KCM INC EST.2016 <a href="tel:+4047400093">404-740-0093</a>
@@ -86,7 +86,7 @@ const App = () => {
 
         <FacebookFilled />
         <TwitterSquareFilled />
-      </Footer>
+      </Footer> */}
     </Layout>
   )
 }

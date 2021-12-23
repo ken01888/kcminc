@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { Parallax } from 'rc-scroll-anim'
-import { Row, Col, Select, Input, Button, Card,Tag } from 'antd'
+import { Row, Col, Select, Input, Button, Card, Tag } from 'antd'
 import {
   AreaChartOutlined,
   ArrowLeftOutlined,
   ArrowRightOutlined,
   CaretLeftFilled,
   CaretRightOutlined,
+  CheckCircleOutlined,
   DollarCircleOutlined,
   ExperimentFilled,
   PhoneOutlined,
@@ -43,8 +44,8 @@ const Home: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Row justify='space-around' className='heroSection'>
-        <Col xs={23} md={10}>
+      <Row justify='space-around' className='heroSection' >
+        <Col xs={18} >
           <h1 className='h1Hero'>Responsibily designed business solutions.</h1>
           <p>
             <span style={{ color: '#009688', fontWeight: 600 }}>KCM INC</span>{' '}
@@ -53,85 +54,19 @@ const Home: React.FC = () => {
             designed to improve the well-being of both national and global
             communities.
           </p>
-        </Col>
-        <Col xs={23} md={10} >
-        <Col xs={23} md={6}>
-          <h1 className='h1solutions'>
-            <ExperimentFilled style={{ fontSize: '2rem', color: '#009688' }} />
-            Nutrimap
-          </h1>
-          <p style={{ width: '17rem' }}>
-            A complete nutrient analysis solution that helps food support
-            instituions create healthier food products.
-          </p>
           <Link to='/health'>
-            <motion.p
-              whileHover={{ textDecoration: 'underline', color: 'black' }}
-              style={{ color: '#009688' }}
-            >
-              Enter <ArrowRightOutlined />
-            </motion.p>
+            <Button type="primary" shape="round" icon={<ExperimentFilled />} size='large' htmlType='button'>
+              Nutrimap
+            </Button>
           </Link>
-        </Col>
-        <Col xs={23} md={6}>
-          <h1 className='h1solutions'>
-            <ExperimentFilled style={{ fontSize: '2rem', color: '#009688' }} />
-            Intravest
-          </h1>
-          <p style={{ width: '17rem' }}>
-            A complete nutrient analysis solution that helps food support
-            instituions create healthier food products.
-          </p>
-          <Link to='/health'>
-            <motion.p
-              whileHover={{ textDecoration: 'underline', color: 'black' }}
-              style={{ color: '#009688' }}
-            >
-              Enter <ArrowRightOutlined />
-            </motion.p>
-          </Link>
-        </Col>
         </Col>
       </Row>
 
-      <Row  className='heroSection'>
-        <Col xs={23} md={6}>
-          <h1 className='h1solutions'>
-            <ExperimentFilled style={{ fontSize: '2rem', color: '#009688' }} />
-            Nutrimap
-          </h1>
-          <p style={{ width: '17rem' }}>
-            A complete nutrient analysis solution that helps food support
-            instituions create healthier food products.
-          </p>
-          <Link to='/health'>
-            <motion.p
-              whileHover={{ textDecoration: 'underline', color: 'black' }}
-              style={{ color: '#009688' }}
-            >
-              Enter <ArrowRightOutlined />
-            </motion.p>
-          </Link>
-        </Col>
-        <Col xs={23} md={6}>
-          <h1 className='h1solutions'>
-            <ExperimentFilled style={{ fontSize: '2rem', color: '#009688' }} />
-            Intravest
-          </h1>
-          <p style={{ width: '17rem' }}>
-            A complete nutrient analysis solution that helps food support
-            instituions create healthier food products.
-          </p>
-          <Link to='/health'>
-            <motion.p
-              whileHover={{ textDecoration: 'underline', color: 'black' }}
-              style={{ color: '#009688' }}
-            >
-              Enter <ArrowRightOutlined />
-            </motion.p>
-          </Link>
-        </Col>
-      </Row>
+     
+
+
+
+
     </React.Fragment>
   )
 }
