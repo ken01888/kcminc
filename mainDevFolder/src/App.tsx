@@ -1,10 +1,10 @@
 import * as React from 'react'
-import {  Layout,Menu,Anchor,Row,Col} from 'antd'
+import {  Layout,Menu,Anchor,Row,Col, PageHeader, Button} from 'antd'
 import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Health from './design/mainSite/components/Page/Health'
 import Contact from './design/mainSite/components/Page/Contact'
-import {FacebookFilled,TwitterSquareFilled} from '@ant-design/icons'
+import {AppstoreOutlined, FacebookFilled,MailOutlined,TwitterSquareFilled} from '@ant-design/icons'
 import Nutrition from './design/mainSite/components/Page/Nutrition'
 import Nutrition2 from './design/mainSite/components/Page/Nutrition2'
 import Nutrition3 from './design/mainSite/components/Page/Nutrition3'
@@ -25,17 +25,13 @@ const App = () => {
     } else {
       return (
         <React.Fragment>
-          {/* <Row>
+          <Row>
             <Col span={24}>
               fds
             </Col>
-          </Row> */}
+          </Row>
 
-          {/* <PageHeader
-            title={<h2>KCM</h2>}
-            subTitle='INC'
-            extra={[<Button key='3'>Operation</Button>]}
-          ></PageHeader> */}
+        
         </React.Fragment>
       )
     }
@@ -51,8 +47,21 @@ const App = () => {
           background: '#fafafa'
         }}
       >
-        <div className='logo' />
-        {newMenu()}
+   <Menu  mode="horizontal" className='largeDisplay'>
+        <Menu.Item key="home" icon={<MailOutlined />}>
+          Home
+        </Menu.Item>
+        <Menu.Item key="solutions"  icon={<AppstoreOutlined />}>
+         Solutions
+        </Menu.Item>
+        <Menu.Item key="faq"  icon={<AppstoreOutlined />}>
+        FAQ
+        </Menu.Item>
+        <Menu.Item key="contact"  icon={<AppstoreOutlined />}>
+         Contact us
+        </Menu.Item>
+       
+      </Menu>
       </Header>
       <Content className='site-layout'>
         <Router>
