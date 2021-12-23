@@ -1,10 +1,10 @@
 import * as React from 'react'
-import {  Layout,Menu,Anchor,Row,Col} from 'antd'
+import {  Layout,Menu,Anchor,Row,Col, PageHeader, Button, Drawer} from 'antd'
 import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Health from './design/mainSite/components/Page/Health'
 import Contact from './design/mainSite/components/Page/Contact'
-import {FacebookFilled,TwitterSquareFilled} from '@ant-design/icons'
+import {AppstoreOutlined, BulbOutlined, FacebookFilled,FolderViewOutlined,HomeOutlined,MailOutlined,MessageOutlined,QuestionOutlined,TwitterSquareFilled} from '@ant-design/icons'
 import Nutrition from './design/mainSite/components/Page/Nutrition'
 import Nutrition2 from './design/mainSite/components/Page/Nutrition2'
 import Nutrition3 from './design/mainSite/components/Page/Nutrition3'
@@ -14,32 +14,14 @@ const { Header, Content, Footer } = Layout
 const { Link } = Anchor
 
 const App = () => {
-  let key: number | boolean = window.innerWidth
-  let newMenu = () => {
-    if (key >= 280 && key <= 768) {
-      return (
-        <Menu theme='dark' mode='horizontal' defaultSelectedKeys={['2']}>
-          <Menu.Item key='1'>cell</Menu.Item>
-        </Menu>
-      )
-    } else {
-      return (
-        <React.Fragment>
-          {/* <Row>
-            <Col span={24}>
-              fds
-            </Col>
-          </Row> */}
-
-          {/* <PageHeader
-            title={<h2>KCM</h2>}
-            subTitle='INC'
-            extra={[<Button key='3'>Operation</Button>]}
-          ></PageHeader> */}
-        </React.Fragment>
-      )
-    }
-  }
+  const [visible, setVisible] = React.useState(false);
+  const showDrawer = () => {
+    setVisible(true);
+  };
+  const onClose = () => {
+    setVisible(false);
+  };
+  
 
   return (
     <Layout>
@@ -51,10 +33,38 @@ const App = () => {
           background: '#fafafa'
         }}
       >
-        <div className='logo' />
-        {newMenu()}
+   <Menu  mode="horizontal" className='largeDisplay' >
+        <Menu.Item key="home" icon={<HomeOutlined style={{color:'#009688'}} />}>
+          KCM INC
+        </Menu.Item>
+        <Menu.Item key="solutions"  icon={<BulbOutlined style={{color:'#009688'}} />}>
+         Solutions
+        </Menu.Item>
+        <Menu.Item key="faq"  icon={<QuestionOutlined style={{color:'#009688'}} />}>
+        FAQ
+        </Menu.Item>
+        <Menu.Item key="contact"  icon={<MessageOutlined style={{color:'#009688'}} />}>
+         Contact us
+        </Menu.Item>
+      </Menu>
+      <Menu  mode="horizontal" className='smallDisplay' >
+        <Menu.Item key="home" icon={<HomeOutlined />}>
+          KCM INC
+        </Menu.Item>
+        <Menu.Item key="solutions">
+        <Button type="dashed" onClick={showDrawer} icon={<FolderViewOutlined style={{fontSize:'1.25rem',color:'#009688'}}  />} >
+        
+      </Button>
+        </Menu.Item>
+       
+      </Menu>
       </Header>
       <Content className='site-layout'>
+      <Drawer title="Basic Drawer" placement="left" onClose={onClose} visible={visible}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />

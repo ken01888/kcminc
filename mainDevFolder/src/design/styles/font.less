@@ -142,11 +142,42 @@ h4{
     font-weight: 600;
 }
 
-@media only screen and (max-width: 600px) {
-   .h1Hero {
-    font-size:2rem;
+.largeDisplay {
+    background-color:#fafafa;
+    display:flex;
+    justify-content:center;
     }
+    .smallDisplay{
+        display:none;
+        justify-content: space-between;
+        background-color:#fafafa;
+
+    }
+
+    
+
+@media only screen and (max-width: 750px)   {
+   .largeDisplay {
+    display:none;
+    }
+   
   }
+
+  @media only screen and (max-width: 749px)   {
+    .smallDisplay{
+        display:flex;
+        justify-content: space-between;
+    }
+    
+   }
+
+
+
+  @media only screen and (max-width: 749px) {
+    .h1Hero {
+     font-size:2rem;
+     }
+   }
 
 .heroSpan{
     margin-bottom:55px;
