@@ -73,7 +73,7 @@ const App = () => {
             key='contact'
             icon={<MessageOutlined style={{ color: '#009688' }} />}
           >
-            Contact Us
+            <Button>Contact Us</Button>
           </Menu.Item>
         </Menu>
         <Menu mode='horizontal' className='smallDisplay'>
