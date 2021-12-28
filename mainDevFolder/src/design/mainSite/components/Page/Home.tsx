@@ -1,6 +1,16 @@
 import * as React from 'react'
 import { Parallax } from 'rc-scroll-anim'
-import { Row, Col, Select, Input, Button, Card, Tag, Divider } from 'antd'
+import {
+  Row,
+  Col,
+  Select,
+  Input,
+  Button,
+  Card,
+  Tag,
+  Divider,
+  Image
+} from 'antd'
 import {
   AreaChartOutlined,
   ArrowLeftOutlined,
@@ -22,6 +32,7 @@ import { RiHealthBookFill } from 'react-icons/Ri'
 import { FaHome } from 'react-icons/fa'
 import { MdSecurity } from 'react-icons/Md'
 import { Link } from 'react-router-dom'
+import image from '../../../img/image_1.jpg'
 
 const { Option, OptGroup } = Select
 
@@ -73,15 +84,45 @@ const Home: React.FC = () => {
         </Col>
       </Row>
       <Row justify='center'>
-        <Col className='section2' xs={24} md={14} >
+        <Col className='section2' xs={24} md={14}>
           <h1>Assisiting a broad range of industries.</h1>
-          <p>We provide integrative technological solutions to institutions operating within a broad range of industries. Our solutions are designed to improve the well-being of global communinties and institutions.</p>
-
+          <p>
+            We provide integrative technological solutions to institutions
+            operating within a broad range of industries. Our solutions are
+            designed to improve the well-being of global communinties and
+            institutions.
+          </p>
         </Col>
-       
       </Row>
-      <Divider className='divider'>Solutions</Divider>
+      <Row className='heroSection'>
+        <Col xs={24} style={{ display: 'flex', justifyContent: 'center' }}>
+          <h1>Solutions</h1>
+        </Col>
+      </Row>
 
+      <Row justify='space-around'>
+        <Col xs={24} md={10}>
+          <Image
+            preview={false}
+            src={image}
+            style={{ width: '445px', height: '545px' }}
+          ></Image>
+        </Col>
+
+        <Col xs={24} md={10} className='nutrimap'>
+          <h3>Nutrimap</h3>
+          <h1>Engineering better food options for consumers.</h1>
+          <h3>Lable</h3>
+          <p>
+          Nutrimap is a data driven nutritional analysis solution 
+          developed to improve consumer health and wellbeing. 
+          Nutrimap doesn't just provide a complete nutrient breakdown 
+          of food products, it also provides nutritional data based on 
+          an individual's stage in life. 
+
+          </p>
+        </Col>
+      </Row>
     </React.Fragment>
   )
 }

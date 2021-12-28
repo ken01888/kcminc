@@ -88,10 +88,18 @@ const configClient = {
                             }
                         }
 
-                    },
+                    }
+
 
                 ]
-            }
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [{
+                    loader: 'file-loader',
+                }, ],
+            },
+
 
             // Add your rules for custom modules here
             // Learn more about loaders from https://webpack.js.org/loaders/

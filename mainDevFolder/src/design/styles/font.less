@@ -1,7 +1,7 @@
 
 
 h1{
-    width: 100%;
+    width: fit-content;
     flex-shrink: 0;
     height: 144px;
     overflow: hidden;
@@ -12,7 +12,7 @@ h1{
     font-style: normal;
     font-family: "Poppins", serif;
     color: var(--token-05828702-56c4-4b7f-843e-eab3a79a0bd7, #000000) /* {"name":"Black"} */;
-    font-size: 60px;
+    font-size: 3rem;
     letter-spacing: -1px;
     line-height: 1.2;
     text-align: center;
@@ -206,5 +206,68 @@ h4{
 
 a{
     color:black
+}
+
+.nutrimap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nutrimap>h3{
+width: auto; /* 52px */
+  height: auto; /* 22px */
+  flex-shrink: 0;
+  overflow: visible;
+  white-space: pre;
+  opacity: 0.8;
+  font-weight: 800;
+  font-style: normal;
+  font-family: "Poppins", serif;
+  color: #009688 /* {"name":"Primary"} */;
+  font-size: 1rem;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.nutrimap>h1{
+  
+        width: fit-content;
+        flex-shrink: 0;
+        height: fit-content;
+        overflow: hidden;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-word;
+        font-weight: 400;
+        font-style: normal;
+        font-family: "Poppins", serif;
+        color: var(--token-05828702-56c4-4b7f-843e-eab3a79a0bd7, #000000) /* {"name":"Black"} */;
+        font-size: 3rem;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+        text-align: start;
+}
+
+
+.nutrimap>p{
+  
+    width: fit-content;
+  flex-shrink: 0;
+  height: fit-content;
+  overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+  opacity: 0.8;
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  color: var(--token-05828702-56c4-4b7f-843e-eab3a79a0bd7, #000000) /* {"name":"Black"} */;
+  font-size: 1.25rem;
+  letter-spacing: 0.4px;
+  line-height: 2;
+  text-align: left;
 }
 
