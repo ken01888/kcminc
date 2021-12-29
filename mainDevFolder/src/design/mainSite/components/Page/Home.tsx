@@ -10,7 +10,8 @@ import {
   Tag,
   Divider,
   Image,
-  Timeline
+  Timeline,
+  Modal
 } from 'antd'
 import {
   AreaChartOutlined,
@@ -50,20 +51,24 @@ const Home: React.FC = () => {
   })
   const [amount, setAmount] = React.useState(false)
 
-  const element = (
-    <motion.h3
-      whileHover={{
-        borderBottom: '2px solid #009688'
-      }}
-    >
-      Nutritional Analysis
-    </motion.h3>
-  )
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   return (
     <React.Fragment>
       <Row justify='center' className='rowHero' gutter={[16, 64]}>
-        <Col offset={1} xs={24} md={10} className='heroSection'>
+        <Col offset={1} xs={24} md={18} className='heroSection'>
           <h1>High impact business solutions.</h1>
           <p>
             Solutions designed to improve the well-being of consumers and
@@ -71,7 +76,7 @@ const Home: React.FC = () => {
           </p>
 
           <Link to='/health'>
-            <Button type="primary" icon={<ScheduleOutlined />} size='large' htmlType='button'>
+            <Button type="dashed" icon={<ScheduleOutlined style={{color:'darkgoldenrod',fontSize:'1.25rem'}}/>} size='large' htmlType='button'>
               Schedule Consultation
             </Button>
           </Link>
@@ -81,7 +86,7 @@ const Home: React.FC = () => {
             <motion.p>Shelter</motion.p>
           </div> */}
         </Col>
-        <Col offset={1} xs={24} md={10} className='heroSection2'>
+        {/* <Col offset={1} xs={24} md={10} className='heroSection2'>
 
           <h2>Solutions built for a broad range of industries.</h2>
 
@@ -92,17 +97,17 @@ const Home: React.FC = () => {
             <Timeline.Item>Real Estate</Timeline.Item>
           </Timeline>
 
-          {/* <Link to='/health'>
+          <Link to='/health'>
             <Button type="primary" shape="round" icon={<ExperimentFilled />} size='large' htmlType='button'>
               Nutrimap
             </Button>
-          </Link> */}
-          {/* <div className='heroDiv'>
+          </Link>
+          <div className='heroDiv'>
             <motion.p>Health</motion.p>
             <motion.p>Security</motion.p>
             <motion.p>Shelter</motion.p>
-          </div> */}
-        </Col>
+          </div>
+        </Col> */}
       </Row>
 
       {/* <Row justify='center'>
@@ -127,19 +132,32 @@ const Home: React.FC = () => {
 
 
         <Col offset={1} xs={24} md={10} className='nutrimap'>
-          <Tag icon={<ExperimentFilled style={{color:'#009688'}} />} style={{fontSize:'1rem'}}>
-            Nutrimap
-          </Tag>  
-                  
-          <h1>Engineering better food options for consumers.</h1>
+           
+  
+          <h1>Conscious Engineering</h1>
           <p>
+            We engineering solutions that help build stronger 
+            institutions and communities. 
+          </p>
+          {/* <p>
             Nutrimap is a data driven nutritional analysis solution
             developed to improve consumer health and wellbeing.
             Nutrimap doesn't just provide a complete nutrient breakdown
             of food products, it also provides nutritional data based on
             an individual's stage in life.
+          </p> */}
+          <div className='industry'>
+          <motion.button whileHover={{border:'2px dashed darkgoldenrod'}} type='button' className="color" onClick={showModal}>Nutrimap</motion.button>
+          <motion.button whileHover={{border:'2px dashed darkgoldenrod'}} type='button' className="color">Intravest</motion.button>         
+          </div>
+          <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
+         
 
-          </p>
+       
         </Col>
       </Row>
     </React.Fragment>

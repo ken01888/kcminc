@@ -20,8 +20,17 @@ body {
 }
 
 .heroSection {
-  border-right: 2px dashed darkgoldenrod;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+
+.heroSection>p {
+  text-align: center;
+}
+
+
 
 .rowHero{
   margin:5rem 0rem ; 
@@ -284,4 +293,26 @@ body {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  .color {
+    box-sizing: border-box;
+    width: 97px;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+    box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 5px;
+    border: 2px dashed #009688;
+    text-decoration: none;
+    background-color: #fafafa;
+  }
+
+  .industry{
+    display:flex;
   }
