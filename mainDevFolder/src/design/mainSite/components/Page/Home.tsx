@@ -40,8 +40,7 @@ import { json } from 'express'
 import { RiHealthBookFill } from 'react-icons/Ri'
 import { FaHome } from 'react-icons/fa'
 import { MdSecurity } from 'react-icons/Md'
-import { Link } from 'react-router-dom';
-import image from '../../../../design/img/food.jpg';
+import { Link, useHistory } from 'react-router-dom';
 
 const { Option, OptGroup } = Select
 
@@ -60,6 +59,7 @@ const Home: React.FC = () => {
   };
 
   const handleOk = () => {
+
     setIsModalVisible(false);
   };
 
@@ -145,9 +145,9 @@ const Home: React.FC = () => {
           <motion.button whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button' className='button' onClick={showModal}>Nutrimap</motion.button>
           </div>
           <Modal  title="Nutrimap" visible={isModalVisible} 
-          onOk={handleOk} onCancel={handleCancel} 
+           
           footer={[<motion.button className='button' whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button'  onClick={handleCancel}>Exit</motion.button>,
-          <motion.button className='button' whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button' >Continue</motion.button>]}>
+          <motion.button className='button' whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button' ><Link to='/health'>Continue</Link></motion.button>]}>
          {/* <p>
             Nutrimap is a data driven nutritional analysis solution
             developed to improve consumer health and wellbeing.
@@ -155,7 +155,7 @@ const Home: React.FC = () => {
             of food products, it also provides nutritional data based on
             an individual's stage in life.
           </p> */}
-          <Badge color='#009688' text='Overview' />
+          <Badge color='darkgoldenrod' text='Overview' />
           <p className='modal'>
           Nutrimap is designed to improve individual health and well-being 
           by providing institutions and enterprises with a comprehensive 
@@ -164,11 +164,9 @@ const Home: React.FC = () => {
          <Statistic title={<h5>Americans consuming to much sodium.</h5>} value={9} suffix="/10" />
          <Statistic title={<h5>Americans ages 2-19 diagnosed with obesity.</h5>} value={19} suffix="%" />
          <Statistic title={<h5>Americans adults diagnosed with obesity.</h5>} value={40} suffix="%" />
-         <Divider dashed></Divider>
-         <p className='modal'>
-          Nutrimap is designed to improve individual health and well-being 
-          by providing institutions and enterprises with a comprehensive 
-          nutrient analysis for the development of healthier food products.
+         <Divider dashed style={{borderWidth:'2px',borderColor:'darkgoldenrod'}}></Divider>
+         <p className='modal1'>
+          Click continue below to submit your organizations information.
           </p>
         
 
