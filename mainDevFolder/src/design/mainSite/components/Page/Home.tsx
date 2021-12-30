@@ -143,12 +143,11 @@ const Home: React.FC = () => {
         
           <div className='industry'>
           <motion.button whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button' className='button' onClick={showModal}>Nutrimap</motion.button>
-          <motion.button whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button' className='button'>Intravest</motion.button>         
           </div>
           <Modal  title="Nutrimap" visible={isModalVisible} 
           onOk={handleOk} onCancel={handleCancel} 
-          footer={[<motion.button className='button' whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button'  onClick={showModal}>Nutrimap</motion.button>,
-          <motion.button className='button' whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button' >Intravest</motion.button>]}>
+          footer={[<motion.button className='button' whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button'  onClick={handleCancel}>Exit</motion.button>,
+          <motion.button className='button' whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button' >Continue</motion.button>]}>
          {/* <p>
             Nutrimap is a data driven nutritional analysis solution
             developed to improve consumer health and wellbeing.
