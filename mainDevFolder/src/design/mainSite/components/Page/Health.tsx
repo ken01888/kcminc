@@ -1,5 +1,6 @@
 import { CheckCircleOutlined, ExperimentFilled } from '@ant-design/icons';
 import { Row, Col, Button, Form, Input, Checkbox, Card } from 'antd';
+import { motion } from 'framer-motion';
 import * as React from 'react';
 import { RiHealthBookFill } from 'react-icons/Ri';
 import { Link, useHistory } from 'react-router-dom'
@@ -55,7 +56,10 @@ const Health = () => {
                 </Button> */}
 
                 <Card className='card'>
-                    <h2>Nutrimap Registration</h2>
+                    <motion.div>
+                        1
+                    </motion.div>
+                    <h4>Nutrimap Registration</h4>
                     <h3>Tell us about your institution. </h3>
                     <Form
                         name="basic"
