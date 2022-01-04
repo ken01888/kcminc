@@ -318,10 +318,57 @@ body {
 .nutrimapCardCol{
   display: flex;
   justify-content: center;
+
 }
 
-.card{
-  border:2px dashed darkgoldenrod;
-  
+
+._2-buttons {
+  box-sizing: border-box;
+  height: auto; /* 635px */
+  width: 322px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--token-6f8d3b5c-c1bb-46f4-ab23-8d66a4793395, #fafafa);
+  overflow: visible;
+  border-radius: 12px;
+  border: 1px dashed #b7860b;
+}
+
+.input{
+  border: 1px solid darkgoldenrod
+}
+
+.card {
+  box-sizing: border-box;
+  height: auto; /* 635px */
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--token-6f8d3b5c-c1bb-46f4-ab23-8d66a4793395, #fafafa);
+  overflow: visible;
+  border-radius: 12px;
+  border: 1px dashed #b7860b;
 }
  
+.white {
+  box-sizing: border-box;
+  width: 97px;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  -webkit-filter: brightness(1);
+  filter: brightness(1);
+  box-shadow: inset 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+  background-color: var(--token-a4612a7b-9f19-492d-80e1-84d963edb48a, #ffffff);
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px dashed #b7860b;
+}
