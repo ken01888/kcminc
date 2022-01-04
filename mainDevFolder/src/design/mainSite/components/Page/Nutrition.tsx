@@ -20,15 +20,15 @@ const Nutrition = () => {
     const onFinish = (values: any) => {
         (async () => {
             let newData = await fetch('http://localhost:4000/nutrientmap/client', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(values)
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(values)
             })
             let newInsert = await newData.json()
             history.push(`/health/nutritionalanalysis/2/${newInsert}`)
-          })()
+        })()
 
 
     };
@@ -37,20 +37,20 @@ const Nutrition = () => {
         console.log('Failed:', errorInfo);
     };
 
- 
-    
-    
+
+
+
 
 
     return (
-        
 
-<Row style={{ height: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fafafa' }}>
 
-<Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
+        <Row style={{ height: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fafafa' }}>
+
+            <Col xs={24} style={{ display: 'grid', justifyContent: 'center' }}>
                 <br></br>
-                <h3 style={{display:'flex',justifyContent:'end',alignItems:'center',width:'auto'}}> <ExperimentFilled  style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap</h3>
-                <p style={{display:'flex',justifyContent:'end'}}>Tell us about yourself.</p>
+                <h3 style={{ display: 'flex', justifyContent: 'end', alignItems: 'center', width: 'auto' }}> <ExperimentFilled style={{ fontSize: '2rem', color: '#009688' }} />Nutrimap</h3>
+                <p style={{ display: 'flex', justifyContent: 'end' }}>Tell us about yourself.</p>
                 <Form
                     name="basic"
                     labelCol={{ span: 10 }}
@@ -73,7 +73,7 @@ const Nutrition = () => {
                         name="last_name"
                         rules={[{ required: true, message: 'Please enter your last name!' }]}
                     >
-                        <Input/>
+                        <Input />
                     </Form.Item>
                     <Form.Item
                         label="Phone number"
@@ -90,19 +90,19 @@ const Nutrition = () => {
                     >
                         <Input />
                     </Form.Item>
-                   
+
 
                     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        
-                        <Button   type="primary" shape="round" size={'large'} htmlType='submit'>
+
+                        <Button type="primary" shape="round" size={'large'} htmlType='submit'>
                             Next
                         </Button>
                     </Form.Item>
-              
+
                 </Form>
             </Col>
-           
-</Row>
+
+        </Row>
 
     )
 };

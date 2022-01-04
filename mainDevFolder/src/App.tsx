@@ -53,27 +53,26 @@ const App = () => {
         <Menu mode='horizontal' className='largeDisplay'>
           <Menu.Item
             key='home'
-            icon={<HomeOutlined style={{ color: '#009688' }} />}
+          // icon={<HomeOutlined style={{ color: '#009688' }} />}
           >
             KCM INC
           </Menu.Item>
           <Menu.Item
             key='solutions'
-            icon={<BulbOutlined style={{ color: '#009688' }} />}
+          // icon={<BulbOutlined style={{ color: '#009688' }} />}
           >
             Solutions
           </Menu.Item>
           <Menu.Item
             key='faq'
-            icon={<QuestionOutlined style={{ color: '#009688' }} />}
+          // icon={<QuestionOutlined style={{ color: '#009688' }} />}
           >
             FAQ
           </Menu.Item>
           <Menu.Item
             key='contact'
-            icon={<MessageOutlined style={{ color: '#009688' }} />}
           >
-            <Button>Contact Us</Button>
+            <Button icon={<MessageOutlined style={{ color: '#009688' }} />}>Contact Us</Button>
           </Menu.Item>
         </Menu>
         <Menu mode='horizontal' className='smallDisplay'>
@@ -122,25 +121,52 @@ const App = () => {
         </Router>
       </Content>
 
-      {/* <Footer style={{ backgroundColor: '#009688',width:'auto' }}>
-        <Row>
-<Col xs={24} md={8}>
-  d
-</Col>
-<Col xs={24} md={8}>
-  d
-</Col>
-<Col xs={24} md={8}>
-  d
-</Col>
-
-        </Row>
-        KCM INC EST.2016 <a href="tel:+4047400093">404-740-0093</a>
-      
-
-
-        <FacebookFilled />
-        <TwitterSquareFilled />
+      {/* <Footer style={{
+        zIndex: 1,
+        width: '100%',
+        background: '#fafafa'
+      }}>
+        <Menu mode='horizontal' className='largeDisplay'>
+          <Menu.Item
+            key='home'
+          // icon={<HomeOutlined style={{ color: '#009688' }} />}
+          >
+            KCM INC
+          </Menu.Item>
+          <Menu.Item
+            key='solutions'
+          // icon={<BulbOutlined style={{ color: '#009688' }} />}
+          >
+            Solutions
+          </Menu.Item>
+          <Menu.Item
+            key='faq'
+          // icon={<QuestionOutlined style={{ color: '#009688' }} />}
+          >
+            FAQ
+          </Menu.Item>
+          <Menu.Item
+            key='contact'
+          >
+            <Button icon={<MessageOutlined style={{ color: '#009688' }} />}>Contact Us</Button>
+          </Menu.Item>
+        </Menu>
+        <Menu mode='horizontal' className='smallDisplay'>
+          <Menu.Item key='home' icon={<HomeOutlined />}>
+            KCM INC
+          </Menu.Item>
+          <Menu.Item key='solutions'>
+            <Button
+              type='dashed'
+              onClick={showDrawer}
+              icon={
+                <FolderViewOutlined
+                  style={{ fontSize: '1.25rem', color: '#009688' }}
+                />
+              }
+            ></Button>
+          </Menu.Item>
+        </Menu>
       </Footer> */}
     </Layout>
   )

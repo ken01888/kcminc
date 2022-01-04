@@ -73,11 +73,11 @@ const Home: React.FC = () => {
         <Col offset={1} xs={24} md={18} className='heroSection'>
           <h1>High impact business solutions.</h1>
           <p>
-          Building a better world one solution at a time. 
+            Building a better world one solution at a time.
           </p>
 
           <Link to='/health'>
-            <Button type="dashed" icon={<ScheduleOutlined style={{color:'darkgoldenrod',fontSize:'1.25rem'}}/>} size='large' htmlType='button'>
+            <Button type="dashed" icon={<ScheduleOutlined style={{ color: 'darkgoldenrod', fontSize: '1.25rem' }} />} size='large' htmlType='button'>
               Schedule Consultation
             </Button>
           </Link>
@@ -132,52 +132,52 @@ const Home: React.FC = () => {
       <Row justify='space-around'>
 
 
-        <Col  xs={24} md={10} className='nutrimap'>
-           
-  
+        <Col xs={24} md={10} className='nutrimap'>
+
+
           <h1>Health based solutions</h1>
           <p>
-          Our health based solutions are creatively designed to address   
-          the most problematic areas affecting the welfare of our general public.  
+            Our health based solutions are creatively designed to address
+            the most problematic areas affecting the welfare of our general public.
           </p>
-        
+
           <div className='industry'>
-          <motion.button whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button' className='button' onClick={showModal}>Nutrimap</motion.button>
+            <motion.button whileHover={{ border: '2px dashed darkgoldenrod', backgroundColor: 'darkgoldenrod' }} type='button' className='button' onClick={showModal}>Nutrimap</motion.button>
           </div>
-          <Modal  title="Nutrimap" visible={isModalVisible} 
-           
-          footer={[<motion.button className='button' whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button'  onClick={handleCancel}>Exit</motion.button>,
-          <motion.button className='button' whileHover={{border:'2px dashed darkgoldenrod', backgroundColor:'darkgoldenrod'}} type='button' ><Link to='/health'>Continue</Link></motion.button>]}>
-         {/* <p>
+          <Modal title="Nutrimap" visible={isModalVisible}
+
+            footer={[<motion.button className='button' whileHover={{ border: '2px dashed darkgoldenrod', backgroundColor: 'darkgoldenrod' }} type='button' onClick={handleCancel}>Exit</motion.button>,
+            <motion.button className='button' whileHover={{ border: '2px dashed darkgoldenrod', backgroundColor: 'darkgoldenrod' }} type='button' ><Link to='/health'>Continue</Link></motion.button>]}>
+            {/* <p>
             Nutrimap is a data driven nutritional analysis solution
             developed to improve consumer health and wellbeing.
             Nutrimap doesn't just provide a complete nutrient breakdown
             of food products, it also provides nutritional data based on
             an individual's stage in life.
           </p> */}
-          <Badge color='darkgoldenrod' text='Overview' />
-          <p className='modal'>
-          Nutrimap is designed to improve individual health and well-being 
-          by providing institutions and enterprises with a comprehensive 
-          nutrient analysis for the development of healthier food products.
-          </p>
-         <Statistic title={<h5>Americans consuming to much sodium.</h5>} value={9} suffix="/10" />
-         <Statistic title={<h5>Americans ages 2-19 diagnosed with obesity.</h5>} value={19} suffix="%" />
-         <Statistic title={<h5>Americans adults diagnosed with obesity.</h5>} value={40} suffix="%" />
-         <Divider dashed style={{borderWidth:'2px',borderColor:'darkgoldenrod'}}></Divider>
-         <p className='modal1'>
-          Click continue below to submit your organizations information.
-          </p>
-        
+            <Badge color='darkgoldenrod' text='Overview' />
+            <p className='modal'>
+              Nutrimap is designed to improve individual health and well-being
+              by providing institutions and enterprises with a comprehensive
+              nutrient analysis for the development of healthier food products.
+            </p>
+            <Statistic title={<h5>Americans consuming to much sodium.</h5>} value={9} suffix="/10" />
+            <Statistic title={<h5>Americans ages 2-19 diagnosed with obesity.</h5>} value={19} suffix="%" />
+            <Statistic title={<h5>Americans adults diagnosed with obesity.</h5>} value={40} suffix="%" />
+            <Divider dashed style={{ borderWidth: '2px', borderColor: 'darkgoldenrod' }}></Divider>
+            <p className='modal1'>
+              Click continue below to submit your organizations information.
+            </p>
 
 
 
-          
 
-      </Modal>
-         
 
-       
+
+          </Modal>
+
+
+
         </Col>
       </Row>
     </React.Fragment>
