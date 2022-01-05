@@ -52,7 +52,8 @@ const Health = () => {
                 body: JSON.stringify(values)
             })
             let newInsert = await newData.json()
-            history.push(`/health/nutritionalanalysis/2/${newInsert}`)
+            // history.push(`/health/nutritionalanalysis/2/${newInsert}`)
+            console.log(values)
         })()
 
 
@@ -124,11 +125,8 @@ const Health = () => {
                         >
                             <Select mode='multiple' className='input' placeholder="What solution/s are you interested in?">
                                 <Select.Option value="NLDV">Nutritional Labeling DV</Select.Option>
-                                <Select.Option value="NLDV&DRI">Nutritional Labeling DV plus Dietary Reference Intakes
-
-                                </Select.Option>
-
-                                <Select.Option value="CBRG">Cloud based recipe guide</Select.Option>
+                                <Select.Option value="NLDV&DRI">Nutritional Labeling DV plus Dietary Reference Intakes</Select.Option>
+                                <Select.Option value="CBRG">Digital recipe guide</Select.Option>
                             </Select>
                         </Form.Item>
 
@@ -138,7 +136,7 @@ const Health = () => {
                                 { required: true, message: 'Please select solutions!' }
                             ]}
                         >
-                            <Select mode='multiple' className='input' placeholder="How many items are on your menu?">
+                            <Select  className='input' placeholder="How many items are on your menu?">
                                 <Select.Option value="1-10">1-10</Select.Option>
                                 <Select.Option value="11-20">11-20</Select.Option>
                                 <Select.Option value="21-30">21-30</Select.Option>
@@ -154,7 +152,7 @@ const Health = () => {
                                 { required: true, message: 'Please select solutions!' }
                             ]}
                         >
-                            <Select mode='multiple' className='input' placeholder="How often does your menu change?">
+                            <Select  className='input' placeholder="How often does your menu change?">
                                 <Select.Option value="Daily">Daily</Select.Option>
                                 <Select.Option value="Weekly">Weekly</Select.Option>
                                 <Select.Option value="Monthly">Monthly</Select.Option>
@@ -191,7 +189,7 @@ const Health = () => {
                                 }}
                                 type='submit'
                             >
-                                <Link to='/health'>Next</Link>
+                               Submit
                             </motion.button>
                         </Form.Item>
 
@@ -232,5 +230,40 @@ const Health = () => {
         </Row>
     )
 }
+
+// console.log(props)
+
+//     const history = useHistory()
+
+//     const pushHome = () => {
+//         history.goBack()
+
+//     }
+
+//     const onFinish = (values:any) => {
+//         (async () => {
+//             let newData = await fetch(`http://localhost:4000/nutrientmap/institution/${props.match.params.client}`, {
+//               method: 'POST',
+//               headers: {
+//                 'Content-Type': 'application/json'
+//               },
+//               body: JSON.stringify(values)
+//             })
+//        history.push('/health/nutritionalanalysis/3')
+//     console.log(values)
+// })()
+//     };
+
+//     const onFinishFailed = (errorInfo: any) => {
+//         console.log('Failed:', errorInfo);
+//     };
+
+//     const nextStep = (e) => {
+//         history.push('/health/nutritionalanalysis/3')
+//     }
+
+//     function handleChange(value) {
+//         console.log(`selected ${value}`);
+//     }
 
 export default Health

@@ -5,6 +5,7 @@ import database_Function from './queries_nutrientmap'
 const app = express()
 
 app.all('/nutrientmap/client', async (req, res, error) => {
+  console.log(req.body)
   switch (req.method) {
     case 'GET':
       const new_Data = await database_Function.allMessages()
@@ -15,7 +16,7 @@ app.all('/nutrientmap/client', async (req, res, error) => {
       
       break;
     case 'POST':
-      // let {insertId}:any = await database_Function.insertCLIENT(req.body)
+      let {insertId}:any = await database_Function.insertCLIENT(req.body)
       res.json(req.body)
       break;
 

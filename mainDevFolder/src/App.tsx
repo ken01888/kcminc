@@ -2,34 +2,21 @@ import * as React from 'react'
 import {
   Layout,
   Menu,
-  Anchor,
-  Row,
-  Col,
-  PageHeader,
   Button,
-  Drawer
+  Drawer,
 } from 'antd'
 import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Health from './design/mainSite/components/Page/Health'
 import Contact from './design/mainSite/components/Page/Contact'
 import {
-  AppstoreOutlined,
-  BulbOutlined,
-  FacebookFilled,
   FolderViewOutlined,
   HomeOutlined,
-  MailOutlined,
   MessageOutlined,
-  QuestionOutlined,
-  TwitterSquareFilled
 } from '@ant-design/icons'
-import Nutrition from './design/mainSite/components/Page/Nutrition'
-import Nutrition2 from './design/mainSite/components/Page/Nutrition2'
-import Nutrition3 from './design/mainSite/components/Page/Nutrition3'
+
 
 const { Header, Content, Footer } = Layout
-const { Link } = Anchor
 
 const App = () => {
   const [visible, setVisible] = React.useState(false)
@@ -40,7 +27,9 @@ const App = () => {
     setVisible(false)
   }
 
-  return (
+  
+
+  return ( 
     <Layout>
       <Header
         style={{
@@ -106,15 +95,6 @@ const App = () => {
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route
-              path='/health/nutritionalanalysis/3'
-              component={Nutrition3}
-            />
-            <Route
-              path='/health/nutritionalanalysis/2/:client'
-              component={Nutrition2}
-            />
-            <Route path='/health/nutritionalanalysis' component={Nutrition} />
             <Route path='/health' component={Health} />
             <Route path='/contact' component={Contact} />
           </Switch>
@@ -168,6 +148,7 @@ const App = () => {
           </Menu.Item>
         </Menu>
       </Footer> */}
+ 
     </Layout>
   )
 }
