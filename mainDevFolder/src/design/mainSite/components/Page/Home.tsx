@@ -50,12 +50,6 @@ const Home: React.FC = () => {
             Building a better world one solution at a time.
           </p>
 
-          <Link to='/health'>
-            <Button type="dashed" icon={<ScheduleOutlined style={{ color: 'darkgoldenrod', fontSize: '1.25rem' }} />} size='large' htmlType='button'>
-              Schedule Consultation
-            </Button>
-          </Link>
-
         </Col>
 
       </Row>
@@ -63,10 +57,10 @@ const Home: React.FC = () => {
 
 
 
-      <Row justify='space-around'>
+      <Row justify='space-around' className='rowHero'>
 
 
-        <Col xs={24} md={10} className='nutrimap'>
+        <Col xs={24} md={8} className='nutrimap'>
           <h1>Health based solutions</h1>
           <p>
             Our health based solutions are creatively designed to address
@@ -110,10 +104,10 @@ const Home: React.FC = () => {
       </Row>
 
 
-      <Row justify='space-around'>
+      <Row justify='space-around' className='rowHero'>
 
 
-        <Col xs={24} md={6} className='nutrimap'>
+        <Col xs={24} md={5} className='nutrimap'>
           <h1>Health based solutions</h1>
           <p>
             Our health based solutions are creatively designed to address
@@ -123,7 +117,7 @@ const Home: React.FC = () => {
             <motion.button whileHover={{ border: '2px dashed darkgoldenrod', backgroundColor: 'darkgoldenrod' }} type='button' className='button' onClick={showModal}>Nutrimap</motion.button>
           </div>
         </Col>
-        <Col xs={24} md={6} className='nutrimap'>
+        <Col xs={24} md={5} className='nutrimap'>
           <h1>Health based solutions</h1>
           <p>
             Our health based solutions are creatively designed to address
@@ -133,7 +127,7 @@ const Home: React.FC = () => {
             <motion.button whileHover={{ border: '2px dashed darkgoldenrod', backgroundColor: 'darkgoldenrod' }} type='button' className='button' onClick={showModal}>Nutrimap</motion.button>
           </div>
         </Col>
-        <Col xs={24} md={6} className='nutrimap'>
+        <Col xs={24} md={5} className='nutrimap'>
           <h1>Health based solutions</h1>
           <p>
             Our health based solutions are creatively designed to address
