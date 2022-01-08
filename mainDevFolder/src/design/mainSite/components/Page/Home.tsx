@@ -9,16 +9,28 @@ import {
   Badge,
   Statistic,
   Collapse,
-  Tree
+  Tree,
+  List,
+  Typography,
+  Avatar
 } from 'antd'
 import {
+  ApiFilled,
+  CalculatorFilled,
   CaretDownOutlined,
+  CheckSquareFilled,
+  CloseCircleFilled,
+  DollarCircleFilled,
+  DollarCircleOutlined,
+  DollarCircleTwoTone,
   DownOutlined,
   FrownFilled,
   FrownOutlined,
   MehOutlined,
   ScheduleOutlined,
-  SmileOutlined
+  SmileOutlined,
+  ToolFilled,
+  WalletFilled
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 
@@ -41,7 +53,7 @@ const Home: React.FC = () => {
     setIsModalVisible(false)
   }
 
-  function callback (key) {
+  function callback(key) {
     console.log(key)
   }
 
@@ -96,7 +108,7 @@ const Home: React.FC = () => {
         }
       ]
     },
-   
+
     {
       title: 'Elements',
       key: '2-2',
@@ -191,7 +203,7 @@ const Home: React.FC = () => {
 
           key: '2-2-14'
         },
-        
+
       ]
     },
     {
@@ -276,14 +288,14 @@ const Home: React.FC = () => {
 
           key: '3-3-12'
         },
-      
+
         {
           title: 'Choline',
           isLeaf: true,
 
           key: '3-3-13'
         },
-        
+
       ]
     },
     {
@@ -321,7 +333,7 @@ const Home: React.FC = () => {
           key: '4-4-4'
         },
         {
-          title: 'U+03b1'+'-Linolenic Acid',
+          title: 'U+03b1' + '-Linolenic Acid',
           isLeaf: true,
 
           key: '4-4-5'
@@ -332,15 +344,23 @@ const Home: React.FC = () => {
 
           key: '4-4-6'
         },
-        
+
       ]
     }
-  ]
+  ];
+
+  const data = [
+    'Racing car sprays burning fuel into crowd.',
+    'Japanese princess to wed commoner.',
+    'Australian walks 100km after outback crash.',
+    'Man charged over missing wedding girl.',
+    'Los Angeles battles huge wildfires.',
+  ];
 
   return (
     <React.Fragment>
       <Row justify='center' className='rowHero' gutter={[16, 64]}>
-        <Col offset={1} xs={24} md={18} className='heroSection'>
+        <Col xs={24} md={18} className='heroSection'>
           <h1>High impact business solutions.</h1>
           <p>Building a better world one solution at a time.</p>
         </Col>
@@ -417,7 +437,7 @@ const Home: React.FC = () => {
         </Modal>
       </Row>
 
-      <Row  className='rowHero' >
+      <Row className='rowHero' >
         <Col xs={24} md={18} className='heroSection'>
           <h1>Current Solutions</h1>
           {/* <motion.div animate={{y:[5,10,10,5]}} transition={{repeat:Infinity,duration:3}}>
@@ -434,7 +454,7 @@ const Home: React.FC = () => {
           <p>
             Nutrimap provides a nutritional breakdown of the final food products
             produced by food and healthcare institutions, in addition to the
-            products effect on end users at various stages of life.
+            products effect on individuals at various stages of life.
           </p>
           <div className='industry'>
             <motion.button
@@ -453,13 +473,63 @@ const Home: React.FC = () => {
         <Col xs={24} md={7} className='solutionTree'>
           <h1>Components</h1>
           <Tree.DirectoryTree
+
             onSelect={onSelect}
             onExpand={onExpand}
             treeData={treeData}
-            style={{backgroundColor:'#b8860b54'}}
+            style={{ backgroundColor: '#b8860b54',height:'fit-content' }}
           />
         </Col>
-        
+        <Col xs={24} md={7} className='solutionTree'>
+          <List
+           
+            bordered={false}
+            >
+              <List.Item>
+              <List.Item.Meta
+                avatar={<DollarCircleFilled style={{fontSize:'1rem',color:"#b88623"}} />}
+                title='10 samples $1,000'
+                description="Pricing may vary based on size of product catalogue, 
+                complexity of items, condition of recipe guide, size of organization, and other
+                institutional related factors."
+              />
+            </List.Item>
+           
+            
+            <List.Item>
+              <List.Item.Meta
+                avatar={<ToolFilled style={{fontSize:'1rem',color:"#b88623"}}  />}
+                title='Turnaround Time'
+                description="2 months on average."
+              />
+            </List.Item>
+            <List.Item>
+              <List.Item.Meta
+                avatar={<CheckSquareFilled  style={{fontSize:'1rem',color:"#b88623"}}  />}
+                title='Data Driven Analysis'
+                description="No lab testing required"
+              />
+            </List.Item>
+            <List.Item>
+              <List.Item.Meta
+                avatar={<CalculatorFilled style={{fontSize:'1rem',color:"#b88623"}}  />}
+                title='Accuracy'
+                description="+/- 10 point"
+              />
+            </List.Item>
+            <List.Item>
+              <List.Item.Meta
+                avatar={<ApiFilled  style={{fontSize:'1rem',color:"#b88623"}}  />}
+                title='Integration'
+                description="We handle all integrations directly into your current website."
+              />
+            </List.Item>
+           
+            </List>
+            
+          
+        </Col>
+
       </Row>
     </React.Fragment>
   )
