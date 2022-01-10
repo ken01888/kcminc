@@ -449,7 +449,7 @@ const Home: React.FC = () => {
       </Row>
 
       <Row justify='center' className='rowHero'>
-        <Col xs={24} md={7} className='nutrimap'>
+        <Col xs={24} md={15} className='nutrimap'>
           <h1>Nutrimap</h1>
           <p>
             Nutrimap provides a nutritional breakdown of the final food products
@@ -470,14 +470,14 @@ const Home: React.FC = () => {
             </motion.button>
           </div>
         </Col>
-        <Col xs={24} md={7} className='solutionTree'>
+        {/* <Col xs={24} md={7} className='solutionTree'>
           <h1>Components</h1>
           <Tree.DirectoryTree
 
             onSelect={onSelect}
             onExpand={onExpand}
             treeData={treeData}
-            style={{ backgroundColor: '#b8860b54',height:'fit-content' }}
+            style={{ height:'fit-content' }}
           />
         </Col>
         <Col xs={24} md={7} className='solutionTree'>
@@ -528,9 +528,10 @@ const Home: React.FC = () => {
             </List>
             
           
-        </Col>
+        </Col> */}
 
       </Row>
+      
     </React.Fragment>
   )
 }
