@@ -15,14 +15,19 @@ import {
   Avatar
 } from 'antd'
 import {
+  AimOutlined,
   ApiFilled,
+  ApiOutlined,
   CalculatorFilled,
+  CalendarOutlined,
   CaretDownOutlined,
+  CheckCircleOutlined,
   CheckSquareFilled,
   CloseCircleFilled,
   DollarCircleFilled,
   DollarCircleOutlined,
   DollarCircleTwoTone,
+  DollarOutlined,
   DownOutlined,
   FrownFilled,
   FrownOutlined,
@@ -299,7 +304,7 @@ const Home: React.FC = () => {
       ]
     },
     {
-      title: 'Micronutrients',
+      title: 'Macronutrients',
       key: '4-4',
 
       children: [
@@ -452,11 +457,70 @@ const Home: React.FC = () => {
         <Col xs={24} md={15} className='nutrimap'>
           <h1>Nutrimap</h1>
           <p>
-            Nutrimap provides a nutritional breakdown of the final food products
-            produced by food and healthcare institutions, in addition to the
-            products effect on individuals at various stages of life.
+          Nutrimap gives food support and food development 
+          institutions a comprehensive breakdown of their 
+          finished products. What separates Nutrimap from 
+          other nutritional analysis systems is its ability 
+          to provide invaluable information about a product’s 
+          impact on individuals at various stages of life. 
           </p>
-          <div className='industry'>
+        </Col>
+        <Col xs={24} md={15} className='solutionTree'>
+          <h1>Nutrimap Variables </h1>
+          <Tree.DirectoryTree
+            onSelect={onSelect}
+            onExpand={onExpand}
+            treeData={treeData}
+            style={{ height:'fit-content' }}
+          />
+        </Col>
+        <Col xs={24} md={15} className='nutrimap'>
+        <List
+           itemLayout='vertical'
+           bordered={false}
+           >
+             <List.Item>
+             <List.Item.Meta
+               avatar={<DollarOutlined  style={{fontSize:'1.5rem',color:"#b88623"}} />}
+               title='10 samples $1,000'
+               description="Pricing may vary based on size of product catalogue, 
+               complexity of items, condition of recipe guide, size of organization, and other
+               institutional related factors."
+             />
+           </List.Item>
+          
+           
+           <List.Item>
+             <List.Item.Meta
+               avatar={<CalendarOutlined  style={{fontSize:'1.5rem',color:"#b88623"}}  />}
+               title='Turnaround Time'
+               description="2 months on average."
+             />
+           </List.Item>
+           <List.Item>
+             <List.Item.Meta
+               avatar={<CheckCircleOutlined   style={{fontSize:'1.5rem',color:"#b88623"}}  />}
+               title='Data Driven Analysis'
+               description="No lab testing required"
+             />
+           </List.Item>
+           <List.Item>
+             <List.Item.Meta
+               avatar={<AimOutlined  style={{fontSize:'1.5rem',color:"#b88623"}}  />}
+               title='Accuracy'
+               description="+/- 10 point"
+             />
+           </List.Item>
+           <List.Item>
+             <List.Item.Meta
+               avatar={<ApiOutlined   style={{fontSize:'1.5rem',color:"#b88623"}}  />}
+               title='Integration'
+               description="We handle all integrations directly into your current website."
+             />
+           </List.Item>
+          
+           </List>
+           <div className='industry'>
             <motion.button
               whileHover={{
                 border: '2px dashed #b88623',
@@ -466,69 +530,13 @@ const Home: React.FC = () => {
               className='button'
               onClick={showModal}
             >
-              Nutrimap
+              Contact us today and begin designing safer food products.
             </motion.button>
           </div>
-        </Col>
-        {/* <Col xs={24} md={7} className='solutionTree'>
-          <h1>Components</h1>
-          <Tree.DirectoryTree
-
-            onSelect={onSelect}
-            onExpand={onExpand}
-            treeData={treeData}
-            style={{ height:'fit-content' }}
-          />
-        </Col>
-        <Col xs={24} md={7} className='solutionTree'>
-          <List
-           
-            bordered={false}
-            >
-              <List.Item>
-              <List.Item.Meta
-                avatar={<DollarCircleFilled style={{fontSize:'1rem',color:"#b88623"}} />}
-                title='10 samples $1,000'
-                description="Pricing may vary based on size of product catalogue, 
-                complexity of items, condition of recipe guide, size of organization, and other
-                institutional related factors."
-              />
-            </List.Item>
-           
-            
-            <List.Item>
-              <List.Item.Meta
-                avatar={<ToolFilled style={{fontSize:'1rem',color:"#b88623"}}  />}
-                title='Turnaround Time'
-                description="2 months on average."
-              />
-            </List.Item>
-            <List.Item>
-              <List.Item.Meta
-                avatar={<CheckSquareFilled  style={{fontSize:'1rem',color:"#b88623"}}  />}
-                title='Data Driven Analysis'
-                description="No lab testing required"
-              />
-            </List.Item>
-            <List.Item>
-              <List.Item.Meta
-                avatar={<CalculatorFilled style={{fontSize:'1rem',color:"#b88623"}}  />}
-                title='Accuracy'
-                description="+/- 10 point"
-              />
-            </List.Item>
-            <List.Item>
-              <List.Item.Meta
-                avatar={<ApiFilled  style={{fontSize:'1rem',color:"#b88623"}}  />}
-                title='Integration'
-                description="We handle all integrations directly into your current website."
-              />
-            </List.Item>
-           
-            </List>
-            
           
-        </Col> */}
+        </Col>
+        
+       
 
       </Row>
       
