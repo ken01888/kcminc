@@ -478,14 +478,15 @@ const Home: React.FC = () => {
         <List
            itemLayout='vertical'
            bordered={false}
+           size='small'
            >
              <List.Item>
              <List.Item.Meta
                avatar={<DollarOutlined  style={{fontSize:'1.5rem',color:"#b88623"}} />}
                title='10 samples $1,000'
-               description="Pricing may vary based on size of product catalogue, 
-               complexity of items, condition of recipe guide, size of organization, and other
-               institutional related factors."
+               description={<p>Pricing may vary based on size of product catalogue, 
+                complexity of items, condition of recipe guide, size of organization, and other
+                institutional related factors.</p>}
              />
            </List.Item>
           
@@ -494,28 +495,28 @@ const Home: React.FC = () => {
              <List.Item.Meta
                avatar={<CalendarOutlined  style={{fontSize:'1.5rem',color:"#b88623"}}  />}
                title='Turnaround Time'
-               description="2 months on average."
+               description={<p>2 months on average.</p>}
              />
            </List.Item>
            <List.Item>
              <List.Item.Meta
                avatar={<CheckCircleOutlined   style={{fontSize:'1.5rem',color:"#b88623"}}  />}
                title='Data Driven Analysis'
-               description="No lab testing required"
+               description={<p>No lab testing required</p>}
              />
            </List.Item>
            <List.Item>
              <List.Item.Meta
                avatar={<AimOutlined  style={{fontSize:'1.5rem',color:"#b88623"}}  />}
                title='Accuracy'
-               description="+/- 10 point"
+               description={<p>+/- 10 point</p>}
              />
            </List.Item>
            <List.Item>
              <List.Item.Meta
                avatar={<ApiOutlined   style={{fontSize:'1.5rem',color:"#b88623"}}  />}
                title='Integration'
-               description="We handle all integrations directly into your current website."
+               description={<p>We handle all integrations directly into your current website.</p>}
              />
            </List.Item>
           
