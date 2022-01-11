@@ -12,6 +12,7 @@ import Contact from './design/mainSite/components/Page/Contact'
 import {
   FolderViewOutlined,
   HomeOutlined,
+  MenuOutlined,
   MessageOutlined,
 } from '@ant-design/icons'
 
@@ -50,13 +51,13 @@ const App = () => {
             key='solutions'
           // icon={<BulbOutlined style={{ color: '#009688' }} />}
           >
-            Solutions
+            Solutions <a href="#solutions"></a>
           </Menu.Item>
           <Menu.Item
             key='faq'
           // icon={<QuestionOutlined style={{ color: '#009688' }} />}
           >
-            FAQ
+            <a href="#faq"> FAQ</a>
           </Menu.Item>
           <Menu.Item
             key='contact'
@@ -73,7 +74,7 @@ const App = () => {
               type='dashed'
               onClick={showDrawer}
               icon={
-                <FolderViewOutlined
+                <MenuOutlined
                   style={{ fontSize: '1.25rem', color: '#b88623' }}
                 />
               }
@@ -101,7 +102,7 @@ const App = () => {
         </Router>
       </Content>
 
-      {/* <Footer style={{
+      <Footer style={{
         zIndex: 1,
         width: '100%',
         background: '#fafafa'
@@ -147,7 +148,7 @@ const App = () => {
             ></Button>
           </Menu.Item>
         </Menu>
-      </Footer> */}
+      </Footer>
  
     </Layout>
   )

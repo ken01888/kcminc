@@ -309,7 +309,7 @@ const Home: React.FC = () => {
 
       children: [
         {
-          title: 'Total Water',
+          title: 'Water',
           key: '4-4-0',
           isLeaf: true
         },
@@ -320,7 +320,7 @@ const Home: React.FC = () => {
           key: '4-4-1'
         },
         {
-          title: 'Total Fiber',
+          title: 'Fiber',
           isLeaf: true,
 
           key: '4-4-2'
@@ -442,14 +442,10 @@ const Home: React.FC = () => {
         </Modal>
       </Row>
 
-      <Row className='rowHero' >
+
+      <Row justify='center' className='rowHero' id='solutions' gutter={[16, 64]}>
         <Col xs={24} md={18} className='heroSection'>
-          <h1>Current Solutions</h1>
-          {/* <motion.div animate={{y:[5,10,10,5]}} transition={{repeat:Infinity,duration:3}}>
-          <CaretDownOutlined style={{ fontSize: '3.5rem', color: '#b88623' }} />
-
-
-          </motion.div> */}
+          <h1>Present Solutions</h1>
         </Col>
       </Row>
 
@@ -457,12 +453,12 @@ const Home: React.FC = () => {
         <Col xs={24} md={15} className='nutrimap'>
           <h1>Nutrimap</h1>
           <p>
-          Nutrimap gives food support and food development 
-          institutions a comprehensive breakdown of their 
-          finished products. What separates Nutrimap from 
-          other nutritional analysis systems is its ability 
-          to provide invaluable information about a product’s 
-          impact on individuals at various stages of life. 
+            Nutrimap gives food support and food development
+            institutions a comprehensive breakdown of their
+            finished products. What separates Nutrimap from
+            other nutritional analysis systems is its ability
+            to provide invaluable information about a product’s
+            impact on individuals at various stages of life.
           </p>
         </Col>
         <Col xs={24} md={15} className='solutionTree'>
@@ -471,76 +467,50 @@ const Home: React.FC = () => {
             onSelect={onSelect}
             onExpand={onExpand}
             treeData={treeData}
-            style={{ height:'fit-content' }}
+            style={{ height: 'fit-content', backgroundColor: '#fafafa' }}
           />
         </Col>
-        <Col xs={24} md={15} className='nutrimap'>
-        <List
-           itemLayout='vertical'
-           bordered={false}
-           size='small'
-           >
-             <List.Item>
-             <List.Item.Meta
-               avatar={<DollarOutlined  style={{fontSize:'1.5rem',color:"#b88623"}} />}
-               title='10 samples $1,000'
-               description={<p>Pricing may vary based on size of product catalogue, 
-                complexity of items, condition of recipe guide, size of organization, and other
-                institutional related factors.</p>}
-             />
-           </List.Item>
-          
-           
-           <List.Item>
-             <List.Item.Meta
-               avatar={<CalendarOutlined  style={{fontSize:'1.5rem',color:"#b88623"}}  />}
-               title='Turnaround Time'
-               description={<p>2 months on average.</p>}
-             />
-           </List.Item>
-           <List.Item>
-             <List.Item.Meta
-               avatar={<CheckCircleOutlined   style={{fontSize:'1.5rem',color:"#b88623"}}  />}
-               title='Data Driven Analysis'
-               description={<p>No lab testing required</p>}
-             />
-           </List.Item>
-           <List.Item>
-             <List.Item.Meta
-               avatar={<AimOutlined  style={{fontSize:'1.5rem',color:"#b88623"}}  />}
-               title='Accuracy'
-               description={<p>+/- 10 point</p>}
-             />
-           </List.Item>
-           <List.Item>
-             <List.Item.Meta
-               avatar={<ApiOutlined   style={{fontSize:'1.5rem',color:"#b88623"}}  />}
-               title='Integration'
-               description={<p>We handle all integrations directly into your current website.</p>}
-             />
-           </List.Item>
-          
-           </List>
-           <div className='industry'>
-            <motion.button
-              whileHover={{
-                border: '2px dashed #b88623',
-                backgroundColor: '#b88623'
-              }}
-              type='button'
-              className='button'
-              onClick={showModal}
-            >
-              Contact us today and begin designing safer food products.
-            </motion.button>
-          </div>
-          
-        </Col>
-        
-       
+        <Col xs={24} md={15} className='faq' id='faq'>
+          <h1>Nutrimap Frequently Asked Questions (FAQ)</h1>
 
+          <Collapse defaultActiveKey={['1']} onChange={callback}>
+            <Collapse.Panel header="How does Nutrimap compare to other nutritional analysis solutions?" key="1">
+              Nutrimap provides a complete nutrient breakdown of food and beverage products, including both micro and macro nutrients.
+              What makes this solution unique is its ability to not only provide daily values but also recommended daily allowances for
+              a wide range of individual at various stages of life.
+
+            </Collapse.Panel>
+            <Collapse.Panel header="How much does Nutrimap cost?" key="2">
+              Pricing for Nutrimap starts at $1,000 for 10 items.
+            </Collapse.Panel>
+            <Collapse.Panel header="What is the average turn around time for Nutrimap analysis?" key="3">
+              You can expect your results in 2 months.
+            </Collapse.Panel>
+            <Collapse.Panel header="Does Nutrimap analytics comply with 21 USC 343-1?" key="4">
+              Yes
+            </Collapse.Panel>
+            <Collapse.Panel header="Can Nutrimap be integrated into an existing website" key="5">
+              Yes,
+              Nutrimap can be added to an existing website for an additional fee.
+            </Collapse.Panel>
+           
+          </Collapse>
+
+        </Col>
+
+        <Col xs={24} md={15} className='contactSales'>
+          <h1>Contact Nutrimap Sales Division </h1>
+          <Tree.DirectoryTree
+            onSelect={onSelect}
+            onExpand={onExpand}
+            treeData={treeData}
+            style={{ height: 'fit-content', backgroundColor: '#fafafa' }}
+          />
+        </Col>
       </Row>
-      
+
+
+
     </React.Fragment>
   )
 }
