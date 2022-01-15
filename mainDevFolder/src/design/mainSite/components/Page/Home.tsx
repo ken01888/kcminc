@@ -18,6 +18,7 @@ import {
   AimOutlined,
   ApiFilled,
   ApiOutlined,
+  ArrowRightOutlined,
   CalculatorFilled,
   CalendarOutlined,
   CaretDownOutlined,
@@ -366,7 +367,7 @@ const Home: React.FC = () => {
     <React.Fragment>
       <Row justify='center' className='rowHero' gutter={[16, 64]}>
         <Col xs={24} md={18} className='heroSection'>
-          <h1>High impact business solutions.</h1>
+          <h1>Thoughtfully designed business solutions.</h1>
           <p>Building a better world one solution at a time.</p>
         </Col>
       </Row>
@@ -499,7 +500,7 @@ const Home: React.FC = () => {
         </Col>
 
         <Col xs={24} md={15} className='contactSales'>
-          <h1>Contact Nutrimap Sales Division </h1>
+          <h1><ArrowRightOutlined />Contact Nutrimap Sales Division </h1>
           <Tree.DirectoryTree
             onSelect={onSelect}
             onExpand={onExpand}

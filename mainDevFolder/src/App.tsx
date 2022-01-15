@@ -1,21 +1,21 @@
 import * as React from 'react'
-import {
-  Layout,
-  Menu,
-  Button,
-  Drawer,
-} from 'antd'
+import { Layout, Menu, Button, Drawer, Row, Col } from 'antd'
 import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Health from './design/mainSite/components/Page/Health'
 import Contact from './design/mainSite/components/Page/Contact'
 import {
+  FacebookFilled,
+  FacebookOutlined,
   FolderViewOutlined,
   HomeOutlined,
+  LinkedinOutlined,
   MenuOutlined,
   MessageOutlined,
+  TwitterCircleFilled,
+  TwitterOutlined
 } from '@ant-design/icons'
-
+import { motion } from 'framer-motion'
 
 const { Header, Content, Footer } = Layout
 
@@ -28,9 +28,7 @@ const App = () => {
     setVisible(false)
   }
 
-  
-
-  return ( 
+  return (
     <Layout>
       <Header
         style={{
@@ -43,26 +41,26 @@ const App = () => {
         <Menu mode='horizontal' className='largeDisplay'>
           <Menu.Item
             key='home'
-          // icon={<HomeOutlined style={{ color: '#009688' }} />}
+            // icon={<HomeOutlined style={{ color: '#009688' }} />}
           >
             KCM INC
           </Menu.Item>
           <Menu.Item
             key='solutions'
-          // icon={<BulbOutlined style={{ color: '#009688' }} />}
+            // icon={<BulbOutlined style={{ color: '#009688' }} />}
           >
-            Solutions <a href="#solutions"></a>
+            Solutions <a href='#solutions'></a>
           </Menu.Item>
           <Menu.Item
             key='faq'
-          // icon={<QuestionOutlined style={{ color: '#009688' }} />}
+            // icon={<QuestionOutlined style={{ color: '#009688' }} />}
           >
-            <a href="#faq"> FAQ</a>
+            <a href='#faq'> FAQ</a>
           </Menu.Item>
-          <Menu.Item
-            key='contact'
-          >
-            <Button icon={<MessageOutlined style={{ color: '#b88623' }} />}>Contact Us</Button>
+          <Menu.Item key='contact'>
+            <Button icon={<MessageOutlined style={{ color: '#b88623' }} />}>
+              Contact Us
+            </Button>
           </Menu.Item>
         </Menu>
         <Menu mode='horizontal' className='smallDisplay'>
@@ -85,7 +83,7 @@ const App = () => {
       <Content className='site-layout'>
         <Drawer
           title='Basic Drawer'
-          placement='left' 
+          placement='left'
           onClose={onClose}
           visible={visible}
         >
@@ -102,54 +100,41 @@ const App = () => {
         </Router>
       </Content>
 
-      <Footer style={{
-        zIndex: 1,
-        width: '100%',
-        background: '#fafafa'
-      }}>
-        <Menu mode='horizontal' className='largeDisplay'>
-          <Menu.Item
-            key='home'
-          // icon={<HomeOutlined style={{ color: '#009688' }} />}
-          >
-            KCM INC
-          </Menu.Item>
-          <Menu.Item
-            key='solutions'
-          // icon={<BulbOutlined style={{ color: '#009688' }} />}
-          >
-            Solutions
-          </Menu.Item>
-          <Menu.Item
-            key='faq'
-          // icon={<QuestionOutlined style={{ color: '#009688' }} />}
-          >
-            FAQ
-          </Menu.Item>
-          <Menu.Item
-            key='contact'
-          >
-            <Button icon={<MessageOutlined style={{ color: '#009688' }} />}>Contact Us</Button>
-          </Menu.Item>
-        </Menu>
-        <Menu mode='horizontal' className='smallDisplay'>
-          <Menu.Item key='home' icon={<HomeOutlined />}>
-            KCM INC
-          </Menu.Item>
-          <Menu.Item key='solutions'>
-            <Button
-              type='dashed'
-              onClick={showDrawer}
-              icon={
-                <FolderViewOutlined
-                  style={{ fontSize: '1.25rem', color: '#009688' }}
-                />
-              }
-            ></Button>
-          </Menu.Item>
-        </Menu>
+      <Footer
+        style={{
+          zIndex: 1,
+          width: '100%',
+          background: '#b88623'
+        }}
+      >
+        <Row justify='space-around'>
+          <Col xs={24} md={7} className='footer'>
+            <h1>Contact</h1>
+            <a href='tel:+1 404-585-7482'>+1 404-585-7482</a>
+            <a href='mailto:ken@kcminc.io'>ken@kcminc.io</a>
+          </Col>
+
+          <Col xs={24} md={7} className='footer'>
+            <h1>Connect</h1>
+            <a href='http://'>
+              <TwitterOutlined className='icon' />
+              Twitter
+            </a>
+            <a href='http://'>
+              <FacebookOutlined className='icon' />
+              Facebook
+            </a>
+            <a href='http://'>
+              <LinkedinOutlined className='icon' />
+              Linkedin
+            </a>
+          </Col>
+
+          <Col xs={24} md={7} className='footer'>
+            <h1>Purpose and Process</h1>
+          </Col>
+        </Row>
       </Footer>
- 
     </Layout>
   )
 }
