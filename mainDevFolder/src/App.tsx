@@ -2,8 +2,6 @@ import * as React from 'react'
 import { Layout, Menu, Button, Drawer, Row, Col } from 'antd'
 import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Health from './design/mainSite/components/Page/Health'
-import Contact from './design/mainSite/components/Page/Contact'
 import {
   FacebookFilled,
   FacebookOutlined,
@@ -94,8 +92,6 @@ const App = () => {
         <Router>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/health' component={Health} />
-            <Route path='/contact' component={Contact} />
           </Switch>
         </Router>
       </Content>

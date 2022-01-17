@@ -229,17 +229,11 @@ const Home: React.FC = () => {
                     </Form>
               
             </Col>
-            <Modal title="Nutrimap" visible={isModalVisible}
+            {/* <Modal title="Nutrimap" visible={isModalVisible}
 
                 footer={[<motion.button className='button' whileHover={{ border: '2px dashed darkgoldenrod', backgroundColor: 'darkgoldenrod' }} type='button' onClick={handleCancel}>Exit</motion.button>,
                 <motion.button className='button' whileHover={{ border: '2px dashed darkgoldenrod', backgroundColor: 'darkgoldenrod' }} type='button' ><Link to='/health'>Continue</Link></motion.button>]}>
-                {/* <p>
-            Nutrimap is a data driven nutritional analysis solution
-            developed to improve consumer health and wellbeing.
-            Nutrimap doesn't just provide a complete nutrient breakdown
-            of food products, it also provides nutritional data based on
-            an individual's stage in life.
-          </p> */}
+              
                 <Badge color='darkgoldenrod' text='Overview' />
                 <p className='modal'>
                     Nutrimap is designed to improve individual health and well-being
@@ -259,9 +253,10 @@ const Home: React.FC = () => {
 
 
 
-            </Modal>
+            </Modal> */}
         </Row>
           )
+          break;
     
       default:
         break;
