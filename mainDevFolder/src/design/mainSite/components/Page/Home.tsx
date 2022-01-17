@@ -579,17 +579,16 @@ const Home: React.FC = () => {
         <Col xs={24} md={15} className='nutrimap'>
           <h1>Nutrimap</h1>
           <p>
-            Nutrimap gives food support and food development
-            institutions a comprehensive breakdown of their
-            finished products. What separates Nutrimap from
-            other nutritional analysis systems is its ability
-            to provide invaluable information about a product’s
-            impact on individuals at various stages of life.
+            Nutrimap is a data driven nutritional analysis solution 
+            that provides greater insight into the food we eat and design. 
+            This solution gives institutions information into 
+            the nutrient content of food products and its effect 
+            on individuals at various stages in life. 
           </p>
         </Col>
 
         <Col xs={24} md={15} className='solutionTree'>
-          <h1>Nutrimap Variables </h1>
+          <h1>Elemental Breakdown </h1>
           <Tree.DirectoryTree
             onSelect={onSelect}
             onExpand={onExpand}
@@ -603,13 +602,15 @@ const Home: React.FC = () => {
 
           <Collapse defaultActiveKey={['1']} onChange={callback}>
             <Collapse.Panel header="How does Nutrimap compare to other nutritional analysis solutions?" key="1">
-              Nutrimap provides a complete nutrient breakdown of food and beverage products, including both micro and macro nutrients.
-              What makes this solution unique is its ability to not only provide daily values but also recommended daily allowances for
-              a wide range of individual at various stages of life.
-
+            Nutrimap provides a complete nutrient breakdown of both 
+            micro and macro nutrient components of food products. 
+            Furthermore, Nutrimap assists food engineers in understanding 
+            how their products affect individuals at a specific stage in life: 
+            allow for the creation of healthier food products.
             </Collapse.Panel>
             <Collapse.Panel header="How much does Nutrimap cost?" key="2">
-              Pricing for Nutrimap starts at $1,000 for 10 items.
+              Pricing for Nutrimap starts at $2,000 for 10 items.
+              Flexible payment options available.
             </Collapse.Panel>
             <Collapse.Panel header="What is the average turn around time for Nutrimap analysis?" key="3">
               You can expect your results in 2 months.
@@ -617,7 +618,7 @@ const Home: React.FC = () => {
             <Collapse.Panel header="Does Nutrimap analytics comply with 21 USC 343-1?" key="4">
               Yes
             </Collapse.Panel>
-            <Collapse.Panel header="Can Nutrimap be integrated into an existing website" key="5">
+            <Collapse.Panel header="Can Nutrimap be integrated into an existing website or mobile appication?" key="5">
               Yes,
               Nutrimap can be added to an existing website for an additional fee.
             </Collapse.Panel>
