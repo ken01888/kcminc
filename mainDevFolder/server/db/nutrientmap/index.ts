@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer'
 import * as express from 'express'
 import database_Function from './queries_nutrientmap'
 
@@ -16,7 +15,7 @@ app.all('/nutrientmap/client', async (req, res, error) => {
       
       break;
     case 'POST':
-      let {insertId}:any = await database_Function.insertCLIENT(req.body)
+      await database_Function.insertCLIENT(req.body)
       res.json(req.body)
       break;
 

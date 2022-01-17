@@ -3,51 +3,18 @@ import {
   Row,
   Col,
   Select,
-  Button,
-  Divider,
-  Modal,
-  Badge,
-  Statistic,
   Collapse,
   Tree,
-  List,
-  Typography,
-  Avatar,
   Form,
   Input,
-  Card,
   Checkbox
 } from 'antd'
 import {
-  AimOutlined,
-  ApiFilled,
-  ApiOutlined,
   ArrowDownOutlined,
   ArrowRightOutlined,
-  CalculatorFilled,
-  CalendarOutlined,
-  CaretDownOutlined,
-  CheckCircleOutlined,
-  CheckSquareFilled,
-  CloseCircleFilled,
-  DollarCircleFilled,
-  DollarCircleOutlined,
-  DollarCircleTwoTone,
-  DollarOutlined,
-  DownOutlined,
-  FrownFilled,
-  FrownOutlined,
-  MehOutlined,
-  ScheduleOutlined,
-  SmileOutlined,
-  ToolFilled,
-  WalletFilled
 } from '@ant-design/icons'
 import { motion } from 'framer-motion'
 
-import { Link } from 'react-router-dom'
-
-const { Option, OptGroup } = Select
 
 const Home: React.FC = () => {
   const [isModalVisible, setIsModalVisible] = React.useState(false)
@@ -149,15 +116,14 @@ const Home: React.FC = () => {
                         </Form.Item>
                         <Form.Item
                             name='solution_request'
-                            label='What solutions are you interest in?'
+                            label='Select Solutions'
                             rules={[
                                 { required: true, message: 'Please select solutions!' }
                             ]}
                         >
                             <Select mode='multiple' className='input' placeholder="Select one or more solutions">
                                 <Select.Option value="NLDV">Nutritional Labeling DV</Select.Option>
-                                <Select.Option value="NLDV&DRI">Nutritional Labeling DV plus Dietary Reference Intakes</Select.Option>
-                                <Select.Option value="CBRG">Digital recipe guide</Select.Option>
+                                <Select.Option value="NLDV&DRI">Dietary Reference Intakes</Select.Option>
                             </Select>
                         </Form.Item>
 

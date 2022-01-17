@@ -1,15 +1,17 @@
 import * as mysql from 'mysql';
 import database_Function from './nutrientmap/queries_nutrientmap'
+import 'dotenv/config';
+
 
 
 
 
 const mysqlAccess = mysql.createPool({
-    host:'127.0.0.1',
-    port:3306,
-    user:'me',
-    password:'password',
-    database:'Nutrientmap'
+    host:process.env.DB_HOST,
+    port:Number(process.env.DB_PORT),
+    user:process.env.DB_USER,
+    password:process.env.DB_PASSWORD,
+    database:process.env.DATABASE
 })
 
 export const Query = (query:string,values?:Array<string|number>)=>{
@@ -17,8 +19,6 @@ export const Query = (query:string,values?:Array<string|number>)=>{
         mysqlAccess.query(query,values,(err,results) =>{
             if(err) return reject(err)
             return resolve(results);
-
-
         })
     })
 };

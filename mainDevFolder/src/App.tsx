@@ -3,17 +3,13 @@ import { Layout, Menu, Button, Drawer, Row, Col } from 'antd'
 import Home from './design/mainSite/components/Page/Home'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import {
-  FacebookFilled,
   FacebookOutlined,
-  FolderViewOutlined,
   HomeOutlined,
   LinkedinOutlined,
   MenuOutlined,
   MessageOutlined,
-  TwitterCircleFilled,
   TwitterOutlined
 } from '@ant-design/icons'
-import { motion } from 'framer-motion'
 
 const { Header, Content, Footer } = Layout
 
@@ -39,19 +35,16 @@ const App = () => {
         <Menu mode='horizontal' className='largeDisplay'>
           <Menu.Item
             key='home'
-            // icon={<HomeOutlined style={{ color: '#009688' }} />}
           >
             KCM INC
           </Menu.Item>
           <Menu.Item
             key='solutions'
-            // icon={<BulbOutlined style={{ color: '#009688' }} />}
           >
             Solutions <a href='#solutions'></a>
           </Menu.Item>
           <Menu.Item
             key='faq'
-            // icon={<QuestionOutlined style={{ color: '#009688' }} />}
           >
             <a href='#faq'> FAQ</a>
           </Menu.Item>
