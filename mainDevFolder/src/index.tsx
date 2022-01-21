@@ -3,8 +3,14 @@ import * as ReactDOM from 'react-dom';
 import App from './App';
 import 'antd/dist/antd.less'
 import './design/styles/index.less'
+
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+
+import Amplify, { API } from 'aws-amplify';
+import awsconfig from '../../src/aws-exports';
+
+Amplify.configure(awsconfig);
 
 ReactDOM.render(
   
