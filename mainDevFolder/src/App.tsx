@@ -1,3 +1,7 @@
+import Amplify, { API } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
 import * as React from 'react'
 import { Layout, Menu, Button, Drawer, Row, Col } from 'antd'
 import Home from './design/mainSite/components/Page/Home'
