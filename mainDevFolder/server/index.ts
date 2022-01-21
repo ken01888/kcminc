@@ -32,8 +32,9 @@ app.use(Nutrientmap)
 //     })
 // })
 
-app.get('/',(req,res)=>{
-    res.send('hello')
+app.post('/',(req,res)=>{
+    console.log(req)
+    res.json(req.body)
 })
 
 
