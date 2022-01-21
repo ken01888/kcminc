@@ -33,15 +33,15 @@ const Home: React.FC = () => {
 
   const onFinish = (values: any) => {
     (async () => {
-        let newData = await fetch('http://localhost:4000', {
+        let newData = await fetch('http://localhost:80', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(values)
         })
-        let data = await newData.json()
-        console.log(data)
+        
+        console.log(newData)
         // let newInsert = await newData.json()
         // history.push(`/health/nutritionalanalysis/2/${newInsert}`)
         // console.log(values)
@@ -635,7 +635,6 @@ const Home: React.FC = () => {
           <motion.h1 onClick={contactUs}>{contact?<ArrowDownOutlined />:<ArrowRightOutlined />} Click here to begin the registration process. </motion.h1>
           {contactForm()}
         </Col>
-        deploy
       </Row>
       
 

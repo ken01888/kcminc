@@ -115,7 +115,7 @@ const configServer = {
     entry: './mainDevFolder/server/index.ts',
     devtool: 'inline-source-map',
     output: {
-        filename: 'index.js',
+        filename: 'server.js',
         path: path.resolve(__dirname, 'dist_server'),
         clean: true
     },
