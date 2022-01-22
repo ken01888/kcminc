@@ -48,7 +48,7 @@
         "build:prod": "webpack --mode=production --node-env=production",
         "watch:watch": "webpack --mode=development --watch ",
         "watch:serve": "webpack serve",
-        "watch:node": "nodemon dist_server/index.js",
+        "watch:node": "nodemon dist_server/server.js",
         "dev": "npm-run-all --parallel watch:*"
     },
     "eslintConfig": {

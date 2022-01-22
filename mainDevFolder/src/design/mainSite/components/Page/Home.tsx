@@ -33,15 +33,20 @@ const Home: React.FC = () => {
 
   const onFinish = (values: any) => {
     (async () => {
-        let newData = await fetch('http://localhost:80', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(values)
-        })
+        let newData = await fetch('http://localhost:8080')
         
-        console.log(newData)
+        // , {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(values)
+        // }
+        
+        
+        let data = await newData.json()
+        
+        console.log(data)
         // let newInsert = await newData.json()
         // history.push(`/health/nutritionalanalysis/2/${newInsert}`)
         // console.log(values)

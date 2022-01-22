@@ -32,9 +32,9 @@ app.use(Nutrientmap)
 //     })
 // })
 
-app.post('/',(req,res)=>{
+app.get('/',(req,res)=>{
     console.log(req)
-    res.json(req.body)
+    res.json('hello')
 })
 
 
@@ -48,6 +48,6 @@ app.post('/',(req,res)=>{
 
 
 
-app.listen(80)
+app.listen(8080)
 
 
