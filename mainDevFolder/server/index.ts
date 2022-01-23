@@ -5,6 +5,8 @@ import * as fetch from 'isomorphic-fetch';
 
 
 const app = express();
+let port = process.env.PORT || 3000
+
 
 app.use(cors())
 app.use(express.json())
@@ -48,6 +50,6 @@ app.get('/',(req,res)=>{
 
 
 
-app.listen(8080)
+app.listen(port)
 
 

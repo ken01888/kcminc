@@ -31,6 +31,7 @@ amplify/backend/amplify-meta.json
 amplify/backend/.temp
 build/
 dist/
+.elasticbeanstalk/
 node_modules/
 aws-exports.js
 awsconfiguration.json
@@ -42,3 +43,9 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
