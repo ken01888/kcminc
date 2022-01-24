@@ -41,7 +41,7 @@ const App = () => {
           <Menu.Item
             key='home'
           >
-            KCM INC
+            KCM INC jj
           </Menu.Item>
           <Menu.Item
             key='solutions'
