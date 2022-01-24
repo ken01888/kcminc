@@ -5,7 +5,7 @@ import * as fetch from 'isomorphic-fetch';
 
 
 const app = express();
-let port = process.env.PORT || 80
+let port = process.env.PORT || 4000
 
 
 app.use(cors())
