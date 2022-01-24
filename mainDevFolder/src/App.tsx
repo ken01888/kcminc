@@ -80,8 +80,8 @@ const App = () => {
           onClose={onClose}
           visible={visible}
         >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
+          <p>Some contents.---..</p>
+          <p>Some contents.--..</p>
           <p>Some contents...</p>
         </Drawer>
         <Router>

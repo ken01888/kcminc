@@ -17,7 +17,7 @@ const configClient = {
     entry: './mainDevFolder/src/index.tsx',
 
     output: {
-        path: path.resolve(__dirname, 'dist_client'),
+        path: path.resolve(__dirname, 'public'),
         filename: 'main.js',
         clean: true
     },
@@ -27,11 +27,11 @@ const configClient = {
         compress: true,
         open: true,
         hot: true,
-        port: 4000,
+        port: 3000,
         historyApiFallback: true
     },
     plugins: [
-        new HtmlWebpackPlugin({ template: 'public/index.html', hash: false })
+        new HtmlWebpackPlugin({ template: 'dist_client/index.html', hash: false })
         // new StylelintPlugin()
     ],
 
@@ -116,7 +116,7 @@ const configServer = {
     devtool: 'inline-source-map',
     output: {
         filename: 'app.js',
-        path: path.resolve(__dirname),
+        path: path.resolve(__dirname,'dist_server'),
         clean: true
     },
 
