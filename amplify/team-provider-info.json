@@ -27,6 +27,10 @@
         "kcminc484c6d53": {
           "deploymentBucketName": "amplify-kcminc-dev-113101-deployment",
           "s3Key": "amplify-builds/kcminc484c6d53-727a7a51673556454e34-build.zip"
+        },
+        "kcminc352e932c": {
+          "deploymentBucketName": "amplify-kcminc-dev-113101-deployment",
+          "s3Key": "amplify-builds/kcminc352e932c-41637376683053584675-build.zip"
         }
       }
     }

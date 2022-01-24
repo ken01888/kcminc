@@ -71,7 +71,7 @@
     },
     "devDependencies": {
         "@ant-design/icons": "^4.7.0",
-        "@babel/core": "^7.16.10",
+        "@babel/core": "^7.16.12",
         "@babel/preset-env": "^7.16.11",
         "@babel/preset-react": "^7.16.7",
         "@testing-library/dom": ">=7.21.4",
@@ -83,6 +83,7 @@
         "aws-amplify": "^4.3.12",
         "aws-sdk": "^2.1062.0",
         "babel-eslint": "^10.1.0",
+        "babel-loader": "^8.2.3",
         "cors": "^2.8.5",
         "css-loader": "^6.3.0",
         "eslint": "^7.32.0",

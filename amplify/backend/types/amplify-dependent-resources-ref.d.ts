@@ -5,6 +5,12 @@ export type AmplifyDependentResourcesAttributes = {
             "Arn": "string",
             "Region": "string",
             "LambdaExecutionRole": "string"
+        },
+        "kcminc352e932c": {
+            "Name": "string",
+            "Arn": "string",
+            "Region": "string",
+            "LambdaExecutionRole": "string"
         }
     },
     "auth": {
@@ -25,6 +31,11 @@ export type AmplifyDependentResourcesAttributes = {
             "ApiId": "string"
         },
         "api2a22e777": {
+            "RootUrl": "string",
+            "ApiName": "string",
+            "ApiId": "string"
+        },
+        "api23e02f27": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"

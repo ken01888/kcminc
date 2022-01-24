@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "paths": {
+    "/data": {
+      "name": "/data",
+      "lambdaFunction": "kcminc352e932c",
+      "permissions": {
+        "setting": "protected",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "guest": [
+          "read"
+        ]
+      }
+    }
+  }
+}

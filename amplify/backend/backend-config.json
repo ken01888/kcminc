@@ -4,6 +4,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "kcminc352e932c": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "auth": {
@@ -54,6 +59,20 @@
         {
           "category": "function",
           "resourceName": "kcminc484c6d53",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "api23e02f27": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "kcminc352e932c",
           "attributes": [
             "Name",
             "Arn"
