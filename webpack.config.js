@@ -27,7 +27,7 @@ const configClient = {
         compress: true,
         open: true,
         hot: true,
-        port: 3000,
+        port: 8080,
         historyApiFallback: true
     },
     plugins: [
